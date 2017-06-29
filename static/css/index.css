@@ -40,10 +40,10 @@ table td{
 }
 
 
-#index a:link {color: #005}		/* 未访问的链接 */
-#index a:visited {color: #669}	/* 已访问的链接 */
-#index a:hover {color: #336;text-decoration: none;}	/* 鼠标移动到链接上 */
-#index a:active {color: #99b}	/* 选定的链接 */
+#index a:link {color: #005}		/* 未訪問的鏈接 */
+#index a:visited {color: #669}	/* 已訪問的鏈接 */
+#index a:hover {color: #336;text-decoration: none;}	/* 鼠標移動到鏈接上 */
+#index a:active {color: #99b}	/* 選定的鏈接 */
 
 /* navbar */
 nav{
@@ -172,7 +172,7 @@ nav{
 	-o-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 	box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 
-	/* 向左倾斜12度，再旋转4度 */
+	/* 向左傾斜12度，再旋轉4度 */
 	-webkit-transform:skew(-11deg) rotate(-4deg);
 	-moz-transform:skew(-11deg) rotate(-4deg);
 	-o-transform:skew(-11deg) rotate(-4deg);
@@ -193,7 +193,7 @@ nav{
 	-o-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 	box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 
-	/* 向左倾斜12度，再旋转4度 */
+	/* 向左傾斜12度，再旋轉4度 */
 	-webkit-transform:skew(11deg) rotate(4deg);
 	-moz-transform:skew(11deg) rotate(4deg);
 	-o-transform:skew(11deg) rotate(4deg);
@@ -215,10 +215,10 @@ footer{
 	-o-box-shadow: 0 -2px 4px rgba(0,0,0,0.5);
 	box-shadow: 0 -2px 4px rgba(0,0,0,0.5);
 }
-footer a:link {color: #aaa}		/* 未访问的链接 */
-footer a:visited {color: #888}	/* 已访问的链接 */
-footer a:hover {color: #bbb;text-decoration: none;}	/* 鼠标移动到链接上 */
-footer a:active {color: #bbb}	/* 选定的链接 */
+footer a:link {color: #aaa}		/* 未訪問的鏈接 */
+footer a:visited {color: #888}	/* 已訪問的鏈接 */
+footer a:hover {color: #bbb;text-decoration: none;}	/* 鼠標移動到鏈接上 */
+footer a:active {color: #bbb}	/* 選定的鏈接 */
 footer .point{
 	margin: 0 8px;
 }
@@ -329,7 +329,7 @@ blockquote:last-child {
 /**
  * demo
  * 瀑布流
- * 使用多栏布局
+ * 使用多欄布局
  */
 #fall{
 	font-size: 0;
@@ -404,13 +404,13 @@ blockquote:last-child {
 	padding: 5px 10px 10px 10px;
 	text-indent: 2em;
 }
-#fall a:link {color: #7676AC}		/* 未访问的链接 */
-#fall a:visited {color: #715584}	/* 已访问的链接 */
-#fall a:hover {color: #5989AD;text-decoration: none;}	/* 鼠标移动到链接上 */
-#fall a:active {color: #91C3CF}	/* 选定的链接 */
+#fall a:link {color: #7676AC}		/* 未訪問的鏈接 */
+#fall a:visited {color: #715584}	/* 已訪問的鏈接 */
+#fall a:hover {color: #5989AD;text-decoration: none;}	/* 鼠標移動到鏈接上 */
+#fall a:active {color: #91C3CF}	/* 選定的鏈接 */
 
 /**
- * 文章目录相关
+ * 文章目錄相關
  */
 @media screen and (min-width: 768px){
 	#markdown-toc {
@@ -418,10 +418,10 @@ blockquote:last-child {
 	}
 }
 
-#content a:link {color: #666}		/* 未访问的链接 */
-#content a:visited {color: #666}	/* 已访问的链接 */
-#content a:hover {color: #336;text-decoration: none;}	/* 鼠标移动到链接上 */
-#content a:active {color: #99b}	/* 选定的链接 */
+#content a:link {color: #666}		/* 未訪問的鏈接 */
+#content a:visited {color: #666}	/* 已訪問的鏈接 */
+#content a:hover {color: #336;text-decoration: none;}	/* 鼠標移動到鏈接上 */
+#content a:active {color: #99b}	/* 選定的鏈接 */
 
 #content{
 	max-width: 292px;

@@ -1,5 +1,5 @@
 /**
- * 页面ready方法
+ * 頁面ready方法
  */
 $(document).ready(function() {
 
@@ -9,8 +9,8 @@ $(document).ready(function() {
 });
 
 /**
- * load方法，页面的加载完成后触发
- * {fixFooterInit();} 固定Footer栏
+ * load方法，頁面的加載完成後觸發
+ * {fixFooterInit();} 固定Footer欄
  */
 /*$(window).load(function() {
     fixFooterInit();
@@ -18,14 +18,14 @@ $(document).ready(function() {
 
 
 /**
- * 固定底栏的初始化方法
- * 在一开始载入页面时，使用fixFooter()方法固定底栏。
- * 在浏览器窗口改变大小是，依然固定底栏
+ * 固定底欄的初始化方法
+ * 在一開始載入頁面時，使用fixFooter()方法固定底欄。
+ * 在瀏覽器窗口改變大小是，依然固定底欄
  * @return {[type]} [description]
  */
 function fixFooterInit() {
     var footerHeight = $('footer').outerHeight();
-    var footerMarginTop = getFooterMarginTop() - 0; //类型转换
+    var footerMarginTop = getFooterMarginTop() - 0; //類型轉換
     // var footerMarginTop = 80;
 
     fixFooter(footerHeight, footerMarginTop); //fix footer at the beginning
@@ -42,9 +42,9 @@ function fixFooterInit() {
 }
 
 /**
- * 固定底栏
- * @param  {number} footerHeight    底栏高度
- * @param  {number} footerMarginTop 底栏MarginTop
+ * 固定底欄
+ * @param  {number} footerHeight    底欄高度
+ * @param  {number} footerMarginTop 底欄MarginTop
  * @return {[type]}                 [description]
  */
 function fixFooter(footerHeight, footerMarginTop) {
@@ -70,8 +70,8 @@ function fixFooter(footerHeight, footerMarginTop) {
 }
 
 /**
- * 使用正则表达式得到底栏的MarginTop
- * @return {string} 底栏的MarginTop
+ * 使用正則表達式得到底欄的MarginTop
+ * @return {string} 底欄的MarginTop
  */
 function getFooterMarginTop() {
     var margintop = $('footer').css('marginTop');
@@ -82,9 +82,9 @@ function getFooterMarginTop() {
 }
 
 /**
- * 分类展示
- * 点击右侧的分类展示时
- * 左侧的相关裂变展开或者收起
+ * 分類展示
+ * 點擊右側的分類展示時
+ * 左側的相關裂變展開或者收起
  * @return {[type]} [description]
  */
 function categoryDisplay() {
@@ -100,10 +100,10 @@ function categoryDisplay() {
 }
 
 /**
- * 回到顶部
+ * 回到頂部
  */
 function backToTop() {
-    //滚页面才显示返回顶部
+    //滾頁面才顯示返回頂部
     $(window).scroll(function() {
         if ($(window).scrollTop() > 100) {
             $("#top").fadeIn(500);
@@ -111,7 +111,7 @@ function backToTop() {
             $("#top").fadeOut(500);
         }
     });
-    //点击回到顶部
+    //點擊回到頂部
     $("#top").click(function() {
         $("body").animate({
             scrollTop: "0"
@@ -126,18 +126,18 @@ function backToTop() {
 
 
 /**
- * 侧边目录
+ * 側邊目錄
  */
 function generateContent() {
 
     // console.log($('#markdown-toc').html());
     if (typeof $('#markdown-toc').html() === 'undefined') {
-        // $('#content .content-text').html('<ul><li>文本较短，暂无目录</li></ul>');
+        // $('#content .content-text').html('<ul><li>文本較短，暫無目錄</li></ul>');
         $('#content').hide();
         $('#myArticle').removeClass('col-sm-9').addClass('col-sm-12');
     } else {
         $('#content .content-text').html('<ul>' + $('#markdown-toc').html() + '</ul>');
-        /*   //数据加载完成后，加固定边栏
+        /*   //數據加載完成後，加固定邊欄
         $('#myAffix').attr({
             'data-spy': 'affix',
             'data-offset': '50'
