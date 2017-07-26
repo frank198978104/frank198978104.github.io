@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "代码校验工具 SublimeLinter 的安装与使用"
+title:  "代碼校驗工具 SublimeLinter 的安裝與使用"
 date:   2015-03-26 15:14:54
 categories: Sublime
-excerpt: 代码校验工具 sublimeLinter 的安装与使用，jshint 的安装与使用，JavaScript 语法检查校验，JavaScript 语法提示
+excerpt: 代碼校驗工具 sublimeLinter 的安裝與使用，jshint 的安裝與使用，JavaScript 語法檢查校驗，JavaScript 語法提示
 ---
 
 * content
@@ -12,27 +12,27 @@ excerpt: 代码校验工具 sublimeLinter 的安装与使用，jshint 的安装�
 
 ## 序   
 
-本文我将讲述一下 SublimeLinter 的安装过程。   
-其组件 jshint 的安装与使用。   
-其组件 csslint 的安装与使用。   
-我将基于 [Sublime Text 3](http://sublimetext.com/3) 来安装。   
-使用 Sublime Text 2 的用户阅读本文是没有帮助的。   
+本文我將講述一下 SublimeLinter 的安裝過程。   
+其組件 jshint 的安裝與使用。   
+其組件 csslint 的安裝與使用。   
+我將基於 [Sublime Text 3](http://sublimetext.com/3) 來安裝。   
+使用 Sublime Text 2 的用戶閱讀本文是沒有幫助的。   
 
-SublimeLinter 是 Sublime 的插件，它的作用是检查代码语法是否有错误，并提示。习惯了 IDE 下写代码的人一定需要一款在 Sublime 上类似的语法检查工具。下面我们开始。   
+SublimeLinter 是 Sublime 的插件，它的作用是檢查代碼語法是否有錯誤，並提示。習慣了 IDE 下寫代碼的人一定需要一款在 Sublime 上類似的語法檢查工具。下面我們開始。   
 
 ---
 
-## 安装 SublimeLinter   
+## 安裝 SublimeLinter   
 
-如同其他插件一样使用 Package Control 来安装。   
+如同其他插件一樣使用 Package Control 來安裝。   
 
-1. 按下 `Ctrl+Shift+p` 进入 Command Palette   
-2. 输入`install`进入 Package Control: Install Package   
-3. 输入`SublimeLinter`。进行安装.   
+1. 按下 `Ctrl+Shift+p` 進入 Command Palette   
+2. 輸入`install`進入 Package Control: Install Package   
+3. 輸入`SublimeLinter`。進行安裝.   
 
 ![SublimeLinter](http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-sublimeLinter.jpg)   
 
-安装完成后可以看到这样一段话：   
+安裝完成後可以看到這樣一段話：   
 
 <pre><code class="markdown">Welcome to SublimeLinter, a linter framework for Sublime Text 3.
  
@@ -56,31 +56,31 @@ SublimeLinter 是 Sublime 的插件，它的作用是检查代码语法是否有
  
  http://www.sublimelinter.com</code></pre>   
 
-可以看到具体的 Linters 组件**不**被包含在 SublimeLinter 3 中，所以我们要额外独立安装组件。   
-可以针对不同的语言安装不同的组件。   
+可以看到具體的 Linters 組件**不**被包含在 SublimeLinter 3 中，所以我們要額外獨立安裝組件。   
+可以針對不同的語言安裝不同的組件。   
 
 ---
 
-## JavaScript 语法检查   
+## JavaScript 語法檢查   
 
-SublimeLinter-jshint 是基于 nodeJS 下的 jshint 的插件，实际上 SublimeLinter-jshint 调用了 nodeJS 中 jshint 的接口来进行语法检查的。   
+SublimeLinter-jshint 是基於 nodeJS 下的 jshint 的插件，實際上 SublimeLinter-jshint 調用了 nodeJS 中 jshint 的接口來進行語法檢查的。   
 
 ---
 
-### 安装 SublimeLinter-jshint
+### 安裝 SublimeLinter-jshint
 
-为了让 JavaScript 代码有语法检查，我们安装 SublimeLinter-jshint   
-同样的方法，我们安装 SublimeLinter-jshint    
+為了讓 JavaScript 代碼有語法檢查，我們安裝 SublimeLinter-jshint   
+同樣的方法，我們安裝 SublimeLinter-jshint    
 
-1. 按下 `Ctrl+Shift+p` 进入 Command Palette   
-2. 输入`install`进入 Package Control: Install Package   
-3. 输入`SublimeLinter-jshint`。进行安装.   
+1. 按下 `Ctrl+Shift+p` 進入 Command Palette   
+2. 輸入`install`進入 Package Control: Install Package   
+3. 輸入`SublimeLinter-jshint`。進行安裝.   
 
-如下图   
+如下圖   
 
 ![SublimeLinter-jshint](http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-jshint.jpg)   
 
-安装完成后我们可以看到下面的一段话   
+安裝完成後我們可以看到下面的一段話   
 
 <pre><code class="markdown">SublimeLinter-jshint
   -------------------------------
@@ -96,19 +96,19 @@ SublimeLinter-jshint 是基于 nodeJS 下的 jshint 的插件，实际上 Sublim
 
 ---
 
-### 安装 nodeJS 和 jshint
+### 安裝 nodeJS 和 jshint
 
-在插件开始工作之前，我们必须再看一下上述插件的[安装说明](https://github.com/SublimeLinter/SublimeLinter-jshint)   
-通过 [SublimeLinter-jshint 的说明](https://github.com/SublimeLinter/SublimeLinter-jshint) 我们可以看到，这个组件依赖于 nodeJS 下的 jshint，所以我们安装 nodeJS 环境和 nodeJS 下的 jshint。   
+在插件開始工作之前，我們必須再看一下上述插件的[安裝說明](https://github.com/SublimeLinter/SublimeLinter-jshint)   
+通過 [SublimeLinter-jshint 的說明](https://github.com/SublimeLinter/SublimeLinter-jshint) 我們可以看到，這個組件依賴於 nodeJS 下的 jshint，所以我們安裝 nodeJS 環境和 nodeJS 下的 jshint。   
 
-1. 安装 [Node.js](https://nodejs.org/)   
-2. 通过 npm 安装`jshint`   
+1. 安裝 [Node.js](https://nodejs.org/)   
+2. 通過 npm 安裝`jshint`   
 
-在命令行下输入如下代码，完成安装   
+在命令行下輸入如下代碼，完成安裝   
 
 	npm install -g jshint
 
-安装完成后命令行中出现如下的信息   
+安裝完成後命令行中出現如下的信息   
 
 	C:\Users\Administrator\AppData\Roaming\npm\jshint -> C:\Users\Administrator\AppData\Roaming\npm\node_modules\jshint\bin\jshint
 	jshint@2.6.3 C:\Users\Administrator\AppData\Roaming\npm\node_modules\jshint
@@ -121,42 +121,42 @@ SublimeLinter-jshint 是基于 nodeJS 下的 jshint 的插件，实际上 Sublim
 	├── minimatch@1.0.0 (sigmund@1.0.0, lru-cache@2.5.0)
 	└── cli@0.6.6 (glob@3.2.11)
 
-可以查看 jshint 版本，已确认安装完成。  
+可以查看 jshint 版本，已確認安裝完成。  
 
 	C:\Users\Administrator>jshint -v
 	jshint v2.6.3
 
-现在，恭喜你，我们使用 Sublime 编辑 JavaScript 文件，就会有语法检查了！   
+現在，恭喜你，我們使用 Sublime 編輯 JavaScript 文件，就會有語法檢查了！   
 
-在编辑过程中，会有如下提示   
+在編輯過程中，會有如下提示   
 
 ![SublimeLinter-jshint-test](http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-jshint-test.jpg)
 
-点击提示点后，Sublime 状态栏也会有相应的说明   
+點擊提示點後，Sublime 狀態欄也會有相應的說明   
 
 ![SublimeLinter-jshint-test2](http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-jshint-test2.jpg)
 
 ---
 
-## css 语法检查 
+## css 語法檢查 
 
-与 jshint 同理，SublimeLinter-csslint 也是基于 nodeJS 下的 csslint 的插件，实际上 SublimeLinter-csslint 调用了 nodeJS 中 csslint 的接口来进行语法检查的。   
+與 jshint 同理，SublimeLinter-csslint 也是基於 nodeJS 下的 csslint 的插件，實際上 SublimeLinter-csslint 調用了 nodeJS 中 csslint 的接口來進行語法檢查的。   
 
 ---
 
-### 安装 SublimeLinter-csslint   
+### 安裝 SublimeLinter-csslint   
 
-同样的方法。   
+同樣的方法。   
 
-1. 按下 `Ctrl+Shift+p` 进入 Command Palette   
-2. 输入`install`进入 Package Control: Install Package   
-3. 输入`SublimeLinter-csslint`。进行安装.   
+1. 按下 `Ctrl+Shift+p` 進入 Command Palette   
+2. 輸入`install`進入 Package Control: Install Package   
+3. 輸入`SublimeLinter-csslint`。進行安裝.   
 
-如下图   
+如下圖   
 
 ![SublimeLinter-csslint](http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-csslint.jpg)   
 
-安装完成后我们可以看到下面的一段话   
+安裝完成後我們可以看到下面的一段話   
 
 	SublimeLinter-csslint
 	-------------------------------
@@ -169,38 +169,38 @@ SublimeLinter-jshint 是基于 nodeJS 下的 jshint 的插件，实际上 Sublim
 
 	https://github.com/SublimeLinter/SublimeLinter-csslint
 
-在使用插件之前，必须遵循上述网址中的[安装说明](https://github.com/SublimeLinter/SublimeLinter-csslint)   
+在使用插件之前，必須遵循上述網址中的[安裝說明](https://github.com/SublimeLinter/SublimeLinter-csslint)   
 
 ---
 
-### 在 nodeJS 下安装 csslint   
+### 在 nodeJS 下安裝 csslint   
 
-进入上述的 GitHub 地址，csslint 的说明页。我们知道了和 jshint 一样，csslint 也是基于 nodeJS 下的 csslint 来使用的。   
+進入上述的 GitHub 地址，csslint 的說明頁。我們知道了和 jshint 一樣，csslint 也是基於 nodeJS 下的 csslint 來使用的。   
 
-这里安装 nodeJS 过程省略。   
-只需用 npm 安装 csslint 即可。   
+這裡安裝 nodeJS 過程省略。   
+只需用 npm 安裝 csslint 即可。   
 
-在命令行中输入     
+在命令行中輸入     
 
 	npm install -g csslint   
 
-安装完成后命令行中出现如下的信息     
+安裝完成後命令行中出現如下的信息     
 
 	C:\Users\Administrator\AppData\Roaming\npm\csslint -> C:\Users\Administrator\AppData\Roaming\npm\node_modules\csslint\cli.js
 	csslint@0.10.0 C:\Users\Administrator\AppData\Roaming\npm\node_modules\csslint
 	└── parserlib@0.2.5
 
-可以查看 csslint 版本，已确认安装完成。   
+可以查看 csslint 版本，已確認安裝完成。   
 
 	C:\Users\Administrator>csslint --version
 	v0.10.0
 
-现在，恭喜你，我们使用 Sublime 编辑 css 文件，就会有语法检查了！     
+現在，恭喜你，我們使用 Sublime 編輯 css 文件，就會有語法檢查了！     
 
-在编辑过程中，会有如下提示   
+在編輯過程中，會有如下提示   
 
 ![SublimeLinter-csslint-test](http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-csslint-test.jpg)
 
-点击提示点后，Sublime 状态栏也会有相应的说明   
+點擊提示點後，Sublime 狀態欄也會有相應的說明   
 
 ![SublimeLinter-csslint-test2](http://7q5cdt.com1.z0.glb.clouddn.com/SublimeLinter-csslint-test2.jpg)
