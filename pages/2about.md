@@ -1,6 +1,6 @@
 ---
 layout: page
-title: <b id="author">About</b>
+title: About
 permalink: /about/
 icon: glyphicon-heart
 ---
