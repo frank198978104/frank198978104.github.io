@@ -1,7 +1,7 @@
 # Site settings
-title: Frank Sun Personal Website
-email: frank198978104@creatidea.com.tw
-description: Xizhi's Ideas & Blogs
+title: HyG
+email: gaohaoyang126@126.com
+description: 浩阳的博客 前端爱好者
 # > # this means to ignore newlines until "baseurl:"
 #   Write an awesome description for your new site here. You can edit this
 #   line in _config.yml. It will appear in your document head meta (for
@@ -10,25 +10,14 @@ description: Xizhi's Ideas & Blogs
 # baseurl: "" # the subpath of your site, e.g. /blog/
 # url: "http://yourdomain.com" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
-github_username: Frank Sun
+github_username:  Gaohaoyang
 permalink: /:year/:month/:day/:title/
-# this is the url root of the view source link on the footer page.
-viewsourceroot: https://github.com/frank198978104/frank198978104.github.io/blob/master/
-# this is the url root of the create page link on the footer page.
-newsourceroot: https://github.com/frank198978104/frank198978104.github.io/new/master
-#########################################
-# for duoshuo.com commenting system, uncomment following line if you do not want to include duoshuo.com. 
-#duoshuo_shortname: Frank Sun
-#duoshuo_url: "http://frank198978104.github.io"
-# disqus.com commenting system. please note that it is exclusive with duoshuo.com
-disqus_shortname: Frank Sun
-disqus_url: "http://frank198978104.github.io"
-#########################################
 
 # Build settings
 markdown: kramdown
 
 # highlight
+# 本地用rouge, github上用pygments
 # highlighter: pygments
 # highlighter: rouge
 # highlighter: false
