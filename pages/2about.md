@@ -16,7 +16,7 @@ icon: glyphicon-heart
     In my free time, I like singing a song, playing guitar, and listening to music.
 </div>
 
-<div style="margin-top:100px;">
+<div style="margin-top:50px;">
 <h2><b id="skill-set">Skill Set</b></h2>
     <hr/>
     <lu>
@@ -29,7 +29,7 @@ icon: glyphicon-heart
 </div>
 
 
-<div  style="margin-top:100px;">
+<div  style="margin-top:50px;">
 <h2><b id="contact-me">Contact Me</b></h2>
     <hr/>
     <lu>
