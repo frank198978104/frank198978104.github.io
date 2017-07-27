@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "前端处理动态 url 和 pushStatus 的使用"
+title:  "前端處理動態 url 和 pushStatus 的使用"
 date:   2015-12-31 23:06:05
 categories: JavaScript
 tags: JavaScript Ajax URL HistoryApi pushState pjax
@@ -11,156 +11,156 @@ tags: JavaScript Ajax URL HistoryApi pushState pjax
 
 ## 起因
 
-起因是这样的，在尝试前后端分离的这条道路上，我自己也在不断摸索，感觉要把大部分的坑都踩踩了。目前我用的技术是：
+起因是這樣的，在嘗試前後端分離的這條道路上，我自己也在不斷摸索，感覺要把大部分的坑都踩踩了。目前我用的技術是：
 
-* webpack 自动构建
-* AMD 模块化 js
-* Sass 预处理 CSS
-* 使用前端模板引擎 handlebars 解决动态操作将 html 拼接在 js 中的问题
+* webpack 自動構建
+* AMD 模塊化 js
+* Sass 預處理 CSS
+* 使用前端模板引擎 handlebars 解決動態操作將 html 拼接在 js 中的問題
 
-但最近写了一个项目类似知乎这样的多页网站。前端 url 的处理让我觉得不够优雅。我使用的是 hash 的方式处理动态 url 的，为此我专门在知乎上提了一个问题：[前端如何处理动态url？](https://www.zhihu.com/question/38802932)
-
-
+但最近寫了一個項目類似知乎這樣的多頁網站。前端 url 的處理讓我覺得不夠優雅。我使用的是 hash 的方式處理動態 url 的，為此我專門在知乎上提了一個問題：[前端如何處理動態url？](https://www.zhihu.com/question/38802932)
 
 
-这里我将问题描述如下：
 
-> 前后端彻底分离的情况下，页面跳转页全部由前端控制。那么如何更好的处理动态url地址？
-> 例如本问题的url为
+
+這裡我將問題描述如下：
+
+> 前後端徹底分離的情況下，頁面跳轉頁全部由前端控制。那麼如何更好的處理動態url地址？
+> 例如本問題的url為
 > https://www.zhihu.com/question/38802932
-> 这肯定是用后台路由处理的url
+> 這肯定是用後台路由處理的url
 >
-> 纯前端怎么处理？用hash吗，如下:
+> 純前端怎麼處理？用hash嗎，如下:
 > https://www.zhihu.com/question#38802932
-> 那如果本页跳转，只改变hash的话，页面不会刷新。
-> 使用`location.reload()`倒是可以解决。
+> 那如果本頁跳轉，只改變hash的話，頁面不會刷新。
+> 使用`location.reload()`倒是可以解決。
 >
-> **但总觉得这样处理不够优雅。大家在工作中是如何处理此类场景的？还是用传统的后台路由来提供动态url？**
+> **但總覺得這樣處理不夠優雅。大家在工作中是如何處理此類場景的？還是用傳統的後台路由來提供動態url？**
 
 
-感谢郑海波和剧中人的热心回答。都提到了`history`对象中的`pushState`，这是我第一次接触到这方面的内容（顿时觉得自己真是才疏学浅）。
+感謝鄭海波和劇中人的熱心回答。都提到了`history`對象中的`pushState`，這是我第一次接觸到這方面的內容（頓時覺得自己真是才疏學淺）。
 
-同时也有人提到了`pjax`，这个就是`pushState`+`Ajax`的封装，也很有意思。
+同時也有人提到了`pjax`，這個就是`pushState`+`Ajax`的封裝，也很有意思。
 
-下面就来研究和实践一下吧。
+下面就來研究和實踐一下吧。
 
 ## History
 
-`window`对象通过`history`对象提供对浏览器历史记录的访问能力。它暴露了一些非常有用的方法和属性，让你在历史记录中自由前进和后退，而在 HTML5 中，更可以操纵历史记录中的数据。
+`window`對象通過`history`對象提供對瀏覽器歷史記錄的訪問能力。它暴露了一些非常有用的方法和屬性，讓你在歷史記錄中自由前進和後退，而在 HTML5 中，更可以操縱歷史記錄中的數據。
 
 ### `back()`, `forward()`, `go()`, `length`
 
-浏览器的历史记录就好像一个栈，最新的在最上面，较早之前看过的在下面。
+瀏覽器的歷史記錄就好像一個棧，最新的在最上面，較早之前看過的在下面。
 
-如下图，Chrome的历史记录：
+如下圖，Chrome的歷史記錄：
 
 ![chrome history](http://ww2.sinaimg.cn/large/7011d6cfjw1ezb16fn2bfj20k008htan.jpg)
 
-下面介绍怎么在这些历史记录中跳转，但要**注意**，上图中的浏览器历史记录和本文说的 history 还不太同。
+下面介紹怎麼在這些歷史記錄中跳轉，但要**注意**，上圖中的瀏覽器歷史記錄和本文說的 history 還不太同。
 
 * `back()`
 
-    在历史记录中后退
+    在歷史記錄中後退
 
         history.back();
 
 * `forward()`
 
-    在历史记录中前进
+    在歷史記錄中前進
 
         history.forward();
 
 * `go()`
 
-    移动到指定的历史记录点
+    移動到指定的歷史記錄點
 
         history.go(-1);
 
-    通过指定一个相对于当前页面位置的数值，你可以使用go()方法从当前会话的历史记录中加载页面（当前页面位置索引值为0，上一页就是-1，下一页为1）。
+    通過指定一個相對於當前頁面位置的數值，你可以使用go()方法從當前會話的歷史記錄中加載頁面（當前頁面位置索引值為0，上一頁就是-1，下一頁為1）。
 
-    **go()不填参数或参数为go(0)时，页面会刷新，即`history.go()`或`history.go(0)`相当于`location.reload()`**
+    **go()不填參數或參數為go(0)時，頁面會刷新，即`history.go()`或`history.go(0)`相當於`location.reload()`**
 
 * `length`
 
-    `length`为history的属性，显示history长度。
+    `length`為history的屬性，顯示history長度。
 
-本节在线demo见：[History & pjax demo](http://gaohaoyang.github.io/history-pjax-demo/) 源代码：[]()
+本節在線demo見：[History & pjax demo](http://gaohaoyang.github.io/history-pjax-demo/) 源代碼：[]()
 
-**经过亲自测试，`history`对象只记录同一个 tab 页内的历史。如果是在新窗口打开的，则无效。如：在a标签中添加`target="_blank"`，或按住`ctrl`点击，这类场景下，在新的tab页中，`history`对象也是新的。**
+**經過親自測試，`history`對象只記錄同一個 tab 頁內的歷史。如果是在新窗口打開的，則無效。如：在a標籤中添加`target="_blank"`，或按住`ctrl`點擊，這類場景下，在新的tab頁中，`history`對象也是新的。**
 
-**且`history`对象记录的信息与是否同源也无关，所以唯一要满足的就是同一个标签页。**
+**且`history`對象記錄的信息與是否同源也無關，所以唯一要滿足的就是同一個標籤頁。**
 
 ### `pushState()`, `replaceState()`
 
-HTML5 引进了`history.pushState()`方法和`history.replaceState()`方法，它们允许你逐条地添加和修改历史记录条目，能够在不加载新页面的情况下没改变浏览器的URL。这些方法可以协同`window.onpopstate`事件一起工作。
+HTML5 引進了`history.pushState()`方法和`history.replaceState()`方法，它們允許你逐條地添加和修改歷史記錄條目，能夠在不加載新頁面的情況下沒改變瀏覽器的URL。這些方法可以協同`window.onpopstate`事件一起工作。
 
-使用`history.pushState()`会改变`referrer`的值，而在你调用方法后创建的  XMLHttpRequest 对象会在 HTTP 请求头中使用这个值。`referrer的`值则是创建  XMLHttpRequest 对象时所处的窗口的 URL。
+使用`history.pushState()`會改變`referrer`的值，而在你調用方法後創建的  XMLHttpRequest 對象會在 HTTP 請求頭中使用這個值。`referrer的`值則是創建  XMLHttpRequest 對象時所處的窗口的 URL。
 
 * `pushState(any data, string title, [string url])`
 
-    第一个参数为`history`对象的`state`属性值，可以放任意数据，记录历史状态。第二个参数是新状态的标题，目前浏览器基本不支持。第三个参数为可选的相对url。
+    第一個參數為`history`對象的`state`屬性值，可以放任意數據，記錄歷史狀態。第二個參數是新狀態的標題，目前瀏覽器基本不支持。第三個參數為可選的相對url。
 
-    执行`pushState`后，可以在不加载新页面的情况下，更改url。同时`history`栈中新增一条数据。
+    執行`pushState`後，可以在不加載新頁面的情況下，更改url。同時`history`棧中新增一條數據。
 
-    例如，我们有这样一段代码：
+    例如，我們有這樣一段代碼：
 
         <button id="push1">pushState()</button>
 
         document.querySelector('#push1').addEventListener('click', function() {
             history.pushState('abc','pushStatePageTitle','pushState.html');
-            document.querySelector('#length').innerHTML = history.length;//重新读取历史长度
+            document.querySelector('#length').innerHTML = history.length;//重新讀取歷史長度
         });
 
-    当点击按钮的时候，页面不会刷新，但`url`地址的最后已经变为`pushState.html`。这一点非常像`hash`的作用，但比`hash`更优雅。
+    當點擊按鈕的時候，頁面不會刷新，但`url`地址的最後已經變為`pushState.html`。這一點非常像`hash`的作用，但比`hash`更優雅。
 
 
 * `replaceState(any data, string title, [string url])`
 
-    与`pushState()`类似，只是在`history`栈中不是新增记录，而是替换一条记录。
+    與`pushState()`類似，只是在`history`棧中不是新增記錄，而是替換一條記錄。
 
-**需要注意的是：**`pushState()`和`replaceState()`方法存在安全方面的限制，本地测试是无效的，会报错，可以简单放到任何服务端测试，或者使用`http-server`开启简单服务器，通过访问`localhost`来查看效果。
+**需要注意的是：**`pushState()`和`replaceState()`方法存在安全方面的限制，本地測試是無效的，會報錯，可以簡單放到任何服務端測試，或者使用`http-server`開啟簡單服務器，通過訪問`localhost`來查看效果。
 
-本节demo见：[History & pjax demo - pushState](http://gaohaoyang.github.io/history-pjax-demo/index.html)
+本節demo見：[History & pjax demo - pushState](http://gaohaoyang.github.io/history-pjax-demo/index.html)
 
 ## pjax
 
-现在再看本文一开始提出的问题，如何让前端优雅的控制 url，这里就可以考虑 pjax 技术了。我们把 pushState + ajax 进行封装，合起来简称为 pjax。虽然不是什么新的技术，但概念已然不同。
+現在再看本文一開始提出的問題，如何讓前端優雅的控制 url，這裡就可以考慮 pjax 技術了。我們把 pushState + ajax 進行封裝，合起來簡稱為 pjax。雖然不是什麼新的技術，但概念已然不同。
 
-如果不使用 pjax。我们依然可以使用`hash`来实现文本开始的需求。但会不利于 SEO，看着也不够优雅。
+如果不使用 pjax。我們依然可以使用`hash`來實現文本開始的需求。但會不利於 SEO，看著也不夠優雅。
 
-Pjax的原理十分简单。
+Pjax的原理十分簡單。
 
-1. 拦截 a 标签的默认跳转动作或某些按钮的点击事件。
-2. 使用 Ajax 请求新页面。
-3. 将返回的 Html 替换到页面中。
+1. 攔截 a 標籤的默認跳轉動作或某些按鈕的點擊事件。
+2. 使用 Ajax 請求新頁面。
+3. 將返回的 Html 替換到頁面中。
 4. 使用 HTML5 的`pushState()`修改Url。
 
-个人理解3中也可以仅仅请求数据，再由浏览器渲染。
+個人理解3中也可以僅僅請求數據，再由瀏覽器渲染。
 
-每当同一个文档的浏览历史（即history对象）出现变化时，会触发`window.onpopstate`事件。
+每當同一個文檔的瀏覽歷史（即history對象）出現變化時，會觸發`window.onpopstate`事件。
 
     window.onpopstate = function(event) {
         console.log(event.state);
         console.log(location);
     };
 
-这样在用户点击前进后退时也可以很好的监听url，来做相应的页面渲染。
+這樣在用戶點擊前進後退時也可以很好的監聽url，來做相應的頁面渲染。
 
-若用户刷新了页面，但没有相应的页面资源，这时页面就会显示不存在。所以我认为较好的方法是在写`pushState()`第三个参数的时候，写为`?a=1`这样的参数形式。[History.js](https://github.com/browserstate/history.js) 也是这么写的。但是这样应该会多一次请求。也许使用 nodeJS 作为中间层会好一些吧。
+若用戶刷新了頁面，但沒有相應的頁面資源，這時頁面就會顯示不存在。所以我認為較好的方法是在寫`pushState()`第三個參數的時候，寫為`?a=1`這樣的參數形式。[History.js](https://github.com/browserstate/history.js) 也是這麼寫的。但是這樣應該會多一次請求。也許使用 nodeJS 作為中間層會好一些吧。
 
-对于上述的探索，不知道是不是我还不够深入，总觉得还是不够完美。
+對於上述的探索，不知道是不是我還不夠深入，總覺得還是不夠完美。
 
-## 参考
+## 參考
 
 * [MDN History](https://developer.mozilla.org/en-US/docs/Web/API/History)
-* [MDN 操纵浏览器的历史记录](https://developer.mozilla.org/zh-CN/docs/DOM/Manipulating_the_browser_history)
+* [MDN 操縱瀏覽器的歷史記錄](https://developer.mozilla.org/zh-CN/docs/DOM/Manipulating_the_browser_history)
 * [pjax 是如何工作的？ 知乎](https://www.zhihu.com/question/20289254)
-* [PJAX的实现与应用 小胡子哥](http://www.cnblogs.com/hustskyking/p/history-api-in-html5.html)
-* [URL的井号-阮一峰](http://www.ruanyifeng.com/blog/2011/03/url_hash.html)
-* [history对象 JavaScript 标准参考教程（alpha） 阮一峰](http://javascript.ruanyifeng.com/bom/history.html)
-* [Pjax(pushState and Ajax) 黯羽轻扬](http://www.ayqy.net/blog/pjaxpushstate-and-ajax/)
-* [操纵历史，利用HTML5 History API实现无刷新跳转 蓝飞](http://www.clanfei.com/2012/09/1646.html)
-* [前端：将网站打造成单页面应用SPA（一） Coffce](http://segmentfault.com/a/1190000002920768)
+* [PJAX的實現與應用 小鬍子哥](http://www.cnblogs.com/hustskyking/p/history-api-in-html5.html)
+* [URL的井號-阮一峰](http://www.ruanyifeng.com/blog/2011/03/url_hash.html)
+* [history對象 JavaScript 標準參考教程（alpha） 阮一峰](http://javascript.ruanyifeng.com/bom/history.html)
+* [Pjax(pushState and Ajax) 黯羽輕揚](http://www.ayqy.net/blog/pjaxpushstate-and-ajax/)
+* [操縱歷史，利用HTML5 History API實現無刷新跳轉 藍飛](http://www.clanfei.com/2012/09/1646.html)
+* [前端：將網站打造成單頁面應用SPA（一） Coffce](http://segmentfault.com/a/1190000002920768)
 * [coffce-pjax](https://github.com/Coffcer/coffce-pjax)
 * [History.js](https://github.com/browserstate/history.js)
 * [defunkt/jquery-pjax GitHub](https://github.com/defunkt/jquery-pjax)

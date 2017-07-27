@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Git 如何 clone 非 master 分支的代码"
+title:  "Git 如何 clone 非 master 分支的代碼"
 categories: GitHub
 tags:  Git GitHub 分支
 ---
@@ -8,29 +8,29 @@ tags:  Git GitHub 分支
 * content
 {:toc}
 
-## 问题描述
+## 問題描述
 
-我们每次使用命令
+我們每次使用命令
 
 ```
 git clone git@gitlab.xxx.com:xxxxx.git
 ```
 
-默认 clone 的是这个仓库的 master 分支。如果最新的代码不在 master 分支上，该如何拿到呢？如下图所示，最新的代码可能在`daily/1.4.1`分支上，我们希望拿到这个分支上的代码。
+默認 clone 的是這個倉庫的 master 分支。如果最新的代碼不在 master 分支上，該如何拿到呢？如下圖所示，最新的代碼可能在`daily/1.4.1`分支上，我們希望拿到這個分支上的代碼。
 
 
 
 
 ![7f07c8f6deef169ef6be5103bbd3e932f8676bb1.png](https://ooo.0o0.ooo/2016/07/07/577e349ab42ed.png)
 
-## 解决方法
+## 解決方法
 
-**刚刚开周会的时候，自己洋洋得意的分享我的解决方案，但是……经过与团队成员的的讨论，自己的方法弱爆了，现在把更优雅的方法写一下。原来写的方法并不太适合用在这个场景里。** 我之前写的方法在文章后面。
+**剛剛開週會的時候，自己洋洋得意的分享我的解決方案，但是……經過與團隊成員的的討論，自己的方法弱爆了，現在把更優雅的方法寫一下。原來寫的方法並不太適合用在這個場景裡。** 我之前寫的方法在文章後面。
 
 直接使用命令
 
 ```
-git branch -r #查看远程分支
+git branch -r #查看遠程分支
 ```
 或
 
@@ -38,7 +38,7 @@ git branch -r #查看远程分支
 git branch -a #查看所有分支
 ```
 
-会显示
+會顯示
 
 ```
 origin/HEAD -> origin/master
@@ -50,7 +50,7 @@ origin/feature/daily-1.0.0
 origin/master
 ```
 
-然后直接
+然後直接
 
 ```
 git checkout origin/daily/1.4.1
@@ -58,24 +58,24 @@ git checkout origin/daily/1.4.1
 
 就好了。。。
 
-## 原来的解决方案
+## 原來的解決方案
 
-**其实我原来写的这个方法更多的是：设置已有的本地分支跟踪一个刚刚拉取下来的远程分支，或者想要修改正在跟踪的上游分支。**
+**其實我原來寫的這個方法更多的是：設置已有的本地分支跟蹤一個剛剛拉取下來的遠程分支，或者想要修改正在跟蹤的上游分支。**
 
-我们在本地先建立一个分支，建议名称和远程的想要同步的分支名称一样。
+我們在本地先建立一個分支，建議名稱和遠程的想要同步的分支名稱一樣。
 
 ```
 git branch daily/1.4.1
 ```
 
-在切换到这个本地分支
+在切換到這個本地分支
 
 ```
 git checkout daily/1.4.1
 # Switched to branch 'daily/1.4.1'
 ```
 
-接下来就可以去建立上游分支的关联了，但是这个命令比较长，不好记，我们可以直接先`pull`一下，git 会提示我们相应的操作和命令。
+接下來就可以去建立上游分支的關聯了，但是這個命令比較長，不好記，我們可以直接先`pull`一下，git 會提示我們相應的操作和命令。
 
 ```
 git pull
@@ -90,14 +90,14 @@ If you wish to set tracking information for this branch you can do so with:
     git branch --set-upstream-to=origin/<branch> daily/1.4.1
 ```
 
-我们看到最后一行，执行这个命令，即可完成与上游分支的关联。
+我們看到最後一行，執行這個命令，即可完成與上游分支的關聯。
 
 ```
 git branch --set-upstream-to=origin/daily/1.4.1 daily/1.4.1
 # Branch daily/1.4.1 set up to track remote branch daily/1.4.1 from origin.
 ```
 
-然后再`pull`一下就好了！
+然後再`pull`一下就好了！
 
 ```
 git pull

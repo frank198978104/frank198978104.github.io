@@ -2,23 +2,23 @@
 
 /**
  * [fixSidebar description]
- * 滚轮滚到一定位置时，将 sidebar-wrap 添加 fixed 样式
- * 反之，取消样式
+ * 滾輪滾到一定位置時，將 sidebar-wrap 添加 fixed 樣式
+ * 反之，取消樣式
  */
 (function() {
     if (window.innerWidth > 770) {
 
         var sidebarWrap = document.querySelector('.right>.wrap')
 
-        //fix 之后百分比宽度会失效，这里用js赋予宽度
+        //fix 之後百分比寬度會失效，這裡用js賦予寬度
         sidebarWrap.style.width = sidebarWrap.offsetWidth + "px"
         window.onscroll = function() {
 
-            // 页面顶部滚进去的距离
+            // 頁面頂部滾進去的距離
             var scrollTop = Math.max(document.documentElement.scrollTop, document.body.scrollTop)
 
 
-            // 页面底部滚进去的距离
+            // 頁面底部滾進去的距離
             var htmlHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight)
                 // console.log(htmlHeight);
             var scrollBottom = htmlHeight - window.innerHeight - scrollTop
@@ -29,18 +29,18 @@
             } else if (scrollBottom >= (190 - 38)) {
                 sidebarWrap.classList.remove('scroll-bottom')
                 sidebarWrap.classList.add('fixed')
-            } else if (isMaxHeight()) { //content 达到maxHeight
+            } else if (isMaxHeight()) { //content 達到maxHeight
                 sidebarWrap.classList.remove('fixed')
                 sidebarWrap.classList.add('scroll-bottom')
             }
         }
-        setContentMaxHeightInPC() //设置目录最大高度(PC端)
+        setContentMaxHeightInPC() //設置目錄最大高度(PC端)
     }
-    moveTOC() //将Content内容转移
+    moveTOC() //將Content內容轉移
 }());
 
 /**
- * 设置目录最大高度
+ * 設置目錄最大高度
  */
 function setContentMaxHeightInPC() {
     var windowHeight = window.innerHeight
@@ -50,7 +50,7 @@ function setContentMaxHeightInPC() {
 }
 
 /**
- * 达到最大高度
+ * 達到最大高度
  * @return {Boolean} [description]
  */
 function isMaxHeight() {
@@ -66,7 +66,7 @@ function isMaxHeight() {
 
 //-------------mobile--------------
 /**
- * 屏幕宽度小于770px时，点击锚点按钮，弹出目录框
+ * 屏幕寬度小於770px時，點擊錨點按鈕，彈出目錄框
  * @param  {[type]} function( [description]
  * @return {[type]}           [description]
  */
@@ -76,7 +76,7 @@ function isMaxHeight() {
         var rightDiv = document.querySelector('.right')
 
         /**
-         * 监听锚点按钮
+         * 監聽錨點按鈕
          */
         anchorBtn.onclick = function(e) {
             e.stopPropagation()
@@ -84,19 +84,19 @@ function isMaxHeight() {
             anchorBtn.classList.add('anchor-hide')
         }
 
-        //监听body，点击body，隐藏Content
+        //監聽body，點擊body，隱藏Content
         document.querySelector('body').addEventListener('click', function() {
             rightDiv.classList.remove('right-show')
             anchorBtn.classList.remove('anchor-hide')
         })
 
-        ancherPostion(anchorBtn, rightDiv) //目录锚的位置固定
-        setContentMaxHeight() //设置目录最大高度
+        ancherPostion(anchorBtn, rightDiv) //目錄錨的位置固定
+        setContentMaxHeight() //設置目錄最大高度
     }
 }());
 
 /**
- * 目录锚的位置固定
+ * 目錄錨的位置固定
  */
 function ancherPostion(anchorBtn, rightDiv) {
     window.addEventListener('scroll', function() {
@@ -115,7 +115,7 @@ function ancherPostion(anchorBtn, rightDiv) {
 }
 
 /**
- * 设置目录最大高度
+ * 設置目錄最大高度
  */
 function setContentMaxHeight() {
     var windowHeight = window.innerHeight
@@ -125,7 +125,7 @@ function setContentMaxHeight() {
 }
 
 //-------------post Content----------------------
-//将Content内容转移
+//將Content內容轉移
 function moveTOC() {
     if (document.querySelector('#markdown-toc') !== null) {
         var TOCString = document.querySelector('#markdown-toc').innerHTML
@@ -134,7 +134,7 @@ function moveTOC() {
 
         // if (!isAndroidWechatBrowser()) {
 
-            //添加scroll样式，为了平滑滚动
+            //添加scroll樣式，為了平滑滾動
             //add class "scroll", for smooth scroll
             var aTags = document.querySelectorAll('#content-side a')
 
@@ -157,7 +157,7 @@ function moveTOC() {
 }
 
 /**
- * 判断安卓版微信浏览器
+ * 判斷安卓版微信瀏覽器
  * @return {Boolean} [description]
  */
 function isAndroidWechatBrowser() {

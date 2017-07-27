@@ -1,4 +1,4 @@
-# 关于这个简洁明快的博客主题 🤘🤘🤘
+# 關於這個簡潔明快的博客主題 🤘🤘🤘
 
 [![GitHub stars](https://img.shields.io/github/stars/Gaohaoyang/gaohaoyang.github.io.svg)](https://github.com/Gaohaoyang/gaohaoyang.github.io/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/Gaohaoyang/gaohaoyang.github.io.svg)](https://github.com/Gaohaoyang/gaohaoyang.github.io/network)
@@ -6,174 +6,174 @@
 [![GitHub release](https://img.shields.io/github/release/Gaohaoyang/gaohaoyang.github.io.svg)](https://github.com/Gaohaoyang/gaohaoyang.github.io/releases)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Gaohaoyang/gaohaoyang.github.io/master/LICENSE)
 
-随着 jekyll 的版本升级，同时我也想重构我的旧版博客主题，因此在这个月对博客进行了重构加改版，这个仓库存放我的新博客，并且我也会一直使用这个主题。目前基本改版完成，后续可能还会有些细节上的修补。
+隨著 jekyll 的版本升級，同時我也想重構我的舊版博客主題，因此在這個月對博客進行了重構加改版，這個倉庫存放我的新博客，並且我也會一直使用這個主題。目前基本改版完成，後續可能還會有些細節上的修補。
 
-**博客访问地址：[http://gaohaoyang.github.io/](http://gaohaoyang.github.io/)**。若您喜欢这个新的博客主题，请给我个star以示鼓励吧，欢迎大家使用。
+**博客訪問地址：[http://gaohaoyang.github.io/](http://gaohaoyang.github.io/)**。若您喜歡這個新的博客主題，請給我個star以示鼓勵吧，歡迎大家使用。
 
-## 目录
+## 目錄
 
-* [预览图](#预览图)
-* [各部分详情](#各部分详情)
-    * [主页 Home](#主页-home)
-    * [归档页 Archives](#归档页-archives)
-    * [分类页 Categories](#分类页-categories)
-    * [标签页 Tags](#标签页-tags)
-    * [收藏页 Collections](#收藏页-collections)
-    * [展示页 Demo](#展示页-demo)
-    * [关于页 About](#关于页-about)
-    * [评论](#评论)
-    * [目录 Contents](#目录-contents)
-    * [代码高亮](#代码高亮)
-    * [灯泡效果](#灯泡效果)
-    * [移动端适配](#移动端适配)
+* [預覽圖](#預覽圖)
+* [各部分詳情](#各部分詳情)
+    * [主頁 Home](#主頁-home)
+    * [歸檔頁 Archives](#歸檔頁-archives)
+    * [分類頁 Categories](#分類頁-categories)
+    * [標籤頁 Tags](#標籤頁-tags)
+    * [收藏頁 Collections](#收藏頁-collections)
+    * [展示頁 Demo](#展示頁-demo)
+    * [關於頁 About](#關於頁-about)
+    * [評論](#評論)
+    * [目錄 Contents](#目錄-contents)
+    * [代碼高亮](#代碼高亮)
+    * [燈泡效果](#燈泡效果)
+    * [移動端適配](#移動端適配)
     * [Footer](#footer)
-    * [统计](#统计)
-* [博客主题使用方法](#博客主题使用方法)
-    * [1. 安装 ruby 和 jekyll 环境](#1-安装-ruby-和-jekyll-环境)
-    * [2. 复制博客主题代码](#2-复制博客主题代码)
-    * [3. 修改参数](#3-修改参数)
+    * [統計](#統計)
+* [博客主題使用方法](#博客主題使用方法)
+    * [1. 安裝 ruby 和 jekyll 環境](#1-安裝-ruby-和-jekyll-環境)
+    * [2. 複製博客主題代碼](#2-複製博客主題代碼)
+    * [3. 修改參數](#3-修改參數)
         * [基本信息](#基本信息)
-        * [链接信息](#链接信息)
-        * [评论信息](#评论信息)
-        * [统计信息](#统计信息)
-    * [4. 写文章](#4-写文章)
-    * [5. 本地运行](#5-本地运行)
-    * [6. 发布到 GitHub](#6-发布到-github)
+        * [鏈接信息](#鏈接信息)
+        * [評論信息](#評論信息)
+        * [統計信息](#統計信息)
+    * [4. 寫文章](#4-寫文章)
+    * [5. 本地運行](#5-本地運行)
+    * [6. 發布到 GitHub](#6-發布到-github)
 * [捐助 donate](#捐助-donate)
 * [Update Log](#update-log)
 * [License](#license)
 
-## 预览图
+## 預覽圖
 
-先上预览图：
+先上預覽圖：
 
-主页
+主頁
 ![index](http://ww3.sinaimg.cn/large/7011d6cfjw1f3bdli86awj211k0oyqen.jpg)
 
-文章页
+文章頁
 ![post](http://ww4.sinaimg.cn/large/7011d6cfjw1f3bdmzb9v6j210p0j7gwn.jpg)
 
-## 各部分详情
+## 各部分詳情
 
-### 主页 Home
+### 主頁 Home
 
-主页默认展示5篇文章的摘要部分，用户点击标题或阅读全文后进入文章页。右侧为近期文章、分类和标签3块区域，用户可以继续在这部分添加区域，只需修改`index.html`即可。
+主頁默認展示5篇文章的摘要部分，用戶點擊標題或閱讀全文後進入文章頁。右側為近期文章、分類和標籤3塊區域，用戶可以繼續在這部分添加區域，只需修改`index.html`即可。
 
-### 归档页 Archives
+### 歸檔頁 Archives
 
-按照年份归档文章。
+按照年份歸檔文章。
 
-### 分类页 Categories
+### 分類頁 Categories
 
-按照文章的分类，显示文章。
+按照文章的分類，顯示文章。
 
-### 标签页 Tags
+### 標籤頁 Tags
 
-按照文章的标签显示文章。
+按照文章的標籤顯示文章。
 
-### 收藏页 Collections
+### 收藏頁 Collections
 
-本页是用`markdown`写的，用户可以收藏自己喜欢的文章链接。
+本頁是用`markdown`寫的，用戶可以收藏自己喜歡的文章鏈接。
 
-### 展示页 Demo
+### 展示頁 Demo
 
-使用 [Masonry](http://masonry.desandro.com/) 重写了瀑布流布局，响应式布局，更好的交互体验。
+使用 [Masonry](http://masonry.desandro.com/) 重寫了瀑布流布局，響應式布局，更好的交互體驗。
 
-### 关于页 About
+### 關於頁 About
 
-对个人和对本站的介绍，使用`markdown`写的。
+對個人和對本站的介紹，使用`markdown`寫的。
 
-### 评论
+### 評論
 
-支持 [多说评论](http://duoshuo.com/) 和 [disqus](https://disqus.com/) 评论。
+支持 [多說評論](http://duoshuo.com/) 和 [disqus](https://disqus.com/) 評論。
 
-只需要在 `_config.yml` 修改相应的配置`short_name`即可，如下：
+只需要在 `_config.yml` 修改相應的配置`short_name`即可，如下：
 
 ```yml
 # comments
 # two ways to comment, only choose one, and use your own short name
-# 两种评论插件，选一个就好了，使用自己的 short_name
+# 兩種評論插件，選一個就好了，使用自己的 short_name
 duoshuo_shortname: #xxx
 disqus_shortname: xxx
 ```
 
-### 目录 Contents
+### 目錄 Contents
 
-页面滚动时目录固定在屏幕右侧，若目录高度超出屏幕高度，目录产生滚动条。
+頁面滾動時目錄固定在屏幕右側，若目錄高度超出屏幕高度，目錄產生滾動條。
 
-### 代码高亮
+### 代碼高亮
 
-随着 jekyll 的升级，目前代码高亮使用风格与 github 上的 markdown 写法一致。
+隨著 jekyll 的升級，目前代碼高亮使用風格與 github 上的 markdown 寫法一致。
 
-### 灯泡效果
+### 燈泡效果
 
 ![light](http://ww3.sinaimg.cn/large/7011d6cfjw1f3be6y4vp3j209i02rweg.jpg)
 
-可以看到导航按钮高亮时，下面的阴影效果，我把这个称为灯泡效果。
+可以看到導航按鈕高亮時，下面的陰影效果，我把這個稱為燈泡效果。
 
-### 移动端适配
+### 移動端適配
 
-完美适配移动端。
+完美適配移動端。
 
 ![mobile](http://ww4.sinaimg.cn/large/7011d6cfjw1f3bebnzxkpj20ah0fzgp4.jpg)
 
 ### Footer
 
-**欢迎使用这个主题，使用时请保留 footer 上的模板主题来源。** Theme designed by [HyG](https://github.com/gaohaoyang).
+**歡迎使用這個主題，使用時請保留 footer 上的模板主題來源。** Theme designed by [HyG](https://github.com/gaohaoyang).
 ![footer](http://ww3.sinaimg.cn/large/7011d6cfjw1f3bepd8002j20hl02ct95.jpg)
 
-### 统计
+### 統計
 
-博客支持百度统计和 Google Analytics，只需在`_config.yml`中配置响应的id即可，代码如下。
+博客支持百度統計和 Google Analytics，只需在`_config.yml`中配置響應的id即可，代碼如下。
 
 ```yml
-# statistic analysis 统计代码
-# 百度统计 id，将统计代码替换为自己的百度统计id，即
+# statistic analysis 統計代碼
+# 百度統計 id，將統計代碼替換為自己的百度統計id，即
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
 baidu_tongji_id: xxxxxxxxxxxx
-google_analytics_id: UA-xxxxxxxx # google 分析追踪id
+google_analytics_id: UA-xxxxxxxx # google 分析追蹤id
 ```
 
-## 博客主题使用方法
+## 博客主題使用方法
 
-欢迎使用这个主题，以下简单说一下使用方法。
+歡迎使用這個主題，以下簡單說一下使用方法。
 
-### 1. 安装 ruby 和 jekyll 环境
+### 1. 安裝 ruby 和 jekyll 環境
 
-这一步和第5步主要是为了让博客系统在本地跑起来，如果不想在本地运行，可以无视这两步，但我还是强烈建议试着先在本地跑起来，没有什么问题后再推送的 GitHub 上。
+這一步和第5步主要是為了讓博客系統在本地跑起來，如果不想在本地運行，可以無視這兩步，但我還是強烈建議試著先在本地跑起來，沒有什麼問題後再推送的 GitHub 上。
 
-Windows 用户可以直接使用 [RubyInstaller](http://rubyinstaller.org/) 安装 ruby 环境。后续的操作中可能还会提示安装 DevKit，根据提示操作即可。
+Windows 用戶可以直接使用 [RubyInstaller](http://rubyinstaller.org/) 安裝 ruby 環境。後續的操作中可能還會提示安裝 DevKit，根據提示操作即可。
 
-建议使用 [RubyGems 镜像- Ruby China](https://gems.ruby-china.org/) 安装 jekyll。
+建議使用 [RubyGems 鏡像- Ruby China](https://gems.ruby-china.org/) 安裝 jekyll。
 
-安装 jekyll 命令如下
+安裝 jekyll 命令如下
 
 ```
 gem install jekyll
 ```
 
-详情可以查看 jekyll 官网。[https://jekyllrb.com/](https://jekyllrb.com/) 或 中文翻译版 jekyll 官网[http://jekyllcn.com/](http://jekyllcn.com/) （中文文档翻译落后于英文官网，有兴趣有时间的小伙伴可以参与翻译，为开源世界贡献一份力哦~）
+詳情可以查看 jekyll 官網。[https://jekyllrb.com/](https://jekyllrb.com/) 或 中文翻譯版 jekyll 官網[http://jekyllcn.com/](http://jekyllcn.com/) （中文文檔翻譯落後於英文官網，有興趣有時間的小夥伴可以參與翻譯，為開源世界貢獻一份力哦~）
 
-在 mac OS X El Capitan 系统下安装可能会出现问题，解决方案详情见 jekyll 官网: [ https://jekyllrb.com/docs/troubleshooting/#jekyll-amp-mac-os-x-1011]( https://jekyllrb.com/docs/troubleshooting/#jekyll-amp-mac-os-x-1011)
+在 mac OS X El Capitan 系統下安裝可能會出現問題，解決方案詳情見 jekyll 官網: [ https://jekyllrb.com/docs/troubleshooting/#jekyll-amp-mac-os-x-1011]( https://jekyllrb.com/docs/troubleshooting/#jekyll-amp-mac-os-x-1011)
 
-对 jekyll 本身感兴趣的同学可以看看 jekyll 源码: [https://github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+對 jekyll 本身感興趣的同學可以看看 jekyll 源碼: [https://github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
 
 ![jekyll logo](http://jekyllcn.com/img/logo-2x.png)
 
-### 2. 复制博客主题代码
+### 2. 複製博客主題代碼
 
-可以直接 clone 、下载 或 fork 这个仓库的代码即可
+可以直接 clone 、下載 或 fork 這個倉庫的代碼即可
 
-### 3. 修改参数
+### 3. 修改參數
 
-主要修改 `_config.yml` 中的参数和自己的网站小图`favicon.ico`
+主要修改 `_config.yml` 中的參數和自己的網站小圖`favicon.ico`
 
 `_config.yml`文件中
 
 #### 基本信息
 
-主要用于网站头部header。
+主要用於網站頭部header。
 
 ```yml
 # Site settings
@@ -183,9 +183,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://gaohaoyang.github.io" # the base hostname & protocol for your site
 ```
 
-#### 链接信息
+#### 鏈接信息
 
-主要用于网站底部footer。
+主要用於網站底部footer。
 
 ```yml
 # other links
@@ -198,50 +198,50 @@ zhihu_username: gaohaoyang
 linkedIn_username: gaohaoyang
 dribbble_username:
 
-description_footer: 本站记录我前端之旅的沿途风景！
+description_footer: 本站記錄我前端之旅的沿途風景！
 ```
 
-#### 评论信息
+#### 評論信息
 
-获取`short_name`的方法：
+獲取`short_name`的方法：
 
-访问 https://disqus.com/ 或 http://duoshuo.com/ 根据提示操作即可。
+訪問 https://disqus.com/ 或 http://duoshuo.com/ 根據提示操作即可。
 
 ```yml
 # comments
 # two ways to comment, only choose one, and use your own short name
-# 两种评论插件，选一个就好了，使用自己的 short_name
+# 兩種評論插件，選一個就好了，使用自己的 short_name
 duoshuo_shortname: #hygblog
 disqus_shortname: gaohaoyang
 ```
 
-运行成功后，可以在 disqus 或 多说 的后台管理页看到相关信息。
+運行成功後，可以在 disqus 或 多說 的後台管理頁看到相關信息。
 
-#### 统计信息
+#### 統計信息
 
-获取 百度统计id 或 Google Analytics id 的方法：
+獲取 百度統計id 或 Google Analytics id 的方法：
 
-访问 http://tongji.baidu.com/ 或 https://www.google.com/analytics/ 根据提示操作即可。当然，如果不想添加统计信息，这两个参数可以不填。
+訪問 http://tongji.baidu.com/ 或 https://www.google.com/analytics/ 根據提示操作即可。當然，如果不想添加統計信息，這兩個參數可以不填。
 
 ```yml
-# statistic analysis 统计代码
-# 百度统计 id，将统计代码替换为自己的百度统计id，即
+# statistic analysis 統計代碼
+# 百度統計 id，將統計代碼替換為自己的百度統計id，即
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
 baidu_tongji_id: cf8506e0ef223e57ff6239944e5d46a4
-google_analytics_id: UA-72449510-4 # google 分析追踪id
+google_analytics_id: UA-72449510-4 # google 分析追蹤id
 ```
 
-成功后，进入自己的百度统计或 Google Analytics 后台管理，即可看到网站的访问量、访客等相关信息。
+成功後，進入自己的百度統計或 Google Analytics 後台管理，即可看到網站的訪問量、訪客等相關信息。
 
-### 4. 写文章
+### 4. 寫文章
 
-`_posts`目录下存放文章信息，文章头部注明 layout(布局)、title、date、categories、tags、author(可选)、mathjax(可选，点击[这里](https://www.mathjax.org/)查看更多关于`Mathjax`)，如下：
+`_posts`目錄下存放文章信息，文章頭部註明 layout(布局)、title、date、categories、tags、author(可選)、mathjax(可選，點擊[這裡](https://www.mathjax.org/)查看更多關於`Mathjax`)，如下：
 
 ```
 ---
 layout: post
-title:  "对这个 jekyll 博客主题的改版和重构"
+title:  "對這個 jekyll 博客主題的改版和重構"
 date:   2016-03-12 11:40:18 +0800
 categories: jekyll
 tags: jekyll 端口 markdown Foxit RubyGems HTML CSS
@@ -250,34 +250,34 @@ mathjax: true
 ---
 ```
 
-下面这两行代码为产生目录时使用
+下面這兩行代碼為產生目錄時使用
 ```
 * content
 {:toc}
 ```
 
-文章中存在的4次换行为摘要分割符，换行前的内容会以摘要的形式显示在主页Home上，进入文章页不影响。
+文章中存在的4次換行為摘要分割符，換行前的內容會以摘要的形式顯示在主頁Home上，進入文章頁不影響。
 
-换行符的设置见配置文件`_config.yml`的 excerpt，如下：
+換行符的設置見配置文件`_config.yml`的 excerpt，如下：
 
 ```yml
 # excerpt
 excerpt_separator: "\n\n\n\n"
 ```
 
-使用 markdown 语法写文章。
+使用 markdown 語法寫文章。
 
-代码风格与 GitHub 上 README 或 issue 中的一致。使用3个\`\`\`的方式。
+代碼風格與 GitHub 上 README 或 issue 中的一致。使用3個\`\`\`的方式。
 
-### 5. 本地运行
+### 5. 本地運行
 
-本地执行
+本地執行
 
 ```
 jekyll s
 ```
 
-显示
+顯示
 
 ```
 Configuration file: E:/GitWorkSpace/blog/_config.yml
@@ -294,112 +294,112 @@ Configuration file: E:/GitWorkSpace/blog/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-在本地访问 localhost:4000 即可看到博客主页。
+在本地訪問 localhost:4000 即可看到博客主頁。
 
-若安装了 Foxit 福昕pdf阅读器可能会占用4000端口，关闭 Foxit服务 或切换 jekyll 端口即可解决。详情见文章：[对这个 jekyll 博客主题的改版和重构](http://gaohaoyang.github.io/2016/03/12/jekyll-theme-version-2.0/)
+若安裝了 Foxit 福昕pdf閱讀器可能會占用4000端口，關閉 Foxit服務 或切換 jekyll 端口即可解決。詳情見文章：[對這個 jekyll 博客主題的改版和重構](http://gaohaoyang.github.io/2016/03/12/jekyll-theme-version-2.0/)
 
-若正在使用全局代理，可能会报错502，关闭全局代理即可。
+若正在使用全局代理，可能會報錯502，關閉全局代理即可。
 
-### 6. 发布到 GitHub
+### 6. 發布到 GitHub
 
-没什么问题，推送到自己的博客仓库即可。
+沒什麼問題，推送到自己的博客倉庫即可。
 
 ## 捐助 donate
 
-您也可以捐助我喝杯咖啡！感谢！
+您也可以捐助我喝杯咖啡！感謝！
 
 <!-- PayPal
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="Q44JFSYQXBFL2">
-<input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_cc_147x47.png" border="0" name="submit" alt="PayPal——最安全便捷的在线支付方式！">
+<input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_cc_147x47.png" border="0" name="submit" alt="PayPal——最安全便捷的在線支付方式！">
 <img alt="" border="0" src="https://www.paypalobjects.com/zh_XC/i/scr/pixel.gif" width="1" height="1">
 </form><br>      -->
 
-|                                   支付宝                                    |                                  微信支付                                   |                                                                     PayPal                                                                     |
+|                                   支付寶                                    |                                  微信支付                                   |                                                                     PayPal                                                                     |
 |:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------:|
 | ![alipay](http://ww2.sinaimg.cn/large/7011d6cfjw1f3bk8ikzoij20740743z5.jpg) | ![wechat](http://ww2.sinaimg.cn/large/7011d6cfjw1f3bkdw3bslj206z06q3z6.jpg) | [![PayPal](https://www.paypalobjects.com/webstatic/paypalme/images/pp_logo_small.png)<br>Donate via PayPal ](https://www.paypal.me/gaohaoyang) |
 
-感谢捐赠的小伙伴！！！
+感謝捐贈的小夥伴！！！
 
-* 2017.05.25 收到 微信用户 ¥1.00
-* 2017.05.19 收到 风之筝 ¥6.66
-* 2017.05.16 收到 张驰 ¥6.00
+* 2017.05.25 收到 微信用戶 ¥1.00
+* 2017.05.19 收到 風之箏 ¥6.66
+* 2017.05.16 收到 張馳 ¥6.00
 * 2017.05.03 收到 希成 ¥6.66
 * 2017.04.24 收到 deezer ¥10.00
 * 2017.04.13 收到 Abraham Xiao ¥30.00
-* 2017.04.11 收到 微信用户 ¥4.00
+* 2017.04.11 收到 微信用戶 ¥4.00
 * 2017.04.01 收到 Elvin Zeng ¥6.66
-* 2017.03.13 收到 微信用户 ¥6.66
-* 2017.03.04 收到 史莱姆 ¥9.90
-* 2017.03.02 收到 梦想小熊 ¥6.66
-* 2017.02.27 收到 夏友杰 ¥6.66
-* 2017.02.26 收到 兰缘小妖 ¥10.00
-* 2017.02.25 收到 微信用户 ¥6.66
-* 2017.02.22 收到 微信用户 ¥6.66
-* 2017.02.15 收到 微信用户 ¥10.00
+* 2017.03.13 收到 微信用戶 ¥6.66
+* 2017.03.04 收到 史萊姆 ¥9.90
+* 2017.03.02 收到 夢想小熊 ¥6.66
+* 2017.02.27 收到 夏友傑 ¥6.66
+* 2017.02.26 收到 蘭緣小妖 ¥10.00
+* 2017.02.25 收到 微信用戶 ¥6.66
+* 2017.02.22 收到 微信用戶 ¥6.66
+* 2017.02.15 收到 微信用戶 ¥10.00
 * 2017.02.06 收到 Light ¥10.24
-* 2017.01.15 收到 微信用户 ¥6.66
+* 2017.01.15 收到 微信用戶 ¥6.66
 * 2016.12.17 收到 HitNoah ¥12.00
 * 2016.12.09 收到 情融 ¥6.60
-* 2016.11.16 收到 微信用户 ¥6.66
-* 2016.11.16 收到 微信用户 ¥1.00
+* 2016.11.16 收到 微信用戶 ¥6.66
+* 2016.11.16 收到 微信用戶 ¥1.00
 * 2016.10.24 收到 奇峰 ¥6.66
 * 2016.10.21 收到 旭廷 ¥10.00
 * 2016.09.24 收到 鑫 ¥6.66
 * 2016.08.25 收到 Erlend Aakre $2.50
-* 2016.08.10 收到 微信用户 ¥4.40
-* 2016.07.25 收到 邓炳初 ¥6.66
-* 2016.07.11 收到 彦风 ¥6.66
+* 2016.08.10 收到 微信用戶 ¥4.40
+* 2016.07.25 收到 鄧炳初 ¥6.66
+* 2016.07.11 收到 彥風 ¥6.66
 * 2016.07.07 收到 Klci ¥2.50
 * 2016.05.08 收到 1057 ¥10.57
-* 2016.05.07 收到 吴林 ¥2
-* 2016.04.29 收到 北归 ¥10
-* 2016.04.28 收到 魏楚阳_Brian ¥2
+* 2016.05.07 收到 吳林 ¥2
+* 2016.04.29 收到 北歸 ¥10
+* 2016.04.28 收到 魏楚陽_Brian ¥2
 * 2016.04.28 收到 薛彬 ¥8.8
 
 ## Update Log
 
 ### 2017.2.28
 
-- `[^]` 修复目录滚动 bug [#22](https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/22), [#48](https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/48)
+- `[^]` 修復目錄滾動 bug [#22](https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/22), [#48](https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/48)
 
 ### 2016.6.20
 
-* `[+]` 在文章页中添加上一篇和下一篇文章链接。
-* `[^]` 修改 font-family 顺序，避免微软雅黑将单引号解析为全角。
-* `[^]` 修复标签云算法中被除数为零的 bug。[#26](https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/26), [#28](https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/28), [#30](https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/30)
+* `[+]` 在文章頁中添加上一篇和下一篇文章鏈接。
+* `[^]` 修改 font-family 順序，避免微軟雅黑將單引號解析為全角。
+* `[^]` 修復標籤雲算法中被除數為零的 bug。[#26](https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/26), [#28](https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/28), [#30](https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/30)
 
 ### 2016.5.11 v2.0.1
 
-* `[^]` 优化代码，将页面中的大段评论相关代码抽离出来，放入`comments.html`
-* `[+]` 添加百度统计和Google分析代码，在`_config.yml`中配置相关参数即可
-* `[+]` 更新文档，添加博客主题使用方法，便于上手
+* `[^]` 優化代碼，將頁面中的大段評論相關代碼抽離出來，放入`comments.html`
+* `[+]` 添加百度統計和Google分析代碼，在`_config.yml`中配置相關參數即可
+* `[+]` 更新文檔，添加博客主題使用方法，便於上手
 * `[+]` 添加了`favicon.ico`
-* `[^]` 修复 bug，目录太长时，滚动到最底部时隐藏到footer下面。修复后长目录在滚动到底部时使用`position:absolute`
-* `[^]` 修改目录区的滚动条样式（仅针对`webkit`内核浏览器）
-* `[^]` 修改 demo 页中 disqus 评论区 a 标签的颜色 bug，修改 blockqoute 中 p 标签的 margin
-* `[+]` 添加不蒜子计数功能，在footer上显示访问量
-* `[+]` 添加回到顶部功能
+* `[^]` 修復 bug，目錄太長時，滾動到最底部時隱藏到footer下面。修復後長目錄在滾動到底部時使用`position:absolute`
+* `[^]` 修改目錄區的滾動條樣式（僅針對`webkit`內核瀏覽器）
+* `[^]` 修改 demo 頁中 disqus 評論區 a 標籤的顏色 bug，修改 blockqoute 中 p 標籤的 margin
+* `[+]` 添加不蒜子計數功能，在footer上顯示訪問量
+* `[+]` 添加回到頂部功能
 
 ### 2016.4.27 v2.0.0
 
-* `[^]` 基于 jekyll 3.1.2 重构了所有代码
-* `[+]` 主页添加了摘要，在正文中使用4个换行符来分割，可在`_config.yml`中修改
-* `[+]` 主页添加了近期文章、分类列表和标签云
-* `[+]` 主页导航区做了视觉优化，阴影效果
-* `[+]` 增加了归档、标签和分类页面
-* `[+]` 增加了收藏页面
-* `[+]` 评论插件可以选择 disqus 或 多说，直接在`_config.yml`中修改
-* `[+]` 适配移动端
-* `[+]` 页面滚动时，文章目录固定在右侧
-* `[+]` 页面内容较少时，固定 footer 在页面底部
-* `[^]` 使用 GitHub 风格的代码高亮写法，即\`\`\`的写法，去除`highlight.js`代码高亮插件的使用
-* `[^]` 使用 Masonry 重写了 Demo 页中的瀑布流布局，响应式交互体验更好
-* `[-]` 去除了 jQuery 和 BootStrap，使得加载速度更快
+* `[^]` 基於 jekyll 3.1.2 重構了所有代碼
+* `[+]` 主頁添加了摘要，在正文中使用4個換行符來分割，可在`_config.yml`中修改
+* `[+]` 主頁添加了近期文章、分類列表和標籤雲
+* `[+]` 主頁導航區做了視覺優化，陰影效果
+* `[+]` 增加了歸檔、標籤和分類頁面
+* `[+]` 增加了收藏頁面
+* `[+]` 評論插件可以選擇 disqus 或 多說，直接在`_config.yml`中修改
+* `[+]` 適配移動端
+* `[+]` 頁面滾動時，文章目錄固定在右側
+* `[+]` 頁面內容較少時，固定 footer 在頁面底部
+* `[^]` 使用 GitHub 風格的代碼高亮寫法，即\`\`\`的寫法，去除`highlight.js`代碼高亮插件的使用
+* `[^]` 使用 Masonry 重寫了 Demo 頁中的瀑布流布局，響應式交互體驗更好
+* `[-]` 去除了 jQuery 和 BootStrap，使得加載速度更快
 
-关于旧版博客，我不再维护，同时我把代码转移到了另一个仓库，见 [Gaohaoyang/old-blog](https://github.com/Gaohaoyang/old-blog)。
+關於舊版博客，我不再維護，同時我把代碼轉移到了另一個倉庫，見 [Gaohaoyang/old-blog](https://github.com/Gaohaoyang/old-blog)。
 
 ## License
 

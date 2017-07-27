@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "JavaScript 面向对象"
+title:  "JavaScript 面向對象"
 date:   2015-06-15 14:06:05
 categories: JavaScript
-tags: JavaScript 面向对象 慕课网 ife
+tags: JavaScript 面向對象 慕課網 ife
 ---
 
 * content
 {:toc}
 
-本文为慕课网 [JavaScript深入浅出](http://www.imooc.com/learn/277)  JavaScript 面向对象笔记。
+本文為慕課網 [JavaScript深入淺出](http://www.imooc.com/learn/277)  JavaScript 面向對象筆記。
 
 
 
@@ -17,15 +17,15 @@ tags: JavaScript 面向对象 慕课网 ife
 
 ## 概念
 
-> 面向对象程序设计（Object-oriented programming，OOP）是一种程序设计范型，同时也是一种程序开发的方法。对象指的是类的实例。它将对象作为程序的基本单元，将程序和数据封装其中，以提高软件的重用性、灵活性和扩展性。
+> 面向對象程序設計（Object-oriented programming，OOP）是一種程序設計范型，同時也是一種程序開發的方法。對象指的是類的實例。它將對象作為程序的基本單元，將程序和數據封裝其中，以提高軟件的重用性、靈活性和擴展性。
 >
-> ——维基百科
+> ——維基百科
 
-一般面向对象包含：继承，封装，多态，抽象
+一般面向對象包含：繼承，封裝，多態，抽象
 
 ---
 
-## 基于原型的继承
+## 基於原型的繼承
 
     function Foo() {
         this.y = 2;
@@ -38,9 +38,9 @@ tags: JavaScript 面向对象 慕课网 ife
     console.log(obj3.y); //2
     console.log(obj3.x); //1
 
-创建函数 `Foo` 的时候，就会有一个内置的 `Foo.prototype` 属性，并且这个属性是对象。
+創建函數 `Foo` 的時候，就會有一個內置的 `Foo.prototype` 屬性，並且這個屬性是對象。
 
-在使用 `new Foo();` 创建对象实例时。`this` 会指向一个对象，并且这个对象的原型会指向 `Foo.prototype` 属性。`this.y = 2` 给这个对象赋值，并把这个对象返回。把这个对象赋值给 `obj3`。
+在使用 `new Foo();` 創建對象實例時。`this` 會指向一個對象，並且這個對象的原型會指向 `Foo.prototype` 屬性。`this.y = 2` 給這個對象賦值，並把這個對象返回。把這個對象賦值給 `obj3`。
 
 `y` 是 `obj3` 上的，`x` 是 `obj3` 的原型 `Foo.prototype` 上的。
 
@@ -48,11 +48,11 @@ tags: JavaScript 面向对象 慕课网 ife
 
 ---
 
-### prototype 属性与原型
+### prototype 屬性與原型
 
-prototype 是函数对象上预设的对象属性。
+prototype 是函數對象上預設的對象屬性。
 
-原型是对象上的原型，通常是构造器的 prototype 属性。
+原型是對象上的原型，通常是構造器的 prototype 屬性。
 
 ---
 
@@ -92,72 +92,72 @@ prototype 是函数对象上预设的对象属性。
 
     //test
     var gao = new Student('Gao', '24', 'Class 3123');
-    console.log(gao); // 这个对象的具体内容见下图
+    console.log(gao); // 這個對象的具體內容見下圖
     gao.hi(); //Hi, my name is Gao. I'm 24 years old now, and from Class 3123.
     gao.LEGS_NUM; //2
     gao.walking(); //Gao is walking...
     gao.learn('JavaScript'); //Gao is learning JavaScript at Class 3123.
 
-* `Object.create(arg)` 创建一个空对象，并且这个对象的原型指向参数 `arg`。
-* `Student.prototype.constructor = Student` 为了保证一致性，否则 constructor 指向 Person。
+* `Object.create(arg)` 創建一個空對象，並且這個對象的原型指向參數 `arg`。
+* `Student.prototype.constructor = Student` 為了保證一致性，否則 constructor 指向 Person。
 
 ---
 
-### 原型链
+### 原型鏈
 
-gao 对象的原型链：
+gao 對象的原型鏈：
 
 ![Object](http://7q5cdt.com1.z0.glb.clouddn.com/blog-oop-gao.png)
 
-下面通过图形展示原型链：
+下面通過圖形展示原型鏈：
 
-![原型链](http://7q5cdt.com1.z0.glb.clouddn.com/blog-原型链.png)
+![原型鏈](http://7q5cdt.com1.z0.glb.clouddn.com/blog-原型鏈.png)
 
 ---
 
 #### `Object.create(null)` & `.bind(null)`
 
-这两种算是特例。
+這兩種算是特例。
 
-`Object.create(null)` 和 `.bind(null)` 这两种方式创建出来的对象是没有 `prototype` 属性的，为 `undefined`。
+`Object.create(null)` 和 `.bind(null)` 這兩種方式創建出來的對象是沒有 `prototype` 屬性的，為 `undefined`。
 
 ---
 
-## prototype 属性
+## prototype 屬性
 
-### 改变 prototype
+### 改變 prototype
 
-JavaScript 中的 prototype 是对象，在运行的时候可以修改。
+JavaScript 中的 prototype 是對象，在運行的時候可以修改。
 
-给 prototype 添加或删除一些属性，是会影响到已经创建好的实例对象的。
+給 prototype 添加或刪除一些屬性，是會影響到已經創建好的實例對象的。
 
-但是，直接修改 prototype 属性，是不会影响到已经创建好的实例对象的。但是会影响到新的实例对象。如下代码：
+但是，直接修改 prototype 屬性，是不會影響到已經創建好的實例對象的。但是會影響到新的實例對象。如下代碼：
 
-    // 上接上面的代码
+    // 上接上面的代碼
 
-    // 给 prototype 添加或删除一些属性
+    // 給 prototype 添加或刪除一些屬性
     Student.prototype.x = 101;
     console.log(gao.x); //101
 
-    // 直接修改 prototype 属性
+    // 直接修改 prototype 屬性
     Student.prototype = {
         y: 2
     };
 
-    // 不会影响到已创建好的实例对象
+    // 不會影響到已創建好的實例對象
     console.log(gao.x); //101
     console.log(gao.y); //undefined
 
-    // 会影响到新创建的实例对象
+    // 會影響到新創建的實例對象
     var ying = new Student('Ying', 24, 'UI');
     console.log(ying.x); //undefined
     console.log(ying.y); //2
 
 ---
 
-### 内置构造器的 `prototype` 属性
+### 內置構造器的 `prototype` 屬性
 
-修改内置构造器的 `prototype` 属性后，在实例化这个对象后，枚举其属性时，会把修改的内置构造器的 `prototype` 属性也枚举出来，有时候这是要避免的。可用 `defineProperty` 方法解决。如下代码：
+修改內置構造器的 `prototype` 屬性後，在實例化這個對象後，枚舉其屬性時，會把修改的內置構造器的 `prototype` 屬性也枚舉出來，有時候這是要避免的。可用 `defineProperty` 方法解決。如下代碼：
 
     Object.prototype.x = 1;
     var obj = {};
@@ -169,7 +169,7 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
     }
     // result--->x
 
-使用 `defineProperty` 后：
+使用 `defineProperty` 後：
 
     Object.defineProperty(Object.prototype, 'x', {
         writable: true,
@@ -183,7 +183,7 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
     }
     // nothing output here
 
-其实也可以这样枚举，使用 `hasOwnProperty` 方法：
+其實也可以這樣枚舉，使用 `hasOwnProperty` 方法：
 
     for (var key in obj) {
         if (obj.hasOwnProperty(key)) {
@@ -193,7 +193,7 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
 
 ---
 
-### 创建对象-new/原型链
+### 創建對象-new/原型鏈
 
 ![prototype](http://7q5cdt.com1.z0.glb.clouddn.com/blog-new prototype.png)
 
@@ -205,13 +205,13 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
     console.log([1, 2] instanceof Object); //true
     console.log(new Object() instanceof Array); //false
 
-左边要求是对象，右边要求是构造器或函数。它会判断：**右边的构造器中的 `prototype` 属性是否出现在左边的对象的原型链上。**
+左邊要求是對象，右邊要求是構造器或函數。它會判斷：**右邊的構造器中的 `prototype` 屬性是否出現在左邊的對象的原型鏈上。**
 
-* **注意：**不同的 window 或 iframe 间的对象类型检测**不能**使用 `instanceof`！
+* **注意：**不同的 window 或 iframe 間的對象類型檢測**不能**使用 `instanceof`！
 
 ---
 
-## 实现继承的方式
+## 實現繼承的方式
 
     function Person() {}
 
@@ -225,13 +225,13 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
 
     Student.prototype.constructor = Student;
 
-注释中：
+注釋中：
 
-1 是错误的。如果改变了 Student 就会改变 Person
+1 是錯誤的。如果改變了 Student 就會改變 Person
 
-2 可以实现继承，但是其调用了构造函数，若父类构造函数中有形参，那么传值就会比较奇怪。
+2 可以實現繼承，但是其調用了構造函數，若父類構造函數中有形參，那麼傳值就會比較奇怪。
 
-3 是最好的方法。创建了一个空对象，并且对象的原型指向参数 Person.prototype。这样便实现了继承。同时原型链写，不向上查找。但是 `Object.create` 是ES5 中的方法，所以可以使用下列代码做兼容：
+3 是最好的方法。創建了一個空對象，並且對象的原型指向參數 Person.prototype。這樣便實現了繼承。同時原型鏈寫，不向上查找。但是 `Object.create` 是ES5 中的方法，所以可以使用下列代碼做兼容：
 
     if (!Object.create) {
         Object.create = function(proto) {
@@ -243,7 +243,7 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
 
 ---
 
-## 模拟重载
+## 模擬重載
 
     function Person() {
         var args = arguments;
@@ -264,7 +264,7 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
         }
     }
 
-    //重写 toString 方法
+    //重寫 toString 方法
     Person.prototype.toString = function() {
         console.log('name='+this.name+', age='+this.age);
     };
@@ -275,11 +275,11 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
     var ying = new Person('Ying',25);
     ying.toString(); // name=Ying, age=25
 
-对参数进行判断，模拟实现重载。
+對參數進行判斷，模擬實現重載。
 
 ---
 
-## 调用子类方法
+## 調用子類方法
 
     function Person(name) {
         this.name = name;
@@ -287,7 +287,7 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
 
     function Student(name, className) {
         this.className = className;
-        Person.call(this, name); // 调用基类的构造器
+        Person.call(this, name); // 調用基類的構造器
     }
 
     var gao = new Student('Gao', '3123');
@@ -297,14 +297,14 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
 
     Student.prototype.init = function() {
         // do sth...
-        Person.prototype.init.apply(this, arguments); // 同时也想调用父类被覆盖的方法
+        Person.prototype.init.apply(this, arguments); // 同時也想調用父類被覆蓋的方法
     };
 
-主要是两种：调用父类的构造器，调用原型链上父类被覆盖的方法。
+主要是兩種：調用父類的構造器，調用原型鏈上父類被覆蓋的方法。
 
 ---
 
-## 链式调用
+## 鏈式調用
 
     function ClassManager() {}
     ClassManager.prototype.addClass = function(str) {
@@ -318,13 +318,13 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
     // Class: classB added
     // Class: classC added
 
-重点在于 return this。返回这个 ClassManager 的实例。这样这个实例又可以继续调用方法。
+重點在於 return this。返回這個 ClassManager 的實例。這樣這個實例又可以繼續調用方法。
 
 ---
 
-## 抽象类
+## 抽象類
 
-在构造器中 `throw new Error('');` 抛异常。这样防止这个类被直接调用。
+在構造器中 `throw new Error('');` 拋異常。這樣防止這個類被直接調用。
 
     function DetectorBase() {
         throw new Error('Abstract class can not be invoked directly!');
@@ -351,13 +351,13 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
     l.detect(); //Uncaught TypeError: l.detect is not a function
     l.init(); //Uncaught TypeError: l.init is not a function
 
-`var d = new DetectorBase();` 是不能实例化的，会报错
+`var d = new DetectorBase();` 是不能實例化的，會報錯
 
-`l.detect();` 但是这个为什么报错我就不知道了。
+`l.detect();` 但是這個為什麼報錯我就不知道了。
 
-已经在原课程下提问了，期待老师的讲解。 [抽象类中子类为什么不能调用父类的非抽象方法？](http://www.imooc.com/qadetail/82732)
+已經在原課程下提問了，期待老師的講解。 [抽象類中子類為什麼不能調用父類的非抽象方法？](http://www.imooc.com/qadetail/82732)
 
-问题已经解决了，应该是老师当时的课件写错了，应该再基类中将这两个方法写在其原型 prototype 上。如下：
+問題已經解決了，應該是老師當時的課件寫錯了，應該再基類中將這兩個方法寫在其原型 prototype 上。如下：
 
     function DetectorBase() {
         throw new Error('Abstract class can not be invoked directly!');
@@ -386,7 +386,7 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
 
 ---
 
-## 模块化
+## 模塊化
 
     var moduleA;
     moduleA = function() {
@@ -398,11 +398,11 @@ JavaScript 中的 prototype 是对象，在运行的时候可以修改。
             func: func,
             prop: prop
         };
-    }(); // 立即执行匿名函数
+    }(); // 立即執行匿名函數
 
-prop，func 不会被泄露到全局作用域。
+prop，func 不會被泄露到全局作用域。
 
-或者另一种写法，使用 new
+或者另一種寫法，使用 new
 
     moduleA = new function() {
         var prop = 1;
@@ -413,12 +413,12 @@ prop，func 不会被泄露到全局作用域。
         this.prop = prop;
     }
 
-更复杂的可以使用 Sea.js Kissy Require.js 模块化工具。
+更複雜的可以使用 Sea.js Kissy Require.js 模塊化工具。
 
 ---
 
-最后补充一点设计模式相关的资料，我还没有来得及看的：
+最後補充一點設計模式相關的資料，我還沒有來得及看的：
 
-* [学用 JavaScript 设计模式](http://www.oschina.net/translate/learning-javascript-design-patterns)
-* [常用的Javascript设计模式](http://blog.jobbole.com/29454/)
-* [JavaScript设计模式深入分析](http://developer.51cto.com/art/201109/288650_all.htm)
+* [學用 JavaScript 設計模式](http://www.oschina.net/translate/learning-javascript-design-patterns)
+* [常用的Javascript設計模式](http://blog.jobbole.com/29454/)
+* [JavaScript設計模式深入分析](http://developer.51cto.com/art/201109/288650_all.htm)

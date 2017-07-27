@@ -1,111 +1,111 @@
 ---
 layout: post
-title:  "百度Web前端技术学院(2)-JavaScript 基础"
+title:  "百度Web前端技術學院(2)-JavaScript 基礎"
 date:   2015-04-22 19:06:05
 categories: JavaScript
-tags: Baidu ife JavaScript 正则 Regular
+tags: Baidu ife JavaScript 正則 Regular
 ---
 
 * content
 {:toc}
 
-百度前端学院的第二次任务笔记，JavaScript 基础。主要有JavaScript的定义，数据类型，对象，数组，字符串，正则表达式，DOM，事件，BOM，Ajax 等知识。
+百度前端學院的第二次任務筆記，JavaScript 基礎。主要有JavaScript的定義，數據類型，對象，數組，字符串，正則表達式，DOM，事件，BOM，Ajax 等知識。
 
 
 
 
 
-## 任务
+## 任務
 
-掌握JavaScript基础知识，能够使用JavaScript编写一些复杂度不大的交互功能。
+掌握JavaScript基礎知識，能夠使用JavaScript編寫一些複雜度不大的交互功能。
 
-**任务：** [JavaScript基础](https://github.com/Gaohaoyang/ife/tree/master/task/task0002)   
+**任務：** [JavaScript基礎](https://github.com/Gaohaoyang/ife/tree/master/task/task0002)   
 
-做完任务一的时候深深地感觉到自己的基础非常的薄弱，在这里再次感谢一下百度前端技术学院，做任务的时候深刻理解了自己平时掌握不牢固的内容，比如浮动、BFC、等高布局等。继续加油吧！
-
-
-像上一篇文章一样，写些东西记录一下。   
+做完任務一的時候深深地感覺到自己的基礎非常的薄弱，在這裡再次感謝一下百度前端技術學院，做任務的時候深刻理解了自己平時掌握不牢固的內容，比如浮動、BFC、等高布局等。繼續加油吧！
 
 
-## 第一个页面交互
+像上一篇文章一樣，寫些東西記錄一下。   
 
-按照任务中的代码，在IE8下提示：`对象不支持“addEventListener”属性或方法`    
-我猜是IE8浏览器没有这个方法吧。
 
-参考资料：[JavaScript 指南-MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide)
+## 第一個頁面交互
 
-### 了解JavaScript是什么
+按照任務中的代碼，在IE8下提示：`對象不支持“addEventListener”屬性或方法`    
+我猜是IE8瀏覽器沒有這個方法吧。
 
-[来自MDN的解释](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/JavaScript_Overview#What_is_JavaScript.3F)
+參考資料：[JavaScript 指南-MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide)
 
-> JavaScript 是一种跨平台，面向对象的脚本语言。作为一种小巧且轻量级的语言，JavaScript 无意于独立运行，而是被设计为可以轻易嵌入到其它的产品和应用中，比如 Web 浏览器。在宿主环境中，JavaScript 可以被连接到环境中的对象之上，以提供对其的编程控制。
+### 了解JavaScript是什麼
+
+[來自MDN的解釋](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/JavaScript_Overview#What_is_JavaScript.3F)
+
+> JavaScript 是一種跨平台，面向對象的腳本語言。作為一種小巧且輕量級的語言，JavaScript 無意於獨立運行，而是被設計為可以輕易嵌入到其它的產品和應用中，比如 Web 瀏覽器。在宿主環境中，JavaScript 可以被連接到環境中的對象之上，以提供對其的編程控制。
 >
-> 核心的 JavaScript 中包含有一组核心的对象，包括 Array，Date 和 Math，以及一组核心的语言要素，包括操作符，控制结构和语句。出于多种目的，可以通过为其增补附加的对象，对核心 JavaScript 加以扩展；例如：
+> 核心的 JavaScript 中包含有一組核心的對象，包括 Array，Date 和 Math，以及一組核心的語言要素，包括操作符，控制結構和語句。出於多種目的，可以通過為其增補附加的對象，對核心 JavaScript 加以擴展；例如：
 >
-> * 客户端 JavaScript 提供了用于控制浏览器（Navigator 或者其它浏览器）以及其中的文档对象模型（DOM）的对象，从而扩展了核心 JavaScript。例如，客户端扩展允许应用程序在 HTML 的表单中加入元素，以便响应用户事件，比如鼠标点击，表单输入和页面导航。
-> * 服务器端 JavaScript 提供了服务于在服务器上运行 JavaScript 的对象，从而扩展了核心 JavaScript。例如，服务器端扩展可以允许应用程序访问关系型数据库，在应用程序的不同调用间提供信息的连续性，甚至于处理服务器之上的文件。
+> * 客戶端 JavaScript 提供了用於控制瀏覽器（Navigator 或者其它瀏覽器）以及其中的文檔對象模型（DOM）的對象，從而擴展了核心 JavaScript。例如，客戶端擴展允許應用程序在 HTML 的表單中加入元素，以便響應用戶事件，比如鼠標點擊，表單輸入和頁面導航。
+> * 服務器端 JavaScript 提供了服務於在服務器上運行 JavaScript 的對象，從而擴展了核心 JavaScript。例如，服務器端擴展可以允許應用程序訪問關係型數據庫，在應用程序的不同調用間提供信息的連續性，甚至於處理服務器之上的文件。
 >
->借由 JavaScript 的 LiveConnect 功能，您可以让 Java 和 JavaScript 间实现通讯。从 JavaScript 中，您可以创建 Java 对象并访问它们的公共方法和域。从 Java 中，也可以访问 JavaScript 的对象，属性和方法。
+>借由 JavaScript 的 LiveConnect 功能，您可以讓 Java 和 JavaScript 間實現通訊。從 JavaScript 中，您可以創建 Java 對象並訪問它們的公共方法和域。從 Java 中，也可以訪問 JavaScript 的對象，屬性和方法。
 >
->Netscape 发明了 JavaScript 并将 JavaScript 首先用于 Netscape 浏览器中。
+>Netscape 發明了 JavaScript 並將 JavaScript 首先用於 Netscape 瀏覽器中。
 
 
-### 如何在 HTML 页面加载 JavaScript 代码
+### 如何在 HTML 頁面加載 JavaScript 代碼
 
-使用 `<script>` 标签在 HTML 文件中添加 JavaScript 代码。
+使用 `<script>` 標籤在 HTML 文件中添加 JavaScript 代碼。
 
-我们可以将 `JavaScript` 代码放在 `html` 文件中任何位置，但是我们一般放在网页的 `head` 或者 `body` 部分。
+我們可以將 `JavaScript` 代碼放在 `html` 文件中任何位置，但是我們一般放在網頁的 `head` 或者 `body` 部分。
 
 放在 `<head>` 部分    
-最常用的方式是在页面中head部分放置 `<script>` 元素，浏览器解析 `head` 部分就会执行这个代码，然后才解析页面的其余部分。
+最常用的方式是在頁面中head部分放置 `<script>` 元素，瀏覽器解析 `head` 部分就會執行這個代碼，然後才解析頁面的其餘部分。
 
 放在 `<body>` 部分    
-JavaScript 代码在网页读取到该语句的时候就会执行。
+JavaScript 代碼在網頁讀取到該語句的時候就會執行。
 
-**注意**: javascript 作为一种脚本语言可以放在 html 页面中任何位置，但是浏览器解释 html 时是按先后顺序的，所以前面的 script 就先被执行。比如进行页面显示初始化的 js 必须放在 head 里面，因为初始化都要求提前进行（如给页面 body 设置 css 等）；而如果是通过事件调用执行的 function 那么对位置没什么要求的。
-
-
-
-### 为什么把 `<script>` 放在 `</body>` 前
-
-虽然理论上放在哪里都是可以的，但是对于前端页面优化来讲，还是放在底部是最佳的，因为如果JS执行出现错误了，最起码页面中的元素还能加载出来，因为DOM文档是从上往下的顺序执行的。    如果你还不了解DOM的加载顺序，请阅读jQuery中ready与load事件的区别。
-
-**下面是重点**
-
-按照HTML5标准中的HTML语法规则，如果在 `</body>` 后再出现 `<script>` 或任何元素的开始标签，都是parse error，浏览器会忽略之前的 `</body>` ，即视作仍旧在body内。所以实际效果和写在 `</body>` 之前是没有区别的。
-
-总之，这种写法虽然也能work，但是并没有带来任何额外好处，实际上出现这样的写法很可能是误解了“将script放在页面最末端”的教条。所以还是不要这样写为好。
-
-* [script在body闭合标签之后还是之前-知乎](http://www.zhihu.com/question/20027966)
-* [body 和 html 标签均没有关闭](http://www.zhihu.com/question/19617126)
+**注意**: javascript 作為一種腳本語言可以放在 html 頁面中任何位置，但是瀏覽器解釋 html 時是按先後順序的，所以前面的 script 就先被執行。比如進行頁面顯示初始化的 js 必須放在 head 裡面，因為初始化都要求提前進行（如給頁面 body 設置 css 等）；而如果是通過事件調用執行的 function 那麼對位置沒什麼要求的。
 
 
-#### JavaScript 的性能优化：加载和执行
 
-* 扩展阅读：[JavaScript 的性能优化：加载和执行](http://www.ibm.com/developerworks/cn/web/1308_caiys_jsload/index.html)
+### 為什麼把 `<script>` 放在 `</body>` 前
 
-**脚本位置**
+雖然理論上放在哪裡都是可以的，但是對於前端頁面優化來講，還是放在底部是最佳的，因為如果JS執行出現錯誤了，最起碼頁面中的元素還能加載出來，因為DOM文檔是從上往下的順序執行的。    如果你還不了解DOM的加載順序，請閱讀jQuery中ready與load事件的區別。
 
-由于脚本会阻塞页面其他资源的下载，因此推荐将所有 `<script>` 标签尽可能放到 `<body>` 标签的底部，以尽量减少对整个页面下载的影响。
+**下面是重點**
 
-**组织脚本**
+按照HTML5標準中的HTML語法規則，如果在 `</body>` 後再出現 `<script>` 或任何元素的開始標籤，都是parse error，瀏覽器會忽略之前的 `</body>` ，即視作仍舊在body內。所以實際效果和寫在 `</body>` 之前是沒有區別的。
 
-由于每个 `<script>` 标签初始下载时都会阻塞页面渲染，所以减少页面包含的 `<script>` 标签数量有助于改善这一情况。这不仅针对外链脚本，内嵌脚本的数量同样也要限制。浏览器在解析 HTML 页面的过程中每遇到一个 `<script>` 标签，都会因执行脚本而导致一定的延时，因此最小化延迟时间将会明显改善页面的总体性能。
+總之，這種寫法雖然也能work，但是並沒有帶來任何額外好處，實際上出現這樣的寫法很可能是誤解了“將script放在頁面最末端”的教條。所以還是不要這樣寫為好。
 
-**无阻塞的脚本**
-
-减少 JavaScript 文件大小并限制 HTTP 请求数在功能丰富的 Web 应用或大型网站上并不总是可行。Web 应用的功能越丰富，所需要的 JavaScript 代码就越多，尽管下载单个较大的 JavaScript 文件只产生一次 HTTP 请求，却会锁死浏览器的一大段时间。为避免这种情况，需要通过一些特定的技术向页面中逐步加载 JavaScript 文件，这样做在某种程度上来说不会阻塞浏览器。
+* [script在body閉合標籤之後還是之前-知乎](http://www.zhihu.com/question/20027966)
+* [body 和 html 標籤均沒有關閉](http://www.zhihu.com/question/19617126)
 
 
-无阻塞脚本的秘诀在于，在页面加载完成后才加载 JavaScript 代码。这就意味着在 window 对象的 onload事件触发后再下载脚本。有多种方式可以实现这一效果。
+#### JavaScript 的性能優化：加載和執行
 
-* 延迟加载脚本
+* 擴展閱讀：[JavaScript 的性能優化：加載和執行](http://www.ibm.com/developerworks/cn/web/1308_caiys_jsload/index.html)
 
-HTML 4 为 `<script>` 标签定义了一个扩展属性：defer。Defer 属性指明本元素所含的脚本不会修改 DOM，因此代码能安全地延迟执行。
+**腳本位置**
 
-带有 defer 属性的 `<script>` 标签可以放置在文档的任何位置。对应的 JavaScript 文件将在页面解析到 `<script>` 标签时开始下载，但不会执行，直到 DOM 加载完成，即onload事件触发前才会被执行。当一个带有 defer 属性的 JavaScript 文件下载时，它不会阻塞浏览器的其他进程，因此这类文件可以与其他资源文件一起并行下载。
+由於腳本會阻塞頁面其他資源的下載，因此推薦將所有 `<script>` 標籤盡可能放到 `<body>` 標籤的底部，以盡量減少對整個頁面下載的影響。
 
-对于如下代码：
+**組織腳本**
+
+由於每個 `<script>` 標籤初始下載時都會阻塞頁面渲染，所以減少頁麵包含的 `<script>` 標籤數量有助於改善這一情況。這不僅針對外鏈腳本，內嵌腳本的數量同樣也要限制。瀏覽器在解析 HTML 頁面的過程中每遇到一個 `<script>` 標籤，都會因執行腳本而導致一定的延時，因此最小化延遲時間將會明顯改善頁面的總體性能。
+
+**無阻塞的腳本**
+
+減少 JavaScript 文件大小並限制 HTTP 請求數在功能豐富的 Web 應用或大型網站上並不總是可行。Web 應用的功能越豐富，所需要的 JavaScript 代碼就越多，儘管下載單個較大的 JavaScript 文件只產生一次 HTTP 請求，卻會鎖死瀏覽器的一大段時間。為避免這種情況，需要通過一些特定的技術向頁面中逐步加載 JavaScript 文件，這樣做在某種程度上來說不會阻塞瀏覽器。
+
+
+無阻塞腳本的秘訣在於，在頁面加載完成後才加載 JavaScript 代碼。這就意味著在 window 對象的 onload事件觸發後再下載腳本。有多種方式可以實現這一效果。
+
+* 延遲加載腳本
+
+HTML 4 為 `<script>` 標籤定義了一個擴展屬性：defer。Defer 屬性指明本元素所含的腳本不會修改 DOM，因此代碼能安全地延遲執行。
+
+帶有 defer 屬性的 `<script>` 標籤可以放置在文檔的任何位置。對應的 JavaScript 文件將在頁面解析到 `<script>` 標籤時開始下載，但不會執行，直到 DOM 加載完成，即onload事件觸發前才會被執行。當一個帶有 defer 屬性的 JavaScript 文件下載時，它不會阻塞瀏覽器的其他進程，因此這類文件可以與其他資源文件一起並行下載。
+
+對於如下代碼：
 
 ```html
 <html>
@@ -128,40 +128,40 @@ HTML 4 为 `<script>` 标签定义了一个扩展属性：defer。Defer 属性�
 </html>
 ```
 
-在支持 defer 属性的浏览器上，弹出的顺序则是："script"、"defer"、"load"。请注意，带有 defer 属性的 `<script>` 元素不是跟在第二个后面执行，而是在 onload 事件被触发前被调用。
+在支持 defer 屬性的瀏覽器上，彈出的順序則是："script"、"defer"、"load"。請注意，帶有 defer 屬性的 `<script>` 元素不是跟在第二個後面執行，而是在 onload 事件被觸發前被調用。
 
-引用的资料可能写的比较早，在 [CanIUse](http://caniuse.com/#search=defer) 上查了一下 defer 发现大部分浏览器都是支持的。如下图：   
-![defer的支持情况](http://7q5cdt.com1.z0.glb.clouddn.com/Baidu-Front-end-defer.jpg)
+引用的資料可能寫的比較早，在 [CanIUse](http://caniuse.com/#search=defer) 上查了一下 defer 發現大部分瀏覽器都是支持的。如下圖：   
+![defer的支持情況](http://7q5cdt.com1.z0.glb.clouddn.com/Baidu-Front-end-defer.jpg)
 
-HTML 5 为 `<script>` 标签定义了一个新的扩展属性：async。它的作用和 defer 一样，能够异步地加载和执行脚本，不因为加载脚本而阻塞页面的加载。但是有一点需要注意，在有 async 的情况下，JavaScript 脚本一旦下载好了就会执行，所以很有可能不是按照原本的顺序来执行的。如果 JavaScript 脚本前后有依赖性，使用 async 就很有可能出现错误。
+HTML 5 為 `<script>` 標籤定義了一個新的擴展屬性：async。它的作用和 defer 一樣，能夠異步地加載和執行腳本，不因為加載腳本而阻塞頁面的加載。但是有一點需要注意，在有 async 的情況下，JavaScript 腳本一旦下載好了就會執行，所以很有可能不是按照原本的順序來執行的。如果 JavaScript 腳本前後有依賴性，使用 async 就很有可能出現錯誤。
 
 IE8,9不支持 `async`
 
-* 动态脚本元素
-* 使用 XMLHttpRequest(XHR)对象
+* 動態腳本元素
+* 使用 XMLHttpRequest(XHR)對象
 
 
-**原文中的总结**
+**原文中的總結**
 
-减少 JavaScript 对性能的影响有以下几种方法：
+減少 JavaScript 對性能的影響有以下幾種方法：
 
-* 将所有的 `<script>` 标签放到页面底部，也就是 `</body>` 闭合标签之前，这能确保在脚本执行前页面已经完成了渲染。
-* 尽可能地合并脚本。页面中的 `<script>` 标签越少，加载也就越快，响应也越迅速。无论是外链脚本还是内嵌脚本都是如此。
-* 采用无阻塞下载 JavaScript 脚本的方法：
-    * 使用 `<script>` 标签的 defer 属性（仅适用于 IE 和 Firefox 3.5 以上版本）；
-    * 使用动态创建的 `<script>` 元素来下载并执行代码；
-    * 使用 XHR 对象下载 JavaScript 代码并注入页面中。
+* 將所有的 `<script>` 標籤放到頁面底部，也就是 `</body>` 閉合標籤之前，這能確保在腳本執行前頁面已經完成了渲染。
+* 盡可能地合併腳本。頁面中的 `<script>` 標籤越少，加載也就越快，響應也越迅速。無論是外鏈腳本還是內嵌腳本都是如此。
+* 採用無阻塞下載 JavaScript 腳本的方法：
+    * 使用 `<script>` 標籤的 defer 屬性（僅適用於 IE 和 Firefox 3.5 以上版本）；
+    * 使用動態創建的 `<script>` 元素來下載並執行代碼；
+    * 使用 XHR 對象下載 JavaScript 代碼並注入頁面中。
 
-通过以上策略，可以在很大程度上提高那些需要使用大量 JavaScript 的 Web 网站和应用的实际性能。
+通過以上策略，可以在很大程度上提高那些需要使用大量 JavaScript 的 Web 網站和應用的實際性能。
 
 
-## JavaScript数据类型及语言基础
+## JavaScript數據類型及語言基礎
 
-### 数据类型概要
+### 數據類型概要
 
-最新的 ECMAScript 标准定义了 7 种数据类型:
+最新的 ECMAScript 標準定義了 7 種數據類型:
 
-* 6 种 原始类型:
+* 6 種 原始類型:
     * Boolean
     * Null
     * Undefined
@@ -171,10 +171,10 @@ IE8,9不支持 `async`
 * 和 Object
 
 
-### 一些要点
+### 一些要點
 
-* 一个没有被赋值的变量会有个默认值 undefined
-* null 与 undefined 的不同点：
+* 一個沒有被賦值的變量會有個默認值 undefined
+* null 與 undefined 的不同點：
 
 ```js
 typeof null        // object (bug in ECMAScript, should be null)
@@ -187,84 +187,84 @@ null == undefined // true
 typeof null 返回 object
 ```
 
-* Number 数字类型，它并没有为整数给出一种特定的类型。除了能够表示浮点数外，还有一些带符号的值：+Infinity，-Infinity 和 NaN (非数值，Not-a-Number)。
-* NaN与任何值都不相等，包括自身。应当使用 `x != x` 来判断，当且仅当 x 为 NaN 的时候，表达式的结果才为 `true`。相似的函数有 `isNaN()`, `isFinite()`。
-* 数组直接量的语法允许有可选的结尾逗号，故 `[,,]` 只有两个元素而非三个。
+* Number 數字類型，它並沒有為整數給出一種特定的類型。除了能夠表示浮點數外，還有一些帶符號的值：+Infinity，-Infinity 和 NaN (非數值，Not-a-Number)。
+* NaN與任何值都不相等，包括自身。應當使用 `x != x` 來判斷，當且僅當 x 為 NaN 的時候，表達式的結果才為 `true`。相似的函數有 `isNaN()`, `isFinite()`。
+* 數組直接量的語法允許有可選的結尾逗號，故 `[,,]` 只有兩個元素而非三個。
 
 
-### 实践判断各种数据类型的方法
+### 實踐判斷各種數據類型的方法
 
 ```js
-// 判断arr是否为一个数组，返回一个bool值
+// 判斷arr是否為一個數組，返回一個bool值
 function isArray(arr) {
     return typeof arr === "object" && Object.prototype.toString.call(arr) === "[object Array]";
 }
 
-// 判断fn是否为一个函数，返回一个bool值
+// 判斷fn是否為一個函數，返回一個bool值
 function isFunction(fn) {
     return typeof fn === "function";
 }
 ```
 
-#### 数组类型
+#### 數組類型
 
-在 ECMAScript5 中，可以直接使用 `Array.isArray()` 来判断数组。
+在 ECMAScript5 中，可以直接使用 `Array.isArray()` 來判斷數組。
 
 ```js
 Array.isArray([]);  //true
 Array.isArray({});  //false
 ```
 
-我看《JavaScript权威指南上》没有推荐使用 `instanceof`，因为可能会有多窗体(frame)存在。
+我看《JavaScript權威指南上》沒有推薦使用 `instanceof`，因為可能會有多窗體(frame)存在。
 
-> 这样每一个窗口都有一个自己的 JavaScript 环境，有自己的全局对象。并且每个全局对象都有自己的一组构造函数。因此一个窗体中的对象不可能是另外窗体中的构造函数的实例。
+> 這樣每一個窗口都有一個自己的 JavaScript 環境，有自己的全局對象。並且每個全局對象都有自己的一組構造函數。因此一個窗體中的對象不可能是另外窗體中的構造函數的實例。
 
-所以采用了上述我写的那样的代码
+所以採用了上述我寫的那樣的代碼
 
 
-### 值类型和引用类型的区别
+### 值類型和引用類型的區別
 
-* 值类型
+* 值類型
 
-    声明一个值类型变量，编译器会在栈上分配一个空间，这个空间对应着该值类型变量，空间里存储的就是该变量的值。存储在栈（stack）中的简单数据段，也就是说，它们的值直接存储在变量访问的位置。
+    聲明一個值類型變量，編譯器會在棧上分配一個空間，這個空間對應著該值類型變量，空間裡存儲的就是該變量的值。存儲在棧（stack）中的簡單數據段，也就是說，它們的值直接存儲在變量訪問的位置。
 
-* 引用类型
+* 引用類型
 
-    引用类型的实例分配在堆上，新建一个引用类型实例，得到的变量值对应的是该实例的内存分配地址，这就像您的银行账号一样。存储在堆（heap）中的对象，也就是说，存储在变量处的值是一个指针（point），指向存储对象的内存处。
+    引用類型的實例分配在堆上，新建一個引用類型實例，得到的變量值對應的是該實例的內存分配地址，這就像您的銀行賬號一樣。存儲在堆（heap）中的對象，也就是說，存儲在變量處的值是一個指針（point），指向存儲對象的內存處。
 
-> 为变量赋值时，ECMAScript 的解释程序必须判断该值是原始类型，还是引用类型。要实现这一点，解释程序则需尝试判断该值是否为 ECMAScript 的原始类型之一，即 Undefined、Null、Boolean、Number 和 String 型。由于这些原始类型占据的空间是固定的，所以可将他们存储在较小的内存区域 - 栈中。这样存储便于迅速查寻变量的值。
+> 為變量賦值時，ECMAScript 的解釋程序必須判斷該值是原始類型，還是引用類型。要實現這一點，解釋程序則需嘗試判斷該值是否為 ECMAScript 的原始類型之一，即 Undefined、Null、Boolean、Number 和 String 型。由於這些原始類型占據的空間是固定的，所以可將他們存儲在較小的內存區域 - 棧中。這樣存儲便於迅速查尋變量的值。
 >
-> * **在许多语言中，字符串都被看作引用类型，而非原始类型，因为字符串的长度是可变的。ECMAScript 打破了这一传统。**
+> * **在許多語言中，字符串都被看作引用類型，而非原始類型，因為字符串的長度是可變的。ECMAScript 打破了這一傳統。**
 >
-> 如果一个值是引用类型的，那么它的存储空间将从堆中分配。由于引用值的大小会改变，所以不能把它放在栈中，否则会降低变量查寻的速度。相反，放在变量的栈空间中的值是该对象存储在堆中的地址。地址的大小是固定的，所以把它存储在栈中对变量性能无任何负面影响。如下图所示：
+> 如果一個值是引用類型的，那麼它的存儲空間將從堆中分配。由於引用值的大小會改變，所以不能把它放在棧中，否則會降低變量查尋的速度。相反，放在變量的棧空間中的值是該對象存儲在堆中的地址。地址的大小是固定的，所以把它存儲在棧中對變量性能無任何負面影響。如下圖所示：
 >
 > ![ct_js_value](http://www.w3school.com.cn/i/ct_js_value.gif)
 
-JavaScript中原始值包括：undefined，null，布尔值，数字和字符串。引用类型主要指对象（包括数组和函数）。
+JavaScript中原始值包括：undefined，null，布爾值，數字和字符串。引用類型主要指對象（包括數組和函數）。
 
->* 原始值是不可更改的。对象的值是可修改的。
->* 原始值的比较是值的比较。对象的比较并非值的比较。对象的值都是引用，对象的比较均是引用的比较，当且仅当他们都引用同一个基对象时，他们才相等。
+>* 原始值是不可更改的。對象的值是可修改的。
+>* 原始值的比較是值的比較。對象的比較並非值的比較。對象的值都是引用，對象的比較均是引用的比較，當且僅當他們都引用同一個基對象時，他們才相等。
 
-**参考：**
+**參考：**
 
 * [ECMAScript 原始值和引用值](http://www.w3school.com.cn/js/pro_js_value.asp)
 
 
-### 对象的读取、遍历方式
+### 對象的讀取、遍歷方式
 
-参考：[JavaScript 指南-使用对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Working_with_Objects)
+參考：[JavaScript 指南-使用對象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Working_with_Objects)
 
-* 对象
+* 對象
 
-在javascript中，一个对象可以是一个单独的拥有属性和类型的实体。我们拿它和一个杯子做下类比。一个杯子是一个对象(物体)，拥有属性。杯子有颜色，图案，重量，由什么材质构成等等。同样，javascript对象也有属性来定义它的特征。
+在javascript中，一個對象可以是一個單獨的擁有屬性和類型的實體。我們拿它和一個杯子做下類比。一個杯子是一個對象(物體)，擁有屬性。杯子有顏色，圖案，重量，由什麼材質構成等等。同樣，javascript對象也有屬性來定義它的特徵。
 
-* 属性
+* 屬性
 
-一个 javascript 对象有很多属性。一个对象的属性可以被解释成一个附加到对象上的变量。对象的属性和普通的 javascript 变量基本没什么区别，仅仅是属性属于某个对象。属性定义了对象的特征(译注：动态语言面向对象的鸭子类型)。你可以通过点符号来访问一个对象的属性。JavaScript 对象的属性也可以通过方括号访问。
+一個 javascript 對象有很多屬性。一個對象的屬性可以被解釋成一個附加到對象上的變量。對象的屬性和普通的 javascript 變量基本沒什麼區別，僅僅是屬性屬於某個對象。屬性定義了對象的特徵(譯注：動態語言面向對象的鴨子類型)。你可以通過點符號來訪問一個對象的屬性。JavaScript 對象的屬性也可以通過方括號訪問。
 
-* 枚举
+* 枚舉
 
-你可以在 `for...in` 语句中使用方括号标记以枚举一个对象的所有属性。为了展示它如何工作，下面的函数当你将对象及其名称作为参数传入时，显示对象的属性：
+你可以在 `for...in` 語句中使用方括號標記以枚舉一個對象的所有屬性。為了展示它如何工作，下面的函數當你將對象及其名稱作為參數傳入時，顯示對象的屬性：
 
 ```js
 function showProps(obj, objName) {
@@ -295,18 +295,18 @@ srcObj.a = 2
 srcObj.b = [object Object]
 ```
 
-这里使用 `hasOwnProperty()` 是为了确保是自己的属性而非继承的属性。
+這裡使用 `hasOwnProperty()` 是為了確保是自己的屬性而非繼承的屬性。
 
-可以如下写，跳过这个对象的方法：
+可以如下寫，跳過這個對象的方法：
 
 ```js
 function showPropsWithoutFun(obj, objName) {
     var result = "";
     for (var i in obj) {
-        if (!obj.hasOwnProperty(i)) {       //跳过继承属性
+        if (!obj.hasOwnProperty(i)) {       //跳過繼承屬性
             continue;
         }
-        if (typeof obj[i] === "function") { //跳过这个对象的方法
+        if (typeof obj[i] === "function") { //跳過這個對象的方法
             continue;
         }
         result += objName + "." + i + "=" + obj[i] + "\n";
@@ -315,25 +315,25 @@ function showPropsWithoutFun(obj, objName) {
 }
 ```
 
-相关的方法还有：`Object.keys()`, `Object.getOwnPropertyNames()`
+相關的方法還有：`Object.keys()`, `Object.getOwnPropertyNames()`
 
-`Object.keys()` 方法会返回一个由给定对象的所有可枚举自身属性的属性名组成的数组，数组中属性名的排列顺序和使用for-in循环遍历该对象时返回的顺序一致（两者的主要区别是 for-in 还会遍历出一个对象从其原型链上继承到的可枚举属性）。
+`Object.keys()` 方法會返回一個由給定對象的所有可枚舉自身屬性的屬性名組成的數組，數組中屬性名的排列順序和使用for-in循環遍歷該對象時返回的順序一致（兩者的主要區別是 for-in 還會遍歷出一個對象從其原型鏈上繼承到的可枚舉屬性）。
 
-`Object.getOwnPropertyNames()` 方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性）组成的数组。
+`Object.getOwnPropertyNames()` 方法返回一個由指定對象的所有自身屬性的屬性名（包括不可枚舉屬性）組成的數組。
 
-* 创建对象
+* 創建對象
 
-创建对象的方式有三种：对象直接量，关键字 `new`，使用 `Object.create()` 方法。
+創建對象的方式有三種：對象直接量，關鍵字 `new`，使用 `Object.create()` 方法。
 
-`Object.create()` 方法创建一个拥有指定原型和若干个指定属性的对象。
+`Object.create()` 方法創建一個擁有指定原型和若干個指定屬性的對象。
 
-* 继承
+* 繼承
 
-所有的 JavaScript 对象继承于至少一个对象。被继承的对象被称作原型，并且继承的属性可能通过构造函数的 prototype 对象找到。
+所有的 JavaScript 對象繼承於至少一個對象。被繼承的對象被稱作原型，並且繼承的屬性可能通過構造函數的 prototype 對象找到。
 
-* 定义方法
+* 定義方法
 
-一个方法 是关联到某个对象的函数，或者简单地说，一个方法是一个值为某个函数的对象属性。定义方法就象定义普通的函数，除了它们必须被赋给对象的某个属性。例如：
+一個方法 是關聯到某個對象的函數，或者簡單地說，一個方法是一個值為某個函數的對象屬性。定義方法就象定義普通的函數，除了它們必須被賦給對象的某個屬性。例如：
 
 ```js
 objectName.methodname = function_name;
@@ -347,16 +347,16 @@ var myObj = {
 
 #### 深度克隆
 
-了解值类型和引用类型的区别，了解各种对象的读取、遍历方式，并在util.js中实现以下方法：
+了解值類型和引用類型的區別，了解各種對象的讀取、遍歷方式，並在util.js中實現以下方法：
 
 ```js
-// 使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
-// 被复制的对象类型会被限制为数字、字符串、布尔、日期、数组、Object对象。不会包含函数、正则对象等
+// 使用遞歸來實現一個深度克隆，可以複製一個目標對象，返回一個完整拷貝
+// 被複製的對象類型會被限制為數字、字符串、布爾、日期、數組、Object對象。不會包含函數、正則對象等
 function cloneObject(src) {
     // your implement
 }
 
-// 测试用例：
+// 測試用例：
 var srcObj = {
     a: 1,
     b: {
@@ -377,45 +377,45 @@ console.log(tarObj.a);      // 1
 console.log(tarObj.b.b1[0]);    // "hello"
 ```
 
-**参考：**
+**參考：**
 
-* [白话简单克隆和深度克隆](http://blog.csdn.net/java2000_net/article/details/3014934) 介绍什么是深度克隆，用羊圈和羊的图，简单深刻。如下图：
+* [白話簡單克隆和深度克隆](http://blog.csdn.net/java2000_net/article/details/3014934) 介紹什麼是深度克隆，用羊圈和羊的圖，簡單深刻。如下圖：
 
-![简单克隆](http://p.blog.csdn.net/images/p_blog_csdn_net/java2000_net/EntryImages/20081004/%E7%AE%80%E5%8D%95%E5%85%8B%E9%9A%86.PNG)
+![簡單克隆](http://p.blog.csdn.net/images/p_blog_csdn_net/java2000_net/EntryImages/20081004/%E7%AE%80%E5%8D%95%E5%85%8B%E9%9A%86.PNG)
 ![深度克隆](http://p.blog.csdn.net/images/p_blog_csdn_net/java2000_net/EntryImages/20081004/%E6%B7%B1%E5%BA%A6%E5%85%8B%E9%9A%86.PNG)
 
 
-* [javascript克隆对象深度介绍](http://www.jb51.net/article/32015.htm) 这个代码写的太妙了，可惜找不到源地址了，都是转载来转载去的，要是你知道源地址，请留言告诉我。
+* [javascript克隆對象深度介紹](http://www.jb51.net/article/32015.htm) 這個代碼寫的太妙了，可惜找不到源地址了，都是轉載來轉載去的，要是你知道源地址，請留言告訴我。
 
-浅度克隆：基本类型为值传递，对象仍为引用传递。
+淺度克隆：基本類型為值傳遞，對象仍為引用傳遞。
 
-深度克隆：所有元素或属性均完全克隆，并于原引用类型完全独立，即，在后面修改对象的属性的时候，原对象不会被修改。
+深度克隆：所有元素或屬性均完全克隆，並於原引用類型完全獨立，即，在後面修改對象的屬性的時候，原對象不會被修改。
 
-**思路：**深度克隆复制目标对象，那么就需要枚举这个对象。
+**思路：**深度克隆複製目標對象，那麼就需要枚舉這個對象。
 
-1. 判断当前属性是否是引用类型，如果是数组或者对象，创建相应类型变量。
-2. 枚举对象内所有属性。
-3. 使用 `hasOwnProperty()` 方法，排除继承的属性。
-4. 给新的对象相应位置赋值，若当前属性为引用类型（数组或对象）递归本方法。直到内部的值类型。
-5. 返回新的对象。
+1. 判斷當前屬性是否是引用類型，如果是數組或者對象，創建相應類型變量。
+2. 枚舉對象內所有屬性。
+3. 使用 `hasOwnProperty()` 方法，排除繼承的屬性。
+4. 給新的對象相應位置賦值，若當前屬性為引用類型（數組或對象）遞歸本方法。直到內部的值類型。
+5. 返回新的對象。
 
-**我的代码实现：**   
+**我的代碼實現：**   
 
 ```js
 function cloneObject(src) {
     // your implement
     var o; //result
     if (Object.prototype.toString.call(src) === "[object Array]") {
-        o = []; //判断是否是数组，并赋初始值
+        o = []; //判斷是否是數組，並賦初始值
     } else {
         o = {};
     }
-    for (var i in src) { //遍历这个对象
-        if (src.hasOwnProperty(i)) { //排出继承属性
+    for (var i in src) { //遍歷這個對象
+        if (src.hasOwnProperty(i)) { //排出繼承屬性
             if (typeof src[i] === "object") {
-                o[i] = cloneObject(src[i]); //递归赋值
+                o[i] = cloneObject(src[i]); //遞歸賦值
             } else {
-                o[i] = src[i]; //直接赋值
+                o[i] = src[i]; //直接賦值
             }
         }
     }
@@ -423,17 +423,17 @@ function cloneObject(src) {
 }
 ```
 
-### 对数组进行去重
+### 對數組進行去重
 
-**参考：**
+**參考：**
 
 * [MDN Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
-* [JavaScript Array 对象 w3school](http://www.w3school.com.cn/jsref/jsref_obj_array.asp)
+* [JavaScript Array 對象 w3school](http://www.w3school.com.cn/jsref/jsref_obj_array.asp)
 
 **要求：**
 
 ```js
-// 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
+// 對數組進行去重操作，只考慮數組中元素為數字或字符串，返回一個去重後的數組
 function uniqArray(arr) {
     // your implement
 }
@@ -446,91 +446,91 @@ console.log(b); // [1, 3, 5, 7]
 
 **思路：**
 
-1. 新建一个空数组
-2. 遍历原数组
-3. 若新数组中不存在当前元素，将其 `push` 入新数组中
-4. 返回新数组
+1. 新建一個空數組
+2. 遍歷原數組
+3. 若新數組中不存在當前元素，將其 `push` 入新數組中
+4. 返回新數組
 
-**实现：**
+**實現：**
 
 ```js
-// 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
+// 對數組進行去重操作，只考慮數組中元素為數字或字符串，返回一個去重後的數組
 function uniqArray(arr) {
-    var newArr = [];    //创建空数组
-    for (var i in arr) {    //遍历旧数组
-        if (newArr.indexOf(arr[i]) == -1) {//如果新数组中不存在当前元素
-            newArr.push(arr[i]);//新数组中加入当前元素
+    var newArr = [];    //創建空數組
+    for (var i in arr) {    //遍歷舊數組
+        if (newArr.indexOf(arr[i]) == -1) {//如果新數組中不存在當前元素
+            newArr.push(arr[i]);//新數組中加入當前元素
         }
     }
     return newArr;
 }
 ```
 
-**相关方法与知识点：**
+**相關方法與知識點：**
 
-#### Array 对象
+#### Array 對象
 
-* Array 对象属性
+* Array 對象屬性
 
-属性  | 描述
-constructor | 返回对创建此对象的数组函数的引用。
-length  | 设置或返回数组中元素的数目。
-prototype  |  使您有能力向对象添加属性和方法。
+屬性  | 描述
+constructor | 返回對創建此對象的數組函數的引用。
+length  | 設置或返回數組中元素的數目。
+prototype  |  使您有能力向對象添加屬性和方法。
 
-* Mutator 方法，这些方法可以改变数组自身
+* Mutator 方法，這些方法可以改變數組自身
 
 方法 | 描述
-pop | 移除数组的最后一个元素，返回值是被删除的元素。
-push | 在数组的末尾添加一个或者多个元素，返回值是新的数组的长度。
-reverse | 颠倒数组中元素的顺序，原先第一个元素现在变成最后一个，同样原先的最后一个元素变成了现在的第一个，也就是数组的索引发生了变化。
-shift | 删除数组的第一个元素，返回值是删除的元素。
-sort | 对数组中的元素进行排序。
-splice | 添加或删除数组中的一个或多个元素。
-unshift | 添加一个或者多个元素在数组的开头，返回值是新的数组的长度。
+pop | 移除數組的最後一個元素，返回值是被刪除的元素。
+push | 在數組的末尾添加一個或者多個元素，返回值是新的數組的長度。
+reverse | 顛倒數組中元素的順序，原先第一個元素現在變成最後一個，同樣原先的最後一個元素變成了現在的第一個，也就是數組的索引發生了變化。
+shift | 刪除數組的第一個元素，返回值是刪除的元素。
+sort | 對數組中的元素進行排序。
+splice | 添加或刪除數組中的一個或多個元素。
+unshift | 添加一個或者多個元素在數組的開頭，返回值是新的數組的長度。
 
-* Accessor 方法，这些过程不改变数组自身 These methods do not modify the array and return some representation of the array.
+* Accessor 方法，這些過程不改變數組自身 These methods do not modify the array and return some representation of the array.
 
 方法|描述
-concat | 返回一个包含此数组和其他数组和/或值的结合的新数组
-indexOf | 返回第一个与给定参数相等的数组元素的索引，没有找到则返回-1。
-join | 将所有的数组元素连接成一个字符串。
-lastIndexOf | 返回在数组中搜索到的与给定参数相等的元素的最后（最大）索引。
-slice | 返回数组中的一段。
+concat | 返回一個包含此數組和其他數組和/或值的結合的新數組
+indexOf | 返回第一個與給定參數相等的數組元素的索引，沒有找到則返回-1。
+join | 將所有的數組元素連接成一個字符串。
+lastIndexOf | 返回在數組中搜索到的與給定參數相等的元素的最後（最大）索引。
+slice | 返回數組中的一段。
 toSource | Returns an array literal representing the specified array; you can use this value to create a new array. Overrides the Object.toSource method.
-toString | 返回代表该数组及其元素的字符,重写Object.toString 过程.
+toString | 返回代表該數組及其元素的字符,重寫Object.toString 過程.
 valueOf | Returns the primitive value of the array. Overrides the Object.valueOf method.
 
-* 循环（迭代）过程
+* 循環（迭代）過程
 
 方法 | 描述
-filter | 对数组中的每一个元素调用参数中指定的过滤函数，并将对于过滤函数返回值为true的那些数组元素集合为新的数组返回。
-forEach | 对数组的每一个元素依次调用参数中指定的函数。
-every | 如果数组中每一个元素都满足参数中提供的测试函数，则返回真。
+filter | 對數組中的每一個元素調用參數中指定的過濾函數，並將對於過濾函數返回值為true的那些數組元素集合為新的數組返回。
+forEach | 對數組的每一個元素依次調用參數中指定的函數。
+every | 如果數組中每一個元素都滿足參數中提供的測試函數，則返回真。
 map | Creates a new array with the results of calling a provided function on every element in this array.
-some | 如果数组中至少有一个元素满足参数函数的测试，则返回true。
+some | 如果數組中至少有一個元素滿足參數函數的測試，則返回true。
 
 
-### 实现 `trim()`
+### 實現 `trim()`
 
-**参考：**
+**參考：**
 
 * [String MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String)
-* [JavaScript String 对象 W3school](http://www.w3school.com.cn/jsref/jsref_obj_string.asp)
+* [JavaScript String 對象 W3school](http://www.w3school.com.cn/jsref/jsref_obj_string.asp)
 
 **要求：**
 
 ```js
-// 中级班同学跳过此题
-// 实现一个简单的trim函数，用于去除一个字符串，头部和尾部的空白字符
+// 中級班同學跳過此題
+// 實現一個簡單的trim函數，用於去除一個字符串，頭部和尾部的空白字符
 // 假定空白字符只有半角空格、Tab
-// 练习通过循环，以及字符串的一些基本方法，分别扫描字符串str头部和尾部是否有连续的空白字符，并且删掉他们，最后返回一个完成去除的字符串
+// 練習通過循環，以及字符串的一些基本方法，分別掃描字符串str頭部和尾部是否有連續的空白字符，並且刪掉他們，最後返回一個完成去除的字符串
 function simpleTrim(str) {
     // your implement
 }
 
-// 很多同学肯定对于上面的代码看不下去，接下来，我们真正实现一个trim
-// 对字符串头尾进行空格字符的去除、包括全角半角空格、Tab等，返回一个字符串
-// 尝试使用一行简洁的正则表达式完成该题目
+// 很多同學肯定對於上面的代碼看不下去，接下來，我們真正實現一個trim
+// 對字符串頭尾進行空格字符的去除、包括全角半角空格、Tab等，返回一個字符串
+// 嘗試使用一行簡潔的正則表達式完成該題目
 function trim(str) {
     // your implement
 }
@@ -543,24 +543,24 @@ console.log(str); // 'hi!'
 
 **思路：**
 
-对于 `simpleTrim()` 做两次循环，从前面开始和从后面开始。遇到空格和Tab跳出，最后用 `slice()` 取出子字符串。
+對於 `simpleTrim()` 做兩次循環，從前面開始和從後面開始。遇到空格和Tab跳出，最後用 `slice()` 取出子字符串。
 
-对于 `trim()` 使用正则表达式。
+對於 `trim()` 使用正則表達式。
 
-**实现：**
+**實現：**
 
 ```js
 function simpleTrim(str) {
     var i;
     var j;
-    for (i = 0; i < str.length; i++) { //从头遍历字符串
-        if (str.charAt(i) != " " && str.charAt(i) != "\t") { //当不为空的时候
-            break; //跳出循环
+    for (i = 0; i < str.length; i++) { //從頭遍歷字符串
+        if (str.charAt(i) != " " && str.charAt(i) != "\t") { //當不為空的時候
+            break; //跳出循環
         }
     }
     for (j = str.length - 1; j >= 0; j--) {
-        if (str.charAt(j) != " " && str.charAt(j) != "\t") { //当不为空的时候
-            break; //跳出循环
+        if (str.charAt(j) != " " && str.charAt(j) != "\t") { //當不為空的時候
+            break; //跳出循環
         }
     }
     return str.slice(i, j + 1); //返回子字符串
@@ -571,72 +571,72 @@ function trim(str) {
 }
 ```
 
-关于正则表达式：
+關於正則表達式：
 
-#### 正则表达式
+#### 正則表達式
 
-上面的思路是匹配开头和结尾的空白字符，并全局匹配。
+上面的思路是匹配開頭和結尾的空白字符，並全局匹配。
 
-* `^`：匹配字符串的开头，在多行检索中，匹配一行的开头。
-* `$`：匹配字符串的结尾，在多行检索中，匹配一行的结尾。
-* `|`：选择，匹配的是该符号左边的子表达式或右边的子表达式。
+* `^`：匹配字符串的開頭，在多行檢索中，匹配一行的開頭。
+* `$`：匹配字符串的結尾，在多行檢索中，匹配一行的結尾。
+* `|`：選擇，匹配的是該符號左邊的子表達式或右邊的子表達式。
 * `\s`：任何 Unicode 空白符。
-* `g`：执行一个全局匹配，简言之，即找到所有匹配，而不是找到第一个之后就停止。
+* `g`：執行一個全局匹配，簡言之，即找到所有匹配，而不是找到第一個之後就停止。
 
-以上来自 JavaScript权威指南（犀牛书），感觉这里面将的正则表达式还不错。
+以上來自 JavaScript權威指南（犀牛書），感覺這裡面將的正則表達式還不錯。
 
-**相关方法和知识点：**
+**相關方法和知識點：**
 
-#### String对象
+#### String對象
 
-* String 对象属性
+* String 對象屬性
 
-属性 | 描述
-constructor | 对创建该对象的函数的引用
-length | 字符串的长度
-prototype  | 允许您向对象添加属性和方法
+屬性 | 描述
+constructor | 對創建該對象的函數的引用
+length | 字符串的長度
+prototype  | 允許您向對象添加屬性和方法
 
-* String 对象方法
+* String 對象方法
 
 方法 | 描述
 charAt()  |  返回在指定位置的字符。
-charCodeAt()  |  返回在指定的位置的字符的 Unicode 编码。
-concat()  |  连接字符串。
-indexOf() |  检索字符串。
-lastIndexOf()  | 从后向前搜索字符串。
-localeCompare() | 用本地特定的顺序来比较两个字符串。
-match()| 找到一个或多个正则表达式的匹配。
-replace() |  替换与正则表达式匹配的子串。
-search()  |  检索与正则表达式相匹配的值。
-slice()| 提取字符串的片断，并在新的字符串中返回被提取的部分。
-split()| 把字符串分割为字符串数组。
-substr()  |  从起始索引号提取字符串中指定数目的字符。
-substring() |提取字符串中两个指定的索引号之间的字符。
-toLowerCase() |  把字符串转换为小写。
-toUpperCase()  | 把字符串转换为大写。
+charCodeAt()  |  返回在指定的位置的字符的 Unicode 編碼。
+concat()  |  連接字符串。
+indexOf() |  檢索字符串。
+lastIndexOf()  | 從後向前搜索字符串。
+localeCompare() | 用本地特定的順序來比較兩個字符串。
+match()| 找到一個或多個正則表達式的匹配。
+replace() |  替換與正則表達式匹配的子串。
+search()  |  檢索與正則表達式相匹配的值。
+slice()| 提取字符串的片斷，並在新的字符串中返回被提取的部分。
+split()| 把字符串分割為字符串數組。
+substr()  |  從起始索引號提取字符串中指定數目的字符。
+substring() |提取字符串中兩個指定的索引號之間的字符。
+toLowerCase() |  把字符串轉換為小寫。
+toUpperCase()  | 把字符串轉換為大寫。
 toString() | 返回字符串。
-valueOf()  | 返回某个字符串对象的原始值。
+valueOf()  | 返回某個字符串對象的原始值。
 
-* 静态方法
+* 靜態方法
 
-`String.fromCharCode()` 使用作为参数传入的字符编码创建一个新的字符串。
+`String.fromCharCode()` 使用作為參數傳入的字符編碼創建一個新的字符串。
 
 * HTML方法
 
-由于不是标准方法，这里就不列举了。
+由於不是標準方法，這裡就不列舉了。
 
 
-### 遍历数组，使每一个元素执行 `fn` 函数
+### 遍歷數組，使每一個元素執行 `fn` 函數
 
 **要求：**
 
 ```js
-// 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
+// 實現一個遍歷數組的方法，針對數組中每一個元素執行fn函數，並將數組索引和元素作為參數傳遞
 function each(arr, fn) {
     // your implement
 }
 
-// 其中fn函数可以接受两个参数：item和index
+// 其中fn函數可以接受兩個參數：item和index
 
 // 使用示例
 var arr = ['java', 'c', 'php', 'html'];
@@ -655,9 +655,9 @@ each(arr, output);  // 0:java, 1:c, 2:php, 3:html
 
 **分析：**
 
-这个任务有点像 `ECMAScript5` 中新增的数组方法：`forEach()`。还有一点这里的参数 index 是可选形参，保证第一个参数 item 能正常传入就行了，代码非常简单，如下：
+這個任務有點像 `ECMAScript5` 中新增的數組方法：`forEach()`。還有一點這裡的參數 index 是可選形參，保證第一個參數 item 能正常傳入就行了，代碼非常簡單，如下：
 
-**实现：**
+**實現：**
 
 ```js
 function each(arr, fn) {
@@ -667,12 +667,12 @@ function each(arr, fn) {
 }
 ```
 
-### 获取对象中第一层元素个数
+### 獲取對象中第一層元素個數
 
 **要求：**
 
 ```js
-// 获取一个对象里面第一层元素的数量，返回一个整数
+// 獲取一個對象裡面第一層元素的數量，返回一個整數
 function getObjectLength(obj) {}
 
 // 使用示例
@@ -687,7 +687,7 @@ var obj = {
 console.log(getObjectLength(obj)); // 3
 ```
 
-**实现：**
+**實現：**
 
 ```js
 function getObjectLength(obj) {
@@ -695,20 +695,20 @@ function getObjectLength(obj) {
 }
 ```
 
-这个自己写的比较简单，不知道可以这样写不。其中 `Object.keys(o)` 为 Object 的一个静态方法，参数是一个对象，返回一个包含o的所有可枚举自有（非继承）属性名字的数组。
+這個自己寫的比較簡單，不知道可以這樣寫不。其中 `Object.keys(o)` 為 Object 的一個靜態方法，參數是一個對象，返回一個包含o的所有可枚舉自有（非繼承）屬性名字的數組。
 
 
-### 正则表达式
+### 正則表達式
 
 **要求：**
 
 ```js
-// 判断是否为邮箱地址
+// 判斷是否為郵箱地址
 function isEmail(emailStr) {
     // your implement
 }
 
-// 判断是否为手机号
+// 判斷是否為手機號
 function isMobilePhone(phone) {
     // your implement
 }
@@ -716,108 +716,108 @@ function isMobilePhone(phone) {
 
 **分析：**
 
-邮箱由（数字字母，点），数字字母组合，@符号，数字字母，（点，数字字母）。其中两个小括号都是任意个数的。并且开头和结尾都是字母。
+郵箱由（數字字母，點），數字字母組合，@符號，數字字母，（點，數字字母）。其中兩個小括號都是任意個數的。並且開頭和結尾都是字母。
 
-手机号是11位组成的，有时候会在前面加国际区号的前缀，如中国：+86。查阅相关资料后发现区号最多4位。[国际电话区号_百度百科](http://baike.baidu.com/link?url=2nwM_XyoKXLNPxk0-uDwGT4SxIFncXy7dqB3VbsH3tSaueYRri3CYOWWF9qb84zUqeKkq9uTF2YfetoiyJVm7_)
+手機號是11位組成的，有時候會在前面加國際區號的前綴，如中國：+86。查閱相關資料後發現區號最多4位。[國際電話區號_百度百科](http://baike.baidu.com/link?url=2nwM_XyoKXLNPxk0-uDwGT4SxIFncXy7dqB3VbsH3tSaueYRri3CYOWWF9qb84zUqeKkq9uTF2YfetoiyJVm7_)
 
-并且手机号最多就是11位，其他国家有用8位的，也有用7位，10位的都有。最短是7位，最长是11位。
+並且手機號最多就是11位，其他國家有用8位的，也有用7位，10位的都有。最短是7位，最長是11位。
 
-**实现：**
+**實現：**
 
 ```js
-// 判断是否为邮箱地址
+// 判斷是否為郵箱地址
 function isEmail(emailStr) {
     var pattern = /^(\w+\.)*\w+@\w+(\.\w+)+$/;
     return pattern.test(emailStr);
 }
 
-// 判断是否为手机号
+// 判斷是否為手機號
 function isMobilePhone(phone) {
     var pattern = /^(\+\d{1,4})?\d{7,11}$/;
     return pattern.test(phone);
 }
 ```
 
-**相关方法和知识点：**
+**相關方法和知識點：**
 
-* 参考：[RegExp MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp#Special_characters_in_regular_expressions)
-* 正则表达式修饰符：
+* 參考：[RegExp MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp#Special_characters_in_regular_expressions)
+* 正則表達式修飾符：
 
-字符 | 含义
+字符 | 含義
 g | 全局匹配
-i | 忽略大小写
-m | 让开始和结束字符（^ 和 $）工作在多行模式（也就是，^ 和 $ 可以匹配字符串中每一行的开始和结束（行是由 \n 或 \r 分割的），而不只是整个输入字符串的最开始和最末尾处。
+i | 忽略大小寫
+m | 讓開始和結束字符（^ 和 $）工作在多行模式（也就是，^ 和 $ 可以匹配字符串中每一行的開始和結束（行是由 \n 或 \r 分割的），而不只是整個輸入字符串的最開始和最末尾處。
 
-* 字符类别
+* 字符類別
 
-字符 |  含义
-[...]|方括号内的任意字符
-[^...]|不在方括号内的任意字符
-. | （点号，小数点）匹配任意单个字符，但是换行符除外，包括：\n \r \u2028 或 \u2029。<br><br>需要注意的是，m 多行（multiline）标志不会改变点号的表现。因此为了匹配多行中的字符集，可使用[^] （当然你不是打算用在旧版本 IE 中），它将会匹配任意字符，包括换行符<br><br>例如，/.y/ 匹配 "yes make my day" 中的 "my" 和 "ay"，但是不匹配 "yes"。
-\d | 匹配基本拉丁字母表（basic Latin alphabet）中的一个数字字符。等价于[0-9]。<br><br>例如，/\d/ 或 /[0-9]/ 匹配 "B2 is the suite number." 中的 '2'。
-\D | 匹配任意一个不是基本拉丁字母表中数字的字符。等价于[^0-9]。<br><br>例如，/\D/ 或 /[^0-9]/ 匹配 "B2 is the suite number." 中的 'B'。
-\w | 匹配任意来自基本拉丁字母表中的字母数字字符，还包括下划线。等价于 [A-Za-z0-9_]。<br><br>例如，/\w/ 匹配 "apple" 中的 'a'，"$5.28" 中的 '5' 和 "3D" 中的 '3'。
-\W | 匹配任意不是基本拉丁字母表中单词（字母数字下划线）字符的字符。等价于 [^A-Za-z0-9_]。<br><br>例如，/\W/ 或 /[^A-Za-z0-9_]/ 匹配 "50%" 中的 '%'。
-\s | 匹配一个空白符，包括空格、制表符、换页符、换行符和其他 Unicode 空格。<br><br>等价于 [ \f\n\r\t\v​\u00a0\u1680​\u180e\u2000​\u2001\u2002​\u2003\u2004​ \u2005\u2006​\u2007\u2008​\u2009\u200a​\u2028\u2029​​\u202f\u205f​ \u3000]。<br><br>例如 /\s\w*/ 匹配 "foo bar" 中的 ' bar'。
-\S | 匹配一个非空白符。等价于 [^ \f\n\r\t\v​\u00a0\u1680​\u180e\u2000​\u2001\u2002​\u2003\u2004​ \u2005\u2006​\u2007\u2008​\u2009\u200a​\u2028\u2029​\u202f\u205f​\u3000]。<br><br>例如，/\S\w*/ 匹配 "foo bar" 中的 'foo'。
-[\b] | 匹配一个退格符（backspace）（不要与 \b 混淆）
+字符 |  含義
+[...]|方括號內的任意字符
+[^...]|不在方括號內的任意字符
+. | （點號，小數點）匹配任意單個字符，但是換行符除外，包括：\n \r \u2028 或 \u2029。<br><br>需要注意的是，m 多行（multiline）標誌不會改變點號的表現。因此為了匹配多行中的字符集，可使用[^] （當然你不是打算用在舊版本 IE 中），它將會匹配任意字符，包括換行符<br><br>例如，/.y/ 匹配 "yes make my day" 中的 "my" 和 "ay"，但是不匹配 "yes"。
+\d | 匹配基本拉丁字母表（basic Latin alphabet）中的一個數字字符。等價於[0-9]。<br><br>例如，/\d/ 或 /[0-9]/ 匹配 "B2 is the suite number." 中的 '2'。
+\D | 匹配任意一個不是基本拉丁字母表中數字的字符。等價於[^0-9]。<br><br>例如，/\D/ 或 /[^0-9]/ 匹配 "B2 is the suite number." 中的 'B'。
+\w | 匹配任意來自基本拉丁字母表中的字母數字字符，還包括下劃線。等價於 [A-Za-z0-9_]。<br><br>例如，/\w/ 匹配 "apple" 中的 'a'，"$5.28" 中的 '5' 和 "3D" 中的 '3'。
+\W | 匹配任意不是基本拉丁字母表中單詞（字母數字下劃線）字符的字符。等價於 [^A-Za-z0-9_]。<br><br>例如，/\W/ 或 /[^A-Za-z0-9_]/ 匹配 "50%" 中的 '%'。
+\s | 匹配一個空白符，包括空格、制表符、換頁符、換行符和其他 Unicode 空格。<br><br>等價於 [ \f\n\r\t\v​\u00a0\u1680​\u180e\u2000​\u2001\u2002​\u2003\u2004​ \u2005\u2006​\u2007\u2008​\u2009\u200a​\u2028\u2029​​\u202f\u205f​ \u3000]。<br><br>例如 /\s\w*/ 匹配 "foo bar" 中的 ' bar'。
+\S | 匹配一個非空白符。等價於 [^ \f\n\r\t\v​\u00a0\u1680​\u180e\u2000​\u2001\u2002​\u2003\u2004​ \u2005\u2006​\u2007\u2008​\u2009\u200a​\u2028\u2029​\u202f\u205f​\u3000]。<br><br>例如，/\S\w*/ 匹配 "foo bar" 中的 'foo'。
+[\b] | 匹配一個退格符（backspace）（不要與 \b 混淆）
 
 * 直接量字符
 
 字符| 匹配
-数字和字母字符|自身
-\t | 匹配一个水平制表符（tab）
-\r | 匹配一个回车符（carriage return）
-\n | 匹配一个换行符（linefeed）
-\v | 匹配一个垂直制表符（vertical tab）
-\f | 匹配一个换页符（form-feed）
-\0 | 匹配一个 NUL 字符。不要在此后面跟小数点。
-\cX |X 是 A - Z 的一个字母。匹配字符串中的一个控制字符。<br><br>例如，/\cM/ 匹配字符串中的 control-M。
-\xhh  |  匹配编码为 hh （两个十六进制数字）的字符。
-\uhhhh | 匹配 Unicode 值为 hhhh （四个十六进制数字）的字符。
+數字和字母字符|自身
+\t | 匹配一個水平制表符（tab）
+\r | 匹配一個迴車符（carriage return）
+\n | 匹配一個換行符（linefeed）
+\v | 匹配一個垂直制表符（vertical tab）
+\f | 匹配一個換頁符（form-feed）
+\0 | 匹配一個 NUL 字符。不要在此後面跟小數點。
+\cX |X 是 A - Z 的一個字母。匹配字符串中的一個控制字符。<br><br>例如，/\cM/ 匹配字符串中的 control-M。
+\xhh  |  匹配編碼為 hh （兩個十六進制數字）的字符。
+\uhhhh | 匹配 Unicode 值為 hhhh （四個十六進制數字）的字符。
 
-* 边界
+* 邊界
 
-字符|  含义
-^  |匹配输入/字符串的开始。如果多行（multiline）标志被设为 true，该字符也会匹配一个断行（line break）符后的开始处。<br><br>例如，/^A/ 不匹配 "an A" 中的 "A"，但匹配 "An A" 中的 "A"。
-$   |匹配输入/字符串的结尾。如果多行（multiline）标志被设为 true，该字符也会匹配一个断行（line break）符的前的结尾处。<br><br>例如，/t$/ 不匹配 "eater" 中的 "t"，但匹配 "eat" 中的 "t"。
-\b  |匹配一个零宽单词边界（zero-width word boundary），如一个字母与一个空格之间。 （不要和 [\b] 混淆）<br><br>例如，/\bno/ 匹配 "at noon" 中的 "no"，/ly\b/ 匹配 "possibly yesterday." 中的 "ly"。
-\B  |匹配一个零宽非单词边界（zero-width non-word boundary），如两个字母之间或两个空格之间。<br><br>例如，/\Bon/ 匹配 "at noon" 中的 "on"，/ye\B/ 匹配 "possibly yesterday." 中的 "ye"。
+字符|  含義
+^  |匹配輸入/字符串的開始。如果多行（multiline）標誌被設為 true，該字符也會匹配一個斷行（line break）符後的開始處。<br><br>例如，/^A/ 不匹配 "an A" 中的 "A"，但匹配 "An A" 中的 "A"。
+$   |匹配輸入/字符串的結尾。如果多行（multiline）標誌被設為 true，該字符也會匹配一個斷行（line break）符的前的結尾處。<br><br>例如，/t$/ 不匹配 "eater" 中的 "t"，但匹配 "eat" 中的 "t"。
+\b  |匹配一個零寬單詞邊界（zero-width word boundary），如一個字母與一個空格之間。 （不要和 [\b] 混淆）<br><br>例如，/\bno/ 匹配 "at noon" 中的 "no"，/ly\b/ 匹配 "possibly yesterday." 中的 "ly"。
+\B  |匹配一個零寬非單詞邊界（zero-width non-word boundary），如兩個字母之間或兩個空格之間。<br><br>例如，/\Bon/ 匹配 "at noon" 中的 "on"，/ye\B/ 匹配 "possibly yesterday." 中的 "ye"。
 
 
 ## DOM
 
-参考：
+參考：
 
 * [HTML DOM 教程 W3C](http://www.w3school.com.cn/htmldom/index.asp)
 * [JavaScript HTML DOM W3C](http://www.w3school.com.cn/js/js_htmldom.asp)
-* [参考手册-HTML DOM Document 对象](http://www.w3school.com.cn/jsref/dom_obj_document.asp)
-* [参考手册-HTML DOM Element 对象](http://www.w3school.com.cn/jsref/dom_obj_all.asp)
+* [參考手冊-HTML DOM Document 對象](http://www.w3school.com.cn/jsref/dom_obj_document.asp)
+* [參考手冊-HTML DOM Element 對象](http://www.w3school.com.cn/jsref/dom_obj_all.asp)
 
 
-### 基本任务
+### 基本任務
 
-**任务：**
+**任務：**
 
-先来一些简单的，在你的util.js中完成以下任务：
+先來一些簡單的，在你的util.js中完成以下任務：
 
 ```js
-// 为element增加一个样式名为newClassName的新样式
+// 為element增加一個樣式名為newClassName的新樣式
 function addClass(element, newClassName) {
     // your implement
 }
 
-// 移除element中的样式oldClassName
+// 移除element中的樣式oldClassName
 function removeClass(element, oldClassName) {
     // your implement
 }
 
-// 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
+// 判斷siblingNode和element是否為同一個父元素下的同一級的元素，返回bool值
 function isSiblingNode(element, siblingNode) {
     // your implement
 }
 
-// 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
+// 獲取element相對於瀏覽器窗口的位置，返回一個對象{x, y}
 function getPosition(element) {
     // your implement
 }
@@ -827,62 +827,62 @@ function getPosition(element) {
 
 * `addClass()`
 
-    对于element本身如果没有样式类，那么使用Element的className属性获取的是空字符串，则直接添加新的样式类字符串即可。对于已经有了样式类的元素，获取到原有的样式类后，在后面添加一个空格，再添加新的样式类即可。
+    對於element本身如果沒有樣式類，那麼使用Element的className屬性獲取的是空字符串，則直接添加新的樣式類字符串即可。對於已經有了樣式類的元素，獲取到原有的樣式類後，在後面添加一個空格，再添加新的樣式類即可。
 
 * `removeClass()`
 
-    获取原始的样式，然后用正则表达式去匹配这个要删掉的样式，由于是动态的正则表达式，所以要用正则的构造函数 `RegExp()` 来创建，并且使用 `\b` 来确定单词边界。匹配好后用空字符串替换被匹配的样式类即可。
+    獲取原始的樣式，然後用正則表達式去匹配這個要刪掉的樣式，由於是動態的正則表達式，所以要用正則的構造函數 `RegExp()` 來創建，並且使用 `\b` 來確定單詞邊界。匹配好後用空字符串替換被匹配的樣式類即可。
 
 * `isSiblingNode()`
 
-    直接判断两个父节点是不是相同
+    直接判斷兩個父節點是不是相同
 
 * `getPosition()`
 
-    下面这些内容是我之前的思路，现在觉得太复杂，可以用另一种解决方法。
+    下面這些內容是我之前的思路，現在覺得太複雜，可以用另一種解決方法。
 
-    > `offsetTop`, `offsetLeft` 都是相对于最近一个有定位的父元素，如果都没有那么就是相对于 body 的偏移位置。
+    > `offsetTop`, `offsetLeft` 都是相對於最近一個有定位的父元素，如果都沒有那麼就是相對於 body 的偏移位置。
     >
-    > `offsetParent` 是寻找最近一个有定位的父级元素，如果没有，那么找到 body 元素。
+    > `offsetParent` 是尋找最近一個有定位的父級元素，如果沒有，那麼找到 body 元素。
     >
-    > 所以这道题需要先寻找有定位的父级元素，如果都没有，那么就是相对于 body 的偏移了，可以直接使用 `offsetTop`, `offsetLeft`。
+    > 所以這道題需要先尋找有定位的父級元素，如果都沒有，那麼就是相對於 body 的偏移了，可以直接使用 `offsetTop`, `offsetLeft`。
     >
-    > 如果有定位的父级元素不是 body，是 A 元素，那么再寻找 A 元素的最近的有定位的父级元素，如果没有，就是相对于 body 的定位，这时，所求偏移量就是 A 的偏移量加所求元素相对于 A 的偏移量。如果 A 还有已经定位的父级元素，就继续去推，直到找到 body 为止。
+    > 如果有定位的父級元素不是 body，是 A 元素，那麼再尋找 A 元素的最近的有定位的父級元素，如果沒有，就是相對於 body 的定位，這時，所求偏移量就是 A 的偏移量加所求元素相對於 A 的偏移量。如果 A 還有已經定位的父級元素，就繼續去推，直到找到 body 為止。
     >
-    > 这里可能要用到一个递归算法。
+    > 這裡可能要用到一個遞歸算法。
 
-    **另一种方法：**
+    **另一種方法：**
 
-    使用 `getBoundingClientRect()` 方法获取当前元素相对于可视区域的位置，再加上滚动条的位置。
+    使用 `getBoundingClientRect()` 方法獲取當前元素相對於可視區域的位置，再加上滾動條的位置。
 
-    关于滚动条的位置 `scrollTop`, `scrollLeft` 这两个属性的使用，各个浏览器还都不一样。
+    關於滾動條的位置 `scrollTop`, `scrollLeft` 這兩個屬性的使用，各個瀏覽器還都不一樣。
 
-    * 详情见 [document.body.scrollTop or document.documentElement.scrollTop](http://www.cnblogs.com/zhenyu-whu/archive/2012/11/13/2768004.html)。
+    * 詳情見 [document.body.scrollTop or document.documentElement.scrollTop](http://www.cnblogs.com/zhenyu-whu/archive/2012/11/13/2768004.html)。
 
-    简单的说就是：FF、Opera 和 IE 浏览器认为在客户端浏览器展示的页面的内容对应于整个 HTML，所以使用 `document.documentElement`来代表，相应的滚动距离则通过 `document.documentElement.scrollLeft` 和 `document.documentElement.scrollTop` 来获取，而 Safari 和 Chrome 浏览器则认为页面开始于 body 部分，从而相应的滚动距离用 `document.body.scrollLeft` 和 `document.body.scrollTop` 来获取。另外需要注意的是，FF 和 IE 的 quirks mode（兼容模式）下是用 `document.body` 来获取的。
+    簡單的說就是：FF、Opera 和 IE 瀏覽器認為在客戶端瀏覽器展示的頁面的內容對應於整個 HTML，所以使用 `document.documentElement`來代表，相應的滾動距離則通過 `document.documentElement.scrollLeft` 和 `document.documentElement.scrollTop` 來獲取，而 Safari 和 Chrome 瀏覽器則認為頁面開始於 body 部分，從而相應的滾動距離用 `document.body.scrollLeft` 和 `document.body.scrollTop` 來獲取。另外需要注意的是，FF 和 IE 的 quirks mode（兼容模式）下是用 `document.body` 來獲取的。
 
-    documentElement 对应的是 html 标签，而 body 对应的是 body 标签
+    documentElement 對應的是 html 標籤，而 body 對應的是 body 標籤
 
-    针对跨浏览器的解决方案则可简单的用如下代码获取：
+    針對跨瀏覽器的解決方案則可簡單的用如下代碼獲取：
 
 ```js
 var scrollLeft = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
 var scrollTop = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
 ```
 
-**实现：**
+**實現：**
 
 ```js
-// 为element增加一个样式名为newClassName的新样式
+// 為element增加一個樣式名為newClassName的新樣式
 function addClass(element, newClassName) {
-    var oldClassName = element.className; //获取旧的样式类
+    var oldClassName = element.className; //獲取舊的樣式類
     element.className = oldClassName === "" ? newClassName : oldClassName + " " + newClassName;
 }
 
-// 移除element中的样式oldClassName
+// 移除element中的樣式oldClassName
 function removeClass(element, oldClassName) {
-    var originClassName = element.className; //获取原先的样式类
-    var pattern = new RegExp("\\b" + oldClassName + "\\b"); //使用构造函数构造动态的正则表达式
+    var originClassName = element.className; //獲取原先的樣式類
+    var pattern = new RegExp("\\b" + oldClassName + "\\b"); //使用構造函數構造動態的正則表達式
     element.className = originClassName.replace(pattern, '');
 }
 
@@ -900,54 +900,54 @@ function getPosition(element) {
 
 ### mini $
 
-**任务：**
+**任務：**
 
-接下来挑战一个mini $，它和之前的$是不兼容的，它应该是document.querySelector的功能子集，在不直接使用document.querySelector的情况下，在你的util.js中完成以下任务：
+接下來挑戰一個mini $，它和之前的$是不兼容的，它應該是document.querySelector的功能子集，在不直接使用document.querySelector的情況下，在你的util.js中完成以下任務：
 
 ```js
-// 实现一个简单的Query
+// 實現一個簡單的Query
 function $(selector) {
 
 }
 
-// 可以通过id获取DOM对象，通过#标示，例如
-$("#adom"); // 返回id为adom的DOM对象
+// 可以通過id獲取DOM對象，通過#標示，例如
+$("#adom"); // 返回id為adom的DOM對象
 
-// 可以通过tagName获取DOM对象，例如
-$("a"); // 返回第一个<a>对象
+// 可以通過tagName獲取DOM對象，例如
+$("a"); // 返回第一個<a>對象
 
-// 可以通过样式名称获取DOM对象，例如
-$(".classa"); // 返回第一个样式定义包含classa的对象
+// 可以通過樣式名稱獲取DOM對象，例如
+$(".classa"); // 返回第一個樣式定義包含classa的對象
 
-// 可以通过attribute匹配获取DOM对象，例如
-$("[data-log]"); // 返回第一个包含属性data-log的对象
+// 可以通過attribute匹配獲取DOM對象，例如
+$("[data-log]"); // 返回第一個包含屬性data-log的對象
 
-$("[data-time=2015]"); // 返回第一个包含属性data-time且值为2015的对象
+$("[data-time=2015]"); // 返回第一個包含屬性data-time且值為2015的對象
 
-// 可以通过简单的组合提高查询便利性，例如
-$("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第一个样式定义包含classa的对象
+// 可以通過簡單的組合提高查詢便利性，例如
+$("#adom .classa"); // 返回id為adom的DOM所包含的所有子節點中，第一個樣式定義包含classa的對象
 ```
 
-**参考：**
+**參考：**
 
-* [Sizzle选择器](http://www.imooc.com/code/4477)
-* [Sizzle引擎--原理与实践（一）](http://www.cnblogs.com/xesam/archive/2012/02/15/2352466.html)
-* [Sizzle是怎样工作的](http://www.cnblogs.com/rubylouvre/archive/2011/01/24/1942818.html)
+* [Sizzle選擇器](http://www.imooc.com/code/4477)
+* [Sizzle引擎--原理與實踐（一）](http://www.cnblogs.com/xesam/archive/2012/02/15/2352466.html)
+* [Sizzle是怎樣工作的](http://www.cnblogs.com/rubylouvre/archive/2011/01/24/1942818.html)
 
 **思路：**
 
-1. 通过空格拆分参数 selector，因为可能是组合查询。拆分为数组 selectorArr
-2. 遍历 selectorArr，条件判断各种情况。
-3. 得到节点的 Element 对象后，以这个对象为父节点，继续下一层的判断。
+1. 通過空格拆分參數 selector，因為可能是組合查詢。拆分為數組 selectorArr
+2. 遍歷 selectorArr，條件判斷各種情況。
+3. 得到節點的 Element 對象後，以這個對象為父節點，繼續下一層的判斷。
 
-**实现：**
+**實現：**
 
 ```js
-//多个选择器有点难到我了，看了一些资料觉得思路应该如下：
-//1.如果存在#，直接从#开始向后查
-//2.如果存在tag直接找到所有的tag然后向后查
-//3.样式类，属性，从后向前查，得到它所有的父节点名称，去筛选匹配
-//以上的做法有点太复杂，我还是做一个简单的正向匹配吧。
+//多個選擇器有點難到我了，看了一些資料覺得思路應該如下：
+//1.如果存在#，直接從#開始向後查
+//2.如果存在tag直接找到所有的tag然後向後查
+//3.樣式類，屬性，從後向前查，得到它所有的父節點名稱，去篩選匹配
+//以上的做法有點太複雜，我還是做一個簡單的正向匹配吧。
 function $(selector) {
 
     if (!selector) {
@@ -960,31 +960,31 @@ function $(selector) {
 
     selector = selector.trim();
     if (selector.indexOf(" ") !== -1) { //若存在空格
-        var selectorArr = selector.split(/\s+/); //拆成数组
+        var selectorArr = selector.split(/\s+/); //拆成數組
 
-        var rootScope = myQuery(selectorArr[0]); //第一次的查找范围
+        var rootScope = myQuery(selectorArr[0]); //第一次的查找範圍
         var i = null;
         var j = null;
         var result = [];
-        //循环选择器中的每一个元素
+        //循環選擇器中的每一個元素
         for (i = 1; i < selectorArr.length; i++) {
             for (j = 0; j < rootScope.length; j++) {
                 result.push(myQuery(selectorArr[i], rootScope[j]));
             }
             // rootScope = result;
-            // 目前这个方法还有bug
+            // 目前這個方法還有bug
         }
         return result[0][0];
-    } else { //只有一个，直接查询
+    } else { //只有一個，直接查詢
         return myQuery(selector, document)[0];
     }
 }
 
 /**
- * 针对一个内容查找结果 success
- * @param  {String} selector 选择器内容
- * @param  {Element} root    根节点元素
- * @return {NodeList数组}    节点列表，可能是多个节点也可能是一个
+ * 針對一個內容查找結果 success
+ * @param  {String} selector 選擇器內容
+ * @param  {Element} root    根節點元素
+ * @return {NodeList數組}    節點列表，可能是多個節點也可能是一個
  */
 function myQuery(selector, root) {
     var signal = selector[0]; //
@@ -992,7 +992,7 @@ function myQuery(selector, root) {
     var content = selector.substr(1);
     var currAttr = null;
     var result = [];
-    root = root || document; //若没有给root，赋值document
+    root = root || document; //若沒有給root，賦值document
     switch (signal) {
         case "#":
             result.push(document.getElementById(content));
@@ -1014,19 +1014,19 @@ function myQuery(selector, root) {
                 }
             }
             break;
-        case "[": //属性选择
-            if (content.search("=") == -1) { //只有属性，没有值
+        case "[": //屬性選擇
+            if (content.search("=") == -1) { //只有屬性，沒有值
                 allChildren = root.getElementsByTagName("*");
                 for (i = 0; i < allChildren.length; i++) {
                     if (allChildren[i].getAttribute(selector.slice(1, -1)) !== null) {
                         result.push(allChildren[i]);
                     }
                 }
-            } else { //既有属性，又有值
+            } else { //既有屬性，又有值
                 allChildren = root.getElementsByTagName("*");
-                var pattern = /\[(\w+)\s*\=\s*(\w+)\]/; //为了分离等号前后的内容
-                var cut = selector.match(pattern); //分离后的结果，为数组
-                var key = cut[1]; //键
+                var pattern = /\[(\w+)\s*\=\s*(\w+)\]/; //為了分離等號前後的內容
+                var cut = selector.match(pattern); //分離後的結果，為數組
+                var key = cut[1]; //鍵
                 var value = cut[2]; //值
                 for (i = 0; i < allChildren.length; i++) {
                     if (allChildren[i].getAttribute(key) == value) {
@@ -1045,12 +1045,12 @@ function myQuery(selector, root) {
 
 ## 事件
 
-### 绑定注册事件与移除事件
+### 綁定註冊事件與移除事件
 
-**任务与实现：**
+**任務與實現：**
 
 ```js
-// 给一个element绑定一个针对event事件的响应，响应函数为listener
+// 給一個element綁定一個針對event事件的響應，響應函數為listener
 function addEvent(element, event, listener) {
     if (element.addEventListener) {
         element.addEventListener(event,listener);
@@ -1059,7 +1059,7 @@ function addEvent(element, event, listener) {
     }
 }
 
-// 移除element对象对于event事件发生时执行listener的响应
+// 移除element對象對於event事件發生時執行listener的響應
 function removeEvent(element, event, listener) {
     if (element.removeEventListenr) {
         element.removeEventListenr(event,listener);
@@ -1069,26 +1069,26 @@ function removeEvent(element, event, listener) {
 }
 ```
 
-**相关说明：**
+**相關說明：**
 
 IE8+ 支持 `addEventListener()`。IE8 以下的版本使用 `attachEvent()`。
 
-* `attachEvent()` 不支持事件捕获。
-* `attachEvent()` 第一个参数事件处理程序属性名使用前缀 on。
-* `attachEvent()` 允许相同的事件处理程序函数注册多次。
+* `attachEvent()` 不支持事件捕獲。
+* `attachEvent()` 第一個參數事件處理程序屬性名使用前綴 on。
+* `attachEvent()` 允許相同的事件處理程序函數註冊多次。
 
 
-### click 与 enter 键事件绑定
+### click 與 enter 鍵事件綁定
 
-**任务与实现：**
+**任務與實現：**
 
 ```js
-// 实现对click事件的绑定
+// 實現對click事件的綁定
 function addClickEvent(element, listener) {
     addEvent(element, "click", listener);
 }
 
-// 实现对于按Enter键时的事件绑定
+// 實現對於按Enter鍵時的事件綁定
 function addEnterEvent(element, listener) {
     addEvent(element, "keydown", function(event) {
         if (event.keyCode == 13) {
@@ -1098,21 +1098,21 @@ function addEnterEvent(element, listener) {
 }
 ```
 
-**相关说明：**
+**相關說明：**
 
-这里我直接使用了上一个任务写好的 `addEvent()` 函数。这样可以简化代码，并有良好的兼容性。
+這裡我直接使用了上一個任務寫好的 `addEvent()` 函數。這樣可以簡化代碼，並有良好的兼容性。
 
-enter 键的 keyCode 为 13。
+enter 鍵的 keyCode 為 13。
 
 
 ### 事件代理
 
-**参考：**
+**參考：**
 
-* [javascript事件代理（委托）](http://www.cnblogs.com/Aralic/p/4446030.html)
+* [javascript事件代理（委託）](http://www.cnblogs.com/Aralic/p/4446030.html)
 * [JS - 事件代理](http://www.cnblogs.com/leo388/p/4461579.html)
 
-**任务与实现：**
+**任務與實現：**
 
 ```js
 function delegateEvent(element,tag,eventName,listener){
@@ -1128,10 +1128,10 @@ function delegateEvent(element,tag,eventName,listener){
 
 ## BOM
 
-**任务与实现：**
+**任務與實現：**
 
 ```js
-// 判断是否为IE浏览器，返回-1或者版本号
+// 判斷是否為IE瀏覽器，返回-1或者版本號
 function isIE() {
     var s = navigator.userAgent.toLowerCase();
     console.log(s);
@@ -1147,7 +1147,7 @@ function isIE() {
     }
 }
 
-// 设置cookie
+// 設置cookie
 function setCookie(cookieName, cookieValue, expiredays) {
     var cookie = cookieName + "=" + encodeURIComponent(cookieValue);
     if (typeof expiredays === "number") {
@@ -1156,7 +1156,7 @@ function setCookie(cookieName, cookieValue, expiredays) {
     document.cookie = cookie;
 }
 
-// 获取cookie值
+// 獲取cookie值
 function getCookie(cookieName) {
     var cookie = {};
     var all = document.cookie;
@@ -1175,46 +1175,46 @@ function getCookie(cookieName) {
 }
 ```
 
-* 参考自：JavaScript权威指南
+* 參考自：JavaScript權威指南
 
 
-### sessionStorage、localStorage 和 cookie 之间的区别
+### sessionStorage、localStorage 和 cookie 之間的區別
 
-* **共同点**
+* **共同點**
 
-    都是保存在浏览器端，且同源的。都是键值对存储。
+    都是保存在瀏覽器端，且同源的。都是鍵值對存儲。
 
-* **区别**
+* **區別**
 
     特性 | Cookie | localStorage | sessionStorage
-    数据的声明周期 | 一般由服务器生成，可设置失效时间。如果在浏览器端生成Cookie，默认是关闭浏览器后失效 | 除非被清除，否则永久保存 | 仅在当前会话下有效，关闭页面或浏览器后被清除
-    存放数据大小 | 4K左右 | 一般为5MB | 同左
-    与服务器端通信 | 每次都会携带在HTTP头中，如果使用cookie保存过多数据会带来性能问题 | 仅在客户端（即浏览器）中保存，不参与和服务器的通信 | 同左
-    易用性 | 需要程序员自己封装，源生的Cookie接口不友好 | 源生接口可以接受，亦可再次封装来对Object和Array有更好的支持 | 同左
+    數據的聲明週期 | 一般由服務器生成，可設置失效時間。如果在瀏覽器端生成Cookie，默認是關閉瀏覽器後失效 | 除非被清除，否則永久保存 | 僅在當前會話下有效，關閉頁面或瀏覽器後被清除
+    存放數據大小 | 4K左右 | 一般為5MB | 同左
+    與服務器端通信 | 每次都會攜帶在HTTP頭中，如果使用cookie保存過多數據會帶來性能問題 | 僅在客戶端（即瀏覽器）中保存，不參與和服務器的通信 | 同左
+    易用性 | 需要程序員自己封裝，源生的Cookie接口不友好 | 源生接口可以接受，亦可再次封裝來對Object和Array有更好的支持 | 同左
 
-* **应用场景**
+* **應用場景**
 
-    每个 HTTP 请求都会带着 Cookie 信息，所以 Cookie 应当简单，比如判断用户是否登陆。
+    每個 HTTP 請求都會帶著 Cookie 信息，所以 Cookie 應當簡單，比如判斷用戶是否登陸。
 
-    localStorage 接替 Cookie 管理购物车，同时也可以存储 HTML5 游戏的一些本地数据。
+    localStorage 接替 Cookie 管理購物車，同時也可以存儲 HTML5 遊戲的一些本地數據。
 
-    sessionStorage 在表单内容较多的时候，为了优化用户体验，按步骤分页引导填写，这时使用sessionStorage 就发挥了作用。
+    sessionStorage 在表單內容較多的時候，為了優化用戶體驗，按步驟分頁引導填寫，這時使用sessionStorage 就發揮了作用。
 
 * **安全性**
 
-    cookie 中最好不要放置任何明文的东西。两个 storage的数据提交后在服务端一定要校验
+    cookie 中最好不要放置任何明文的東西。兩個 storage的數據提交後在服務端一定要校驗
 
-**参考：**
+**參考：**
 
-* [详说 Cookie, LocalStorage 与 SessionStorage](http://jerryzou.com/posts/cookie-and-web-storage/)
+* [詳說 Cookie, LocalStorage 與 SessionStorage](http://jerryzou.com/posts/cookie-and-web-storage/)
 
 
 ## Ajax
 
-**任务：**
+**任務：**
 
 ```js
-// 学习Ajax，并尝试自己封装一个Ajax方法。实现如下方法：
+// 學習Ajax，並嘗試自己封裝一個Ajax方法。實現如下方法：
 function ajax(url, options) {
     // your implement
 }
@@ -1234,14 +1234,14 @@ ajax(
 );　
 ```
 
-**实现：**
+**實現：**
 
 ```js
 function ajax(url, options) {
 
-    var dataResult; //结果data
+    var dataResult; //結果data
 
-    // 处理data
+    // 處理data
     if (typeof(options.data) === 'object') {
         var str = '';
         for (var c in options.data) {
@@ -1250,13 +1250,13 @@ function ajax(url, options) {
         dataResult = str.substring(0, str.length - 1);
     }
 
-    // 处理type
+    // 處理type
     options.type = options.type || 'GET';
 
-    //获取XMLHttpRequest对象
+    //獲取XMLHttpRequest對象
     var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 
-    // 发送请求
+    // 發送請求
     xhr.open(options.type, url, true);
     if (options.type == 'GET') {
         xhr.send(null);
@@ -1282,130 +1282,130 @@ function ajax(url, options) {
 }
 ```
 
-**说明：**
+**說明：**
 
-1. 首先是处理 data，因为测试用例中的 data 是对象，所以把它遍历出来，把键和值中间用 = 连接，和下一组数据用 & 连接。
-2. 处理 type，默认是 GET 请求。
-3. 使用 `open()` 指明请求方法和 url。方法一般为 GET 或 POST。
-4. 调用 `send()` 方法，GET 请求没有主体，所以应该传递 null 或省略这个参数。POST 请求有主体，同时使用 `setRequestHeaders()` 来指定 "Content-type" 头。这样便成功发送了请求。
-5. 取的响应。一个完整的 HTTP 响应是由状态码、响应头集合、响应主体组成。
-    * `readyState` 是一个整数，它指定了 HTTP 请求的状态。其值和含义如下表：
+1. 首先是處理 data，因為測試用例中的 data 是對象，所以把它遍歷出來，把鍵和值中間用 = 連接，和下一組數據用 & 連接。
+2. 處理 type，默認是 GET 請求。
+3. 使用 `open()` 指明請求方法和 url。方法一般為 GET 或 POST。
+4. 調用 `send()` 方法，GET 請求沒有主體，所以應該傳遞 null 或省略這個參數。POST 請求有主體，同時使用 `setRequestHeaders()` 來指定 "Content-type" 頭。這樣便成功發送了請求。
+5. 取的響應。一個完整的 HTTP 響應是由狀態碼、響應頭集合、響應主體組成。
+    * `readyState` 是一個整數，它指定了 HTTP 請求的狀態。其值和含義如下表：
 
-    值 | 含义
-    0 | open() 尚未调用
-    1 | open() 已调用
-    2 | 接收到响应头信息
-    3 | 接收到响应主体
-    4 | 响应完成
+    值 | 含義
+    0 | open() 尚未調用
+    1 | open() 已調用
+    2 | 接收到響應頭信息
+    3 | 接收到響應主體
+    4 | 響應完成
 
-    * `status` 和 `statusText` 属性以数字和文本的形式返回 HTTP 状态码。这些属性保存标准的 HTTP 值。如，200和 "OK" 表示成功请求，404和 "Not Found" 表示 URL 不能匹配服务器上的任何资源。
-    * `getResponseHeader()` 和 `getAllResponseHeaders()` 能查询响应头。
-    * 响应主体可以从 `responseText` 属性中得到文本形式的，从 `responseXML` 属性中得到 Document 形式的。
+    * `status` 和 `statusText` 屬性以數字和文本的形式返回 HTTP 狀態碼。這些屬性保存標準的 HTTP 值。如，200和 "OK" 表示成功請求，404和 "Not Found" 表示 URL 不能匹配服務器上的任何資源。
+    * `getResponseHeader()` 和 `getAllResponseHeaders()` 能查詢響應頭。
+    * 響應主體可以從 `responseText` 屬性中得到文本形式的，從 `responseXML` 屬性中得到 Document 形式的。
 
-6. 补充一点 `onreadystatechange` 事件会在 `readyState` 改变时被触发。
+6. 補充一點 `onreadystatechange` 事件會在 `readyState` 改變時被觸發。
 
-**参考：**
+**參考：**
 
 * [Ajax W3C](http://www.w3school.com.cn/ajax/index.asp)
-* [Comet：基于 HTTP 长连接的“服务器推”技术](http://www.ibm.com/developerworks/cn/web/wa-lo-comet/)
+* [Comet：基於 HTTP 長連接的“服務器推”技術](http://www.ibm.com/developerworks/cn/web/wa-lo-comet/)
 
 
-## 练习1：处理兴趣列表
+## 練習1：處理興趣列表
 
-### 任务要求
+### 任務要求
 
-在`task0002`目录下创建一个`task0002_1.html`文件，以及一个`js`目录和`css`目录，在`js`目录中创建`task0002_1.js`，并将之前写的`util.js`也拷贝到`js`目录下。然后完成以下需求。
+在`task0002`目錄下創建一個`task0002_1.html`文件，以及一個`js`目錄和`css`目錄，在`js`目錄中創建`task0002_1.js`，並將之前寫的`util.js`也拷貝到`js`目錄下。然後完成以下需求。
 
-**第一阶段**
+**第一階段**
 
-在页面中，有一个单行输入框，一个按钮，输入框中用来输入用户的兴趣爱好，允许用户用半角逗号来作为不同爱好的分隔。
+在頁面中，有一個單行輸入框，一個按鈕，輸入框中用來輸入用戶的興趣愛好，允許用戶用半角逗號來作為不同愛好的分隔。
 
-当点击按钮时，把用户输入的兴趣爱好，按照上面所说的分隔符分开后保存到一个数组，过滤掉空的、重复的爱好，在按钮下方创建一个段落显示处理后的爱好。
+當點擊按鈕時，把用戶輸入的興趣愛好，按照上面所說的分隔符分開後保存到一個數組，過濾掉空的、重複的愛好，在按鈕下方創建一個段落顯示處理後的愛好。
 
-**第二阶段**
+**第二階段**
 
-单行变成多行输入框，一个按钮，输入框中用来输入用户的兴趣爱好，允许用户用换行、空格（全角/半角）、逗号（全角/半角）、顿号、分号来作为不同爱好的分隔。
+單行變成多行輸入框，一個按鈕，輸入框中用來輸入用戶的興趣愛好，允許用戶用換行、空格（全角/半角）、逗號（全角/半角）、頓號、分號來作為不同愛好的分隔。
 
-当点击按钮时的行为同上
+當點擊按鈕時的行為同上
 
-**第三阶段**
+**第三階段**
 
-用户输入的爱好数量不能超过10个，也不能什么都不输入。当发生异常时，在按钮上方显示一段红色的错误提示文字，并且不继续执行后面的行为；当输入正确时，提示文字消失。
+用戶輸入的愛好數量不能超過10個，也不能什麼都不輸入。當發生異常時，在按鈕上方顯示一段紅色的錯誤提示文字，並且不繼續執行後面的行為；當輸入正確時，提示文字消失。
 
-同时，当点击按钮时，不再是输出到一个段落，而是每一个爱好输出成为一个checkbox，爱好内容作为checkbox的label。
-
-### 思路
-
-主要就是对字符串的操作，`split()` 的使用，以及正则表达式的使用。
-
-### 实现
-
-* [代码](https://github.com/Gaohaoyang/ife/tree/master/task/task0002/work/Gaohaoyang)
-* [在线demo](http://gaohaoyang.github.io/ife/task/task0002/work/Gaohaoyang/task0002_1.html)
-
-
-## 练习2：倒计时
-
-### 任务要求
-
-在和上一任务同一目录下面创建一个`task0002_2.html`文件，在`js`目录中创建`task0002_2.js`，并在其中编码，实现一个倒计时功能。
-
-- 界面首先有一个文本输入框，允许按照特定的格式`YYYY-MM-DD`输入年月日；
-- 输入框旁有一个按钮，点击按钮后，计算当前距离输入的日期的00:00:00有多少时间差
-- 在页面中显示，距离YYYY年MM月DD日还有XX天XX小时XX分XX秒
-- 每一秒钟更新倒计时上显示的数
-- 如果时差为0，则倒计时停止
+同時，當點擊按鈕時，不再是輸出到一個段落，而是每一個愛好輸出成為一個checkbox，愛好內容作為checkbox的label。
 
 ### 思路
 
-* `setInterval()` 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。
+主要就是對字符串的操作，`split()` 的使用，以及正則表達式的使用。
 
-     `setInterval()` 方法会不停地调用函数，直到 `clearInterval()` 被调用或窗口被关闭。由 `setInterval()` 返回的 ID 值可用作 `clearInterval()` 方法的参数。
-* `clearInterval()` 方法可取消由 `setInterval()` 设置的 timeout。
+### 實現
 
-    `clearInterval()` 方法的参数必须是由 `setInterval()` 返回的 ID 值。
-* `setTimeout()` 方法用于在指定的毫秒数后调用函数或计算表达式。
-
-    setTimeout() 只执行 code 一次。如果要多次调用，请使用 setInterval() 或者让 code 自身再次调用 setTimeout()。   
-* `clearTimeout()` 方法可取消由 setTimeout() 方法设置的 timeout。
-
-### 实现
-
-* [代码](https://github.com/Gaohaoyang/ife/tree/master/task/task0002/work/Gaohaoyang)
-* [在线demo](http://gaohaoyang.github.io/ife/task/task0002/work/Gaohaoyang/task0002_2.html)
+* [代碼](https://github.com/Gaohaoyang/ife/tree/master/task/task0002/work/Gaohaoyang)
+* [在線demo](http://gaohaoyang.github.io/ife/task/task0002/work/Gaohaoyang/task0002_1.html)
 
 
-## 练习3：图片轮播
+## 練習2：倒計時
 
-### 任务要求
+### 任務要求
 
-在和上一任务同一目录下面创建一个`task0002_3.html`文件，在`js`目录中创建`task0002_3.js`，并在其中编码，实现一个轮播图的功能。
+在和上一任務同一目錄下面創建一個`task0002_2.html`文件，在`js`目錄中創建`task0002_2.js`，並在其中編碼，實現一個倒計時功能。
 
-- 图片数量及URL均在HTML中写好
-- 可以配置轮播的顺序（正序、逆序）、是否循环、间隔时长
-- 图片切换的动画要流畅
-- 在轮播图下方自动生成对应图片的小点，点击小点，轮播图自动动画切换到对应的图片
-
-效果示例：[http://echarts.baidu.com/](http://echarts.baidu.com/) 上面的轮播图（不需要做左右两个箭头）
+- 界面首先有一個文本輸入框，允許按照特定的格式`YYYY-MM-DD`輸入年月日；
+- 輸入框旁有一個按鈕，點擊按鈕後，計算當前距離輸入的日期的00:00:00有多少時間差
+- 在頁面中顯示，距離YYYY年MM月DD日還有XX天XX小時XX分XX秒
+- 每一秒鐘更新倒計時上顯示的數
+- 如果時差為0，則倒計時停止
 
 ### 思路
 
-将图片排列成一排，一起向左运动，每次运动的距离刚好是一张图片的宽度。
+* `setInterval()` 方法可按照指定的週期（以毫秒計）來調用函數或計算表達式。
 
-对于下面的小圆点，使用事件代理，将事件传递给每个 a 标签。
+     `setInterval()` 方法會不停地調用函數，直到 `clearInterval()` 被調用或窗口被關閉。由 `setInterval()` 返回的 ID 值可用作 `clearInterval()` 方法的參數。
+* `clearInterval()` 方法可取消由 `setInterval()` 設置的 timeout。
 
-**参考：**
+    `clearInterval()` 方法的參數必須是由 `setInterval()` 返回的 ID 值。
+* `setTimeout()` 方法用於在指定的毫秒數後調用函數或計算表達式。
 
-* [JS图片切换](http://www.itxueyuan.org/view/6323.html)
+    setTimeout() 只執行 code 一次。如果要多次調用，請使用 setInterval() 或者讓 code 自身再次調用 setTimeout()。   
+* `clearTimeout()` 方法可取消由 setTimeout() 方法設置的 timeout。
 
-### 实现
+### 實現
 
-* [代码](https://github.com/Gaohaoyang/ife/tree/master/task/task0002/work/Gaohaoyang)
-* [在线demo](http://gaohaoyang.github.io/ife/task/task0002/work/Gaohaoyang/task0002_3.html)
+* [代碼](https://github.com/Gaohaoyang/ife/tree/master/task/task0002/work/Gaohaoyang)
+* [在線demo](http://gaohaoyang.github.io/ife/task/task0002/work/Gaohaoyang/task0002_2.html)
 
-### 关于变速运动
 
-评论中有人问到运动部分为什么这样写，下面我讲一下吧。
+## 練習3：圖片輪播
+
+### 任務要求
+
+在和上一任務同一目錄下面創建一個`task0002_3.html`文件，在`js`目錄中創建`task0002_3.js`，並在其中編碼，實現一個輪播圖的功能。
+
+- 圖片數量及URL均在HTML中寫好
+- 可以配置輪播的順序（正序、逆序）、是否循環、間隔時長
+- 圖片切換的動畫要流暢
+- 在輪播圖下方自動生成對應圖片的小點，點擊小點，輪播圖自動動畫切換到對應的圖片
+
+效果示例：[http://echarts.baidu.com/](http://echarts.baidu.com/) 上面的輪播圖（不需要做左右兩個箭頭）
+
+### 思路
+
+將圖片排列成一排，一起向左運動，每次運動的距離剛好是一張圖片的寬度。
+
+對於下面的小圓點，使用事件代理，將事件傳遞給每個 a 標籤。
+
+**參考：**
+
+* [JS圖片切換](http://www.itxueyuan.org/view/6323.html)
+
+### 實現
+
+* [代碼](https://github.com/Gaohaoyang/ife/tree/master/task/task0002/work/Gaohaoyang)
+* [在線demo](http://gaohaoyang.github.io/ife/task/task0002/work/Gaohaoyang/task0002_3.html)
+
+### 關於變速運動
+
+評論中有人問到運動部分為什麼這樣寫，下面我講一下吧。
 
 ```js
 function startMove(target) {
@@ -1419,28 +1419,28 @@ function startMove(target) {
 }
 ```
 
-上面是运动部分代码。
+上面是運動部分代碼。
 
-* 参数 `target` 是运动终点的位置。
-* 首先停止计时器，为了避免上一次调用方法时，计时器没有关闭带来的干扰。
+* 參數 `target` 是運動終點的位置。
+* 首先停止計時器，為了避免上一次調用方法時，計時器沒有關閉帶來的干擾。
 
 ```js
 clearInterval(timerInner);
 ```
 
-* 下面开始开启计时器，每隔 30ms 执行一次内部的函数。
+* 下面開始開啟計時器，每隔 30ms 執行一次內部的函數。
 
-* 变速运动
+* 變速運動
 
 ```js
 var speed = (target - imgListDiv.offsetLeft) / 6;
 ```
 
-    逐渐变慢，最后停止，距离越远速度越大，速度由距离决定
+    逐漸變慢，最後停止，距離越遠速度越大，速度由距離決定
 
-    速度=(目标值-当前值)/缩放系数
+    速度=(目標值-當前值)/縮放係數
 
-    这样写的原因就是为了让它做缓冲运动，而不是匀速运动，这样给用户带来的交互感觉会更好。
+    這樣寫的原因就是為了讓它做緩衝運動，而不是勻速運動，這樣給用戶帶來的交互感覺會更好。
 
 * 速度取整
 
@@ -1448,55 +1448,55 @@ var speed = (target - imgListDiv.offsetLeft) / 6;
 speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
 ```
 
-    像素不能是小数，所以速度大于0的时候，向上取整。速度小于0时，向下取整
+    像素不能是小數，所以速度大於0的時候，向上取整。速度小於0時，向下取整
 
-* 最后关于运动终止条件。
+* 最後關於運動終止條件。
 
 ```js
 imgListDiv.style.left = imgListDiv.offsetLeft + speed + "px";
 ```
 
-    由这一行可以看出，`imgListDiv.style.left` 在不断增大，即 `imgListDiv.offsetLeft` 在不断增大。这两个是相同的属性，只不过一个是在赋值时使用，第二个是在取值时使用。
+    由這一行可以看出，`imgListDiv.style.left` 在不斷增大，即 `imgListDiv.offsetLeft` 在不斷增大。這兩個是相同的屬性，只不過一個是在賦值時使用，第二個是在取值時使用。
 
-    再看这行代码，由于这部分是每个30ms执行一次的，所以继续执行到这里。
+    再看這行代碼，由於這部分是每個30ms執行一次的，所以繼續執行到這裡。
 
 ```js
 var speed = (target - imgListDiv.offsetLeft) / 6;
 ```
 
-    当不断增大的 `imgListDiv.offsetLeft` 等于 `target` 时，`speed` 为0。宏观表现为不再运动，这便是运动终止的状态，但是这里的方法还是不断在执行，每个30ms在执行。
+    當不斷增大的 `imgListDiv.offsetLeft` 等於 `target` 時，`speed` 為0。宏觀表現為不再運動，這便是運動終止的狀態，但是這裡的方法還是不斷在執行，每個30ms在執行。
 
 
 
-## 练习4：输入框即时提示
+## 練習4：輸入框即時提示
 
-### 任务要求
+### 任務要求
 
-在和上一任务同一目录下面创建一个`task0002_4.html`文件，在`js`目录中创建`task0002_4.js`，并在其中编码，实现一个类似百度搜索框的输入提示的功能。
+在和上一任務同一目錄下面創建一個`task0002_4.html`文件，在`js`目錄中創建`task0002_4.js`，並在其中編碼，實現一個類似百度搜索框的輸入提示的功能。
 
 要求如下：
 
-- 允许使用鼠标点击选中提示栏中的某个选项
-- 允许使用键盘上下键来选中提示栏中的某个选项，回车确认选中
-- 选中后，提示内容变更到输入框中
+- 允許使用鼠標點擊選中提示欄中的某個選項
+- 允許使用鍵盤上下鍵來選中提示欄中的某個選項，迴車確認選中
+- 選中後，提示內容變更到輸入框中
 
-**初级班：**
+**初級班：**
 
-- 不要求和后端交互，可以自己伪造一份提示数据例如：
+- 不要求和後端交互，可以自己偽造一份提示數據例如：
 
 ```js
 var suggestData = ['Simon', 'Erik', 'Kener'];
 ```
 
-**中级班：**
+**中級班：**
 
-- 自己搭建一个后端Server，使用Ajax来获取提示数据
+- 自己搭建一個後端Server，使用Ajax來獲取提示數據
 
 ### 思路
 
-这里我使用了给 input 标签加 input 监听，即输入框内容发生改变时，触发事件。并兼容到 IE7。
+這裡我使用了給 input 標籤加 input 監聽，即輸入框內容發生改變時，觸發事件。並兼容到 IE7。
 
-关于 input 监听的代码如下：
+關於 input 監聽的代碼如下：
 
 ```js
 function addInputListener() {
@@ -1523,64 +1523,64 @@ function OnPropChanged(event) {
 }
 ```
 
-其中 handleInput() 为下一步要执行的方法。
+其中 handleInput() 為下一步要執行的方法。
 
-其实后来想了想也可以使用 keyup 事件了做这个任务。
+其實後來想了想也可以使用 keyup 事件了做這個任務。
 
-匹配的过程同样适用正则表达式，从开头开始匹配。遍历备选单词，如果匹配成功，则放入 li 标签中，准备展示。
+匹配的過程同樣適用正則表達式，從開頭開始匹配。遍歷備選單詞，如果匹配成功，則放入 li 標籤中，準備展示。
 
-然后分别添加点击事件，键盘的 keydown 事件，用来选中提示出的单词。
+然後分別添加點擊事件，鍵盤的 keydown 事件，用來選中提示出的單詞。
 
-**参考：**
+**參考：**
 
 * [oninput 事件](http://help.dottoro.com/ljhxklln.php)
 
-### 实现
+### 實現
 
-* [代码](https://github.com/Gaohaoyang/ife/tree/master/task/task0002/work/Gaohaoyang)
-* [在线demo](http://gaohaoyang.github.io/ife/task/task0002/work/Gaohaoyang/task0002_4.html)
+* [代碼](https://github.com/Gaohaoyang/ife/tree/master/task/task0002/work/Gaohaoyang)
+* [在線demo](http://gaohaoyang.github.io/ife/task/task0002/work/Gaohaoyang/task0002_4.html)
 
 
 
-## 练习5：拖拽交互
+## 練習5：拖拽交互
 
-### 任务要求
+### 任務要求
 
-- 实现一个可拖拽交互的界面
-- 如示例图，左右两侧各有一个容器，里面的选项可以通过拖拽来左右移动
-- 被选择拖拽的容器在拖拽过程后，在原容器中消失，跟随鼠标移动
-- 注意拖拽释放后，要添加到准确的位置
-- 拖拽到什么位置认为是可以添加到新容器的规则自己定
-- 注意交互中良好的用户体验和使用引导
+- 實現一個可拖拽交互的界面
+- 如示例圖，左右兩側各有一個容器，裡面的選項可以通過拖拽來左右移動
+- 被選擇拖拽的容器在拖拽過程後，在原容器中消失，跟隨鼠標移動
+- 注意拖拽釋放後，要添加到準確的位置
+- 拖拽到什麼位置認為是可以添加到新容器的規則自己定
+- 注意交互中良好的用戶體驗和使用引導
 
 ### 思路
 
-1. 页面布局时，将要被拖拽的 div 设置为绝对定位，因为这样在后面拖拽的时候才方便更改坐标。
-2. 初始化界面的时候，首先让 div 块按照相应的高度重新排列一下。
-3. 拖拽方法的实现。由 mousedown mousemove mouseup 三部分组成。
-4. 在 mousemove 中判断，不能让鼠标拖出浏览器窗口。
-5. 在 mouseup 中判断，是否到达指定区域。完成拖拽。
+1. 頁面布局時，將要被拖拽的 div 設置為絕對定位，因為這樣在後面拖拽的時候才方便更改坐標。
+2. 初始化界面的時候，首先讓 div 塊按照相應的高度重新排列一下。
+3. 拖拽方法的實現。由 mousedown mousemove mouseup 三部分組成。
+4. 在 mousemove 中判斷，不能讓鼠標拖出瀏覽器窗口。
+5. 在 mouseup 中判斷，是否到達指定區域。完成拖拽。
 
-我在这里没有使用 html5 中的拖拽 API，所以兼容性还是很好的。
+我在這裡沒有使用 html5 中的拖拽 API，所以兼容性還是很好的。
 
-### 实现
+### 實現
 
-* [代码](https://github.com/Gaohaoyang/ife/tree/master/task/task0002/work/Gaohaoyang)
-* [在线demo](http://gaohaoyang.github.io/ife/task/task0002/work/Gaohaoyang/task0002_5.html)
+* [代碼](https://github.com/Gaohaoyang/ife/tree/master/task/task0002/work/Gaohaoyang)
+* [在線demo](http://gaohaoyang.github.io/ife/task/task0002/work/Gaohaoyang/task0002_5.html)
 
 
-## 最终作品
+## 最終作品
 
-* [代码](https://github.com/Gaohaoyang/ife/tree/master/task/task0002/work/Gaohaoyang)
-* [在线 Demo](http://gaohaoyang.github.io/ife/task/task0002/work/Gaohaoyang/index.html)
+* [代碼](https://github.com/Gaohaoyang/ife/tree/master/task/task0002/work/Gaohaoyang)
+* [在線 Demo](http://gaohaoyang.github.io/ife/task/task0002/work/Gaohaoyang/index.html)
 
 
 ## Update
 
 **2015/06/01**
 
-* [导师的参考答案](https://github.com/hushicai/ife-task0002)
+* [導師的參考答案](https://github.com/hushicai/ife-task0002)
 * [review](https://github.com/baidu-ife/ife/tree/master/task/task0002/review)
 
 
-加油！向着下一个目标前进！
+加油！向著下一個目標前進！

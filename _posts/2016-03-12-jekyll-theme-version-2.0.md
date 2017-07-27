@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "对这个 jekyll 博客主题的改版和重构"
+title:  "對這個 jekyll 博客主題的改版和重構"
 date:   2016-03-12 11:40:18 +0800
 categories: jekyll
 tags: jekyll 端口 markdown Foxit RubyGems HTML CSS
@@ -10,92 +10,92 @@ author: Haoyang Gao
 * content
 {:toc}
 
-本文主要说明对这个博客主题的改版和代码重构的过程。这个简洁高雅的博客主题受到了很多朋友的喜欢。在写第一版界面时，我对前端并不是很熟悉，对`Jekyll`也不熟悉。现在距离当时也一年了，对自己当时写的代码也不太满意了，同时`Jekyll`如今也已经升级了，目前最新版为3.1.2。因此我在临近毕业尚未入职前做一下博客主题的代码重构和改版吧。
+本文主要說明對這個博客主題的改版和代碼重構的過程。這個簡潔高雅的博客主題受到了很多朋友的喜歡。在寫第一版界面時，我對前端並不是很熟悉，對`Jekyll`也不熟悉。現在距離當時也一年了，對自己當時寫的代碼也不太滿意了，同時`Jekyll`如今也已經升級了，目前最新版為3.1.2。因此我在臨近畢業尚未入職前做一下博客主題的代碼重構和改版吧。
 
-主要想做这些事情有：添加归档，添加标签，添加分类页面，主页显示文章摘要，代码去除 jQuery 和 BootStrap，优化移动端显示，将所有变量写入配置文件`_config.yml`中等。再优化一些细节吧。希望更多人会喜欢。
-
-
+主要想做這些事情有：添加歸檔，添加標籤，添加分類頁面，主頁顯示文章摘要，代碼去除 jQuery 和 BootStrap，優化移動端顯示，將所有變量寫入配置文件`_config.yml`中等。再優化一些細節吧。希望更多人會喜歡。
 
 
 
 
-## 改版重构说明
 
-* **使用 GitHub 风格的代码块 Markdown 写法 (Fenced code blocks)。**
+
+## 改版重構說明
+
+* **使用 GitHub 風格的代碼塊 Markdown 寫法 (Fenced code blocks)。**
 
     即 GFM(github flavored markdown) 的方式。
 
-    Jekyll 已经升级至 3.1.2（2016-03），其中有一些新的要注意的地方，比如官网上说使用了 `Rouge` 去做代码高亮而不是默认的 `Pygments`，因为 `Jekyll` 本身是基于 Ruby 的，因此我看到官方说希望不再使用基于 Python 的 `Pygments` 了，而是都使用基于 Ruby 的代码。详情见官网升级说明 [syntax-highlighter-changed](https://jekyllrb.com/docs/upgrading/2-to-3/#syntax-highlighter-changed)。
-* **首页中添加摘要**
+    Jekyll 已經升級至 3.1.2（2016-03），其中有一些新的要注意的地方，比如官網上說使用了 `Rouge` 去做代碼高亮而不是默認的 `Pygments`，因為 `Jekyll` 本身是基於 Ruby 的，因此我看到官方說希望不再使用基於 Python 的 `Pygments` 了，而是都使用基於 Ruby 的代碼。詳情見官網升級說明 [syntax-highlighter-changed](https://jekyllrb.com/docs/upgrading/2-to-3/#syntax-highlighter-changed)。
+* **首頁中添加摘要**
 
-    摘要可以在每一篇 md 文件头中使用 excerpt 属性写出来。也可以在正文中，4个换行符来分割，这个设置见配置文件`_config.yml`。
-* **添加归档**
+    摘要可以在每一篇 md 文件頭中使用 excerpt 屬性寫出來。也可以在正文中，4個換行符來分割，這個設置見配置文件`_config.yml`。
+* **添加歸檔**
 
-    上一版中没有归档，现在专门做了一个归档页面，当文章很多时方便根据年份快速查阅。
-* **添加标签**
+    上一版中沒有歸檔，現在專門做了一個歸檔頁面，當文章很多時方便根據年份快速查閱。
+* **添加標籤**
 
-    标签还是很有必要添加的，上一版中也没有这个功能。现在也可以根据标签查找文章了。同时标签还有一个重要的作用是，用来获取相似文章的。
-* **添加分类页**
+    標籤還是很有必要添加的，上一版中也沒有這個功能。現在也可以根據標籤查找文章了。同時標籤還有一個重要的作用是，用來獲取相似文章的。
+* **添加分類頁**
 
-    之前的分类就是在首页中直接完成的，现在和标签和归档类似，我将分类单独制作为一页，方便查阅。
+    之前的分類就是在首頁中直接完成的，現在和標籤和歸檔類似，我將分類單獨製作為一頁，方便查閱。
 * **去掉 jQuery 和 BootStrap**
 
-    我觉得太重了，没必要使用这两个库，使用原生 JavaScript 和 CSS就可以做到一样的效果，代码量大大减轻，载入速度略有提高。
+    我覺得太重了，沒必要使用這兩個庫，使用原生 JavaScript 和 CSS就可以做到一樣的效果，代碼量大大減輕，載入速度略有提高。
 
-* **重写了demo页的瀑布流布局**
+* **重寫了demo頁的瀑布流布局**
 
-    改变数据写死的方式，将数据用 json 格式录入，由 JavaScript 拼接为 HTML 代码。同时，使用 [Masonry](http://masonry.desandro.com/)，重写了瀑布流布局。
+    改變數據寫死的方式，將數據用 json 格式錄入，由 JavaScript 拼接為 HTML 代碼。同時，使用 [Masonry](http://masonry.desandro.com/)，重寫了瀑布流布局。
 
-* **简化评论配置，支持 多说 和 disqus**
+* **簡化評論配置，支持 多說 和 disqus**
 
-    在`_config.yml`中评论配置直接添加自己的`short_name`，评论就能正常使用了。
+    在`_config.yml`中評論配置直接添加自己的`short_name`，評論就能正常使用了。
 
-下面列举一些可能遇到的问题，至少我是遇到了：
+下面列舉一些可能遇到的問題，至少我是遇到了：
 
-## RubyGems 无法访问，SSL 证书问题
+## RubyGems 無法訪問，SSL 證書問題
 
-以前我使用的是 RubyGems 的淘宝镜像[https://ruby.taobao.org/](https://ruby.taobao.org/)。现在这个镜像已经不再维护了，作者 [huacnlee (李华顺)](https://ruby-china.org/huacnlee) 转到 [Ruby China](https://ruby-china.org/) 中继续维护了，详情见 [RubyGems 镜像- Ruby China](https://gems.ruby-china.org/)。
+以前我使用的是 RubyGems 的淘寶鏡像[https://ruby.taobao.org/](https://ruby.taobao.org/)。現在這個鏡像已經不再維護了，作者 [huacnlee (李華順)](https://ruby-china.org/huacnlee) 轉到 [Ruby China](https://ruby-china.org/) 中繼續維護了，詳情見 [RubyGems 鏡像- Ruby China](https://gems.ruby-china.org/)。
 
-### 错误呈现
+### 錯誤呈現
 
-在执行任何`gem`命令的时候出现以下错误：
+在執行任何`gem`命令的時候出現以下錯誤：
 
 ```
 ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
     SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (https://gems.ruby-china.org/specs.4.8.gz)
 ```
 
-### 解决方法
+### 解決方法
 
-根据 [https://gems.ruby-china.org/](https://gems.ruby-china.org/) 页面最下方提供的 GitHub Issue 地址。
+根據 [https://gems.ruby-china.org/](https://gems.ruby-china.org/) 頁面最下方提供的 GitHub Issue 地址。
 
-可以进入这个 issue：[https://github.com/ruby-china/rubygems-mirror/issues/3](https://github.com/ruby-china/rubygems-mirror/issues/3)
+可以進入這個 issue：[https://github.com/ruby-china/rubygems-mirror/issues/3](https://github.com/ruby-china/rubygems-mirror/issues/3)
 
-其中 sanlengjingvv 给出了一个链接地址 [https://gist.github.com/fnichol/867550](https://gist.github.com/fnichol/867550) 里面提供了方法。我就是采用这里面的方法解决的。
+其中 sanlengjingvv 給出了一個鏈接地址 [https://gist.github.com/fnichol/867550](https://gist.github.com/fnichol/867550) 裡面提供了方法。我就是採用這裡面的方法解決的。
 
-我使用的是 [The Manual Way](https://gist.github.com/fnichol/867550#the-manual-way-boring)，因为 [The Ruby Way](https://gist.github.com/fnichol/867550#the-ruby-way-fun) 我没有成功，不知道什么原因，有兴趣的朋友可以试试。下面说说我的具体操作吧。
+我使用的是 [The Manual Way](https://gist.github.com/fnichol/867550#the-manual-way-boring)，因為 [The Ruby Way](https://gist.github.com/fnichol/867550#the-ruby-way-fun) 我沒有成功，不知道什麼原因，有興趣的朋友可以試試。下面說說我的具體操作吧。
 
-首先从 [https://curl.haxx.se/ca/cacert.pem](https://curl.haxx.se/ca/cacert.pem) 将文件`cacert.pem`下载至 `C:\RailsInstaller\cacert.pem`
+首先從 [https://curl.haxx.se/ca/cacert.pem](https://curl.haxx.se/ca/cacert.pem) 將文件`cacert.pem`下載至 `C:\RailsInstaller\cacert.pem`
 
-然后执行
+然後執行
 
 ```
 set SSL_CERT_FILE=C:\RailsInstaller\cacert.pem
 ```
 
-就成功了，不会再出现 SSL 错误了。
+就成功了，不會再出現 SSL 錯誤了。
 
-最后原文中说，为了长久设置，将这个目录存入控制面板中。我没理解是什么意思，是指环境变量吗？有朋友知道的话，欢迎留言告知我。
+最後原文中說，為了長久設置，將這個目錄存入控制面板中。我沒理解是什麼意思，是指環境變量嗎？有朋友知道的話，歡迎留言告知我。
 
-我存入环境变量后，还是会出现 SSL 错误，这时再次执行上面那条命令即可。
+我存入環境變量後，還是會出現 SSL 錯誤，這時再次執行上面那條命令即可。
 
-## jekyll-paginate 依赖缺失
+## jekyll-paginate 依賴缺失
 
-因为 jekyll 3 中默认安装已经没有这个分页组件了，官方把这个分页组件插件化了，因此要独立安装。详情见 [https://jekyllrb.com/docs/pagination/](https://jekyllrb.com/docs/pagination/)。
+因為 jekyll 3 中默認安裝已經沒有這個分頁組件了，官方把這個分頁組件插件化了，因此要獨立安裝。詳情見 [https://jekyllrb.com/docs/pagination/](https://jekyllrb.com/docs/pagination/)。
 
-### 错误呈现
+### 錯誤呈現
 
-在启动 jekyll 服务的时候出现以下错误：
+在啟動 jekyll 服務的時候出現以下錯誤：
 
 ```
 jekyll serve
@@ -104,9 +104,9 @@ Configuration file: c:/gitWorkSpace/blog-based-on-jekyll-3/_config.yml
 jekyll 3.1.2 | Error:  jekyll-paginate
 ```
 
-### 解决方法
+### 解決方法
 
-我们安装这个插件到本地即可。
+我們安裝這個插件到本地即可。
 
 ```
 gem install jekyll-paginate
@@ -120,7 +120,7 @@ Done installing documentation for jekyll-paginate after 3 seconds
 
 ## 被 Foxit pdf reader 占用4000端口
 
-### 错误呈现
+### 錯誤呈現
 
 在本地使用命令
 
@@ -128,7 +128,7 @@ Done installing documentation for jekyll-paginate after 3 seconds
 jekyll serve
 ```
 
-出现错误，如下
+出現錯誤，如下
 
 ```
 jekyll serve
@@ -145,15 +145,15 @@ Configuration file: E:/GitWorkSpace/blog/_config.yml
 jekyll 3.1.1 | Error:  Permission denied - bind(2) for 127.0.0.1:4000
 ```
 
-网上查阅后，这篇博文解决了我的问题。[谁占了我的端口 for Windows --By Liu Xia, ThoughtWorks Senior Consultant. .NET Expert](http://lxconan.github.io/2016/01/07/who-is-using-my-port/)
+網上查閱後，這篇博文解決了我的問題。[誰占了我的端口 for Windows --By Liu Xia, ThoughtWorks Senior Consultant. .NET Expert](http://lxconan.github.io/2016/01/07/who-is-using-my-port/)
 
-上述报错主要原因是，jekyll 启动使用的4000端口被福昕pdf阅读器的自动更新进程占用了，关掉这个进程，jekyll在本地调试启动服务时就没有问题了。
+上述報錯主要原因是，jekyll 啟動使用的4000端口被福昕pdf閱讀器的自動更新進程占用了，關掉這個進程，jekyll在本地調試啟動服務時就沒有問題了。
 
-### 解决方法
+### 解決方法
 
-简单的解决方法是：
+簡單的解決方法是：
 
-输入命令，查看各端口被占用情况
+輸入命令，查看各端口被占用情況
 
 ```
 netstat -ano
@@ -161,10 +161,10 @@ netstat -ano
 
 找到4000端口被占用的`PID`
 
-我的结果如下：
+我的結果如下：
 
 ```
-协议  本地地址          外部地址          状态           PID
+協議  本地地址          外部地址          狀態           PID
 TCP  0.0.0.0:80        0.0.0.0:0         LISTENING     4
 TCP  0.0.0.0:135       0.0.0.0:0         LISTENING     836
 TCP  0.0.0.0:445       0.0.0.0:0         LISTENING     4
@@ -186,37 +186,37 @@ TCP  127.0.0.1:4000    127.0.0.1:55160   ESTABLISHED   2476
 TCP  127.0.0.1:4012    0.0.0.0:0         LISTENING     12724
 ```
 
-可以看到4000端口的PID是2476。下面查看是什么进程，命令行中输入：
+可以看到4000端口的PID是2476。下面查看是什麼進程，命令行中輸入：
 
 ```
 tasklist /svc /FI "PID eq 2476"
 ```
 
-得到结果：
+得到結果：
 
 ```
-映像名称                       PID 服务
+映像名稱                       PID 服務
 ========================= ======== ============================================
 FoxitProtect.exe              2476 FxService
 ```
 
-可以看到正是福昕阅读器。下面关掉这个服务就好了。在 win10 中进入任务管理器，选择服务选项卡，关闭这个服务就好了，如下图：
+可以看到正是福昕閱讀器。下面關掉這個服務就好了。在 win10 中進入任務管理器，選擇服務選項卡，關閉這個服務就好了，如下圖：
 
 ![](http://ww4.sinaimg.cn/large/7011d6cfjw1f1ty28wwj4j20g00aiju7.jpg)
 
-当然也可以在启动jekyll服务的时候指定端口号，如下：
+當然也可以在啟動jekyll服務的時候指定端口號，如下：
 
 ```
 jekyll serve --port 3000
 ```
 
-这样在浏览器中输入 http://localhost:3000/ 就可以访问了。
+這樣在瀏覽器中輸入 http://localhost:3000/ 就可以訪問了。
 
-还可以在配置文件`_config.yml`中添加端口号设置（参考[官网文档-Serve Command OptionsPermalink](https://jekyllrb.com/docs/configuration/#serve-command-options)），如下：
+還可以在配置文件`_config.yml`中添加端口號設置（參考[官網文檔-Serve Command OptionsPermalink](https://jekyllrb.com/docs/configuration/#serve-command-options)），如下：
 
 ```
 # port
 port: 1234
 ```
 
-此时，启动jekyll服务后，访问 http://localhost:1234/ 即可
+此時，啟動jekyll服務後，訪問 http://localhost:1234/ 即可

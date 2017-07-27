@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "JavaScript 阶段总结"
+title:  "JavaScript 階段總結"
 date:   2015-07-09 00:06:05
 categories: JavaScript
-tags: JavaScript HTML CSS 思维导图 技能树
+tags: JavaScript HTML CSS 思維導圖 技能樹
 ---
 
-做了一张思维导图。总结这几个月对 JavaScript 的学习吧，也是一个复习。也是我目前的技能树。
+做了一張思維導圖。總結這幾個月對 JavaScript 的學習吧，也是一個復習。也是我目前的技能樹。
 
 
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "同步一个 fork"
+title:  "同步一個 fork"
 date:   2015-04-12 15:14:54
 categories: GitHub
 tags: GitHub 同步 fork
@@ -9,7 +9,7 @@ tags: GitHub 同步 fork
 * content
 {:toc}
 
-fork 了别人的仓库后，原作者又更新了仓库，如何将自己的代码和原仓库保持一致？本文将给你解答。
+fork 了別人的倉庫後，原作者又更新了倉庫，如何將自己的代碼和原倉庫保持一致？本文將給你解答。
 
 
 
@@ -17,19 +17,19 @@ fork 了别人的仓库后，原作者又更新了仓库，如何将自己的代
 
 ## 如何使用搜索引擎
 
-其实这个问题并不难，我又被坑了。百度搜的东西不靠谱啊，以后这种问题一定要用**英文**在 [Google](http://www.google.com) 或者 [Bing](http://cn.bing.com/) 上搜索，这样才能搜到原汁原味的答案。就当是一个教训吧。   
+其實這個問題並不難，我又被坑了。百度搜的東西不靠譜啊，以後這種問題一定要用**英文**在 [Google](http://www.google.com) 或者 [Bing](http://cn.bing.com/) 上搜索，這樣才能搜到原汁原味的答案。就當是一個教訓吧。   
 
-搜索 fork sync，就可以看到 GitHub 自己的帮助文档 [Syncing a fork](https://help.github.com/articles/syncing-a-fork/) 点进去看这篇的时候，注意到有一个 Tip: Before you can sync your fork with an upstream repository, you must [configure a remote that points to the upstream repository](https://help.github.com/articles/configuring-a-remote-for-a-fork/) in Git.   
+搜索 fork sync，就可以看到 GitHub 自己的幫助文檔 [Syncing a fork](https://help.github.com/articles/syncing-a-fork/) 點進去看這篇的時候，注意到有一個 Tip: Before you can sync your fork with an upstream repository, you must [configure a remote that points to the upstream repository](https://help.github.com/articles/configuring-a-remote-for-a-fork/) in Git.   
 
-根据这两篇文章，问题迎刃而解！   
+根據這兩篇文章，問題迎刃而解！   
 
-## 具体方法
+## 具體方法
 
 ### Configuring a remote for a fork
 
-* 给 fork 配置一个 remote   
+* 給 fork 配置一個 remote   
 
-* 主要使用 `git remote -v` 查看远程状态。   
+* 主要使用 `git remote -v` 查看遠程狀態。   
 
 ```
 git remote -v
@@ -37,14 +37,14 @@ git remote -v
 # origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
 ```
 
-* 添加一个将被同步给 fork 远程的上游仓库      
+* 添加一個將被同步給 fork 遠程的上游倉庫      
 
 ```
 git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
 ```
 
 
-* 再次查看状态确认是否配置成功。   
+* 再次查看狀態確認是否配置成功。   
 
 ```
 git remote -v
@@ -56,7 +56,7 @@ git remote -v
 
 ### Syncing a fork
 
-* 从上游仓库 fetch 分支和提交点，传送到本地，并会被存储在一个本地分支 upstream/master   
+* 從上游倉庫 fetch 分支和提交點，傳送到本地，並會被存儲在一個本地分支 upstream/master   
 `git fetch upstream`    
 
 ```
@@ -69,7 +69,7 @@ git fetch upstream
 #  * [new branch]      master     -> upstream/master
 ```
 
-* 切换到本地主分支(如果不在的话)    
+* 切換到本地主分支(如果不在的話)    
 `git checkout master`    
 
 ```
@@ -77,7 +77,7 @@ git checkout master
 # Switched to branch 'master'
 ```
 
-* 把 upstream/master 分支合并到本地 master 上，这样就完成了同步，并且不会丢掉本地修改的内容。    
+* 把 upstream/master 分支合併到本地 master 上，這樣就完成了同步，並且不會丟掉本地修改的內容。    
 `git merge upstream/master`      
 
 ```

@@ -3,13 +3,13 @@ layout: post
 title:  "JavaScript 中的 this"
 date:   2015-06-12 14:06:05
 categories: JavaScript
-tags: JavaScript 慕课网 this ife
+tags: JavaScript 慕課網 this ife
 ---
 
 * content
 {:toc}
 
-本文为慕课网 [JavaScript深入浅出](http://www.imooc.com/learn/277) JavaScript 中的 this笔记。
+本文為慕課網 [JavaScript深入淺出](http://www.imooc.com/learn/277) JavaScript 中的 this筆記。
 
 
 
@@ -17,7 +17,7 @@ tags: JavaScript 慕课网 this ife
 
 ## 全局的 this
 
-全局 this 一般指向全局对象，浏览器中的全局对象就是 `window`。
+全局 this 一般指向全局對象，瀏覽器中的全局對象就是 `window`。
 
 例如：
 
@@ -30,7 +30,7 @@ this.a = 91;
 console.log(window.a); //91
 ```
 
-## 一般函数的 this
+## 一般函數的 this
 
 ```js
 function f1 () {
@@ -39,20 +39,20 @@ function f1 () {
 console.log(f1() === window);//true, global object
 ```
 
-可以看到一般函数的 this 也指向 window，在 nodeJS 中为 global object
+可以看到一般函數的 this 也指向 window，在 nodeJS 中為 global object
 
 ```js
 function f2 () {
-    "use strict";//使用严格模式
+    "use strict";//使用嚴格模式
     return this;
 }
 console.log(f1() === undefined);//true
 ```
 
-严格模式中，函数的 this 为 undefined
+嚴格模式中，函數的 this 為 undefined
 
 
-## 作为对象方法的函数的 this
+## 作為對象方法的函數的 this
 
 ```js
 var o = {
@@ -64,9 +64,9 @@ var o = {
 console.log(o.f()); // 37
 ```
 
-上述代码通过字面量创建对象 o。
+上述代碼通過字面量創建對象 o。
 
-f 为对象 o 的方法。这个方法的 this 指向这个对象，在这里即对象 o。
+f 為對象 o 的方法。這個方法的 this 指向這個對象，在這裡即對象 o。
 
 ```js
 var o = {
@@ -80,9 +80,9 @@ o.f = independent;
 console.log(o.f()); // 37
 ```
 
-上面的代码，创建了对象 o，但是没有给对象 o，添加方法。而是通过 `o.f = independent` 临时添加了方法属性。这样这个方法中的 this 同样也指向这个对象 o。
+上面的代碼，創建了對象 o，但是沒有給對象 o，添加方法。而是通過 `o.f = independent` 臨時添加了方法屬性。這樣這個方法中的 this 同樣也指向這個對象 o。
 
-## 对象原型链上的 this
+## 對象原型鏈上的 this
 
 ```js
 var o = {
@@ -96,11 +96,11 @@ p.b = 2;
 console.log(p.f()); //3
 ```
 
-通过 `var p = Object.create(o)` 创建的对象，p 是基于原型 o 创建出的对象。
+通過 `var p = Object.create(o)` 創建的對象，p 是基於原型 o 創建出的對象。
 
-p 的原型是 o，调用 f() 的时候是调用了 o 上的方法 f()，这里面的 this 是可以指向当前对象的，即对象 p。
+p 的原型是 o，調用 f() 的時候是調用了 o 上的方法 f()，這裡面的 this 是可以指向當前對象的，即對象 p。
 
-## get/set 方法与 this
+## get/set 方法與 this
 
 ```js
 function modulus() {
@@ -121,9 +121,9 @@ Object.defineProperty(o, 'modulus', {
 console.log(o.phase, o.modulus); // -0.78 1.4142
 ```
 
-get/set 方法中的 this 也会指向 get/set 方法所在的对象的。
+get/set 方法中的 this 也會指向 get/set 方法所在的對象的。
 
-## 构造器中的 this
+## 構造器中的 this
 
 ```js
 function MyClass() {
@@ -133,7 +133,7 @@ var o = new MyClass();
 console.log(o.a); //25
 ```
 
-new MyClass() 的时候，MyClass()中的 this 会指向一个空对象，这个对象的原型会指向 MyClass.prototype。MyClass()没有返回值或者返回为基本类型时，默认将 this 返回。
+new MyClass() 的時候，MyClass()中的 this 會指向一個空對象，這個對象的原型會指向 MyClass.prototype。MyClass()沒有返回值或者返回為基本類型時，默認將 this 返回。
 
 ```js
 function C2() {
@@ -147,10 +147,10 @@ o = new C2();
 console.log(o.a); //24
 ```
 
-因为返回了对象，将这个对象作为返回值
+因為返回了對象，將這個對象作為返回值
 
 
-## call/apply 方法与 this
+## call/apply 方法與 this
 
 ```js
 function add(c, d) {
@@ -168,7 +168,7 @@ function bar() {
 bar.call(7); // "[object Number]"
 ```
 
-## bind 方法与 this
+## bind 方法與 this
 
 ```js
 function f() {
@@ -186,4 +186,4 @@ var o = {
 console.log(o.f(), o.g()); // 37, test
 ```
 
-绑定之后再调用时，仍然会按绑定时的内容走，所以 o.g() 结果是 test
+綁定之後再調用時，仍然會按綁定時的內容走，所以 o.g() 結果是 test

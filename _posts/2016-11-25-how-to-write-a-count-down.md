@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "前端如何写一个精确的倒计时"
+title:  "前端如何寫一個精確的倒計時"
 categories: JavaScript
 tags:  countdown JavaScript
 author: HyG
@@ -9,7 +9,7 @@ author: HyG
 * content
 {:toc}
 
-关于写倒计时大家可能都都比较熟悉，使用 setTimeout 或 setInterval 就可以搞定。几秒钟或者几分钟的倒计时这样写没有问题，但是如果是长时间的倒计时，这样写就会不准确。如果用户修改了他的设备时间，这样的倒计时就没有意义了。今天就说说写一个精确的倒计时的方法。
+關於寫倒計時大家可能都都比較熟悉，使用 setTimeout 或 setInterval 就可以搞定。幾秒鐘或者幾分鐘的倒計時這樣寫沒有問題，但是如果是長時間的倒計時，這樣寫就會不準確。如果用戶修改了他的設備時間，這樣的倒計時就沒有意義了。今天就說說寫一個精確的倒計時的方法。
 
 ![](https://img.alicdn.com/tfs/TB18QnlOpXXXXcVXpXXXXXXXXXX-388-256.png)
 
@@ -18,29 +18,29 @@ author: HyG
 
 ## 原理
 
-众所周知 setTimeout 或者 setInterval 调用的时候会有微小的误差。有人做了一个 [demo](https://bl.ocks.org/kenpenn/raw/92ebaa71696b4c4c3acd672b1bb3f49a/) 来观察这个现象并对其做了修正。短时间的误差倒也可以接受，但是作为一个长时间的倒计时，误差累计就会导致倒计时不准确。
+眾所周知 setTimeout 或者 setInterval 調用的時候會有微小的誤差。有人做了一個 [demo](https://bl.ocks.org/kenpenn/raw/92ebaa71696b4c4c3acd672b1bb3f49a/) 來觀察這個現象並對其做了修正。短時間的誤差倒也可以接受，但是作為一個長時間的倒計時，誤差累計就會導致倒計時不準確。
 
-因此我们可以在获取剩余时间的时候，每次 new 一个设备时间，因为设备时间的流逝相对是准确的，并且如果设备打开了网络时间同步，也会解决这个问题。
+因此我們可以在獲取剩餘時間的時候，每次 new 一個設備時間，因為設備時間的流逝相對是準確的，並且如果設備打開了網絡時間同步，也會解決這個問題。
 
-但是，如果用户修改了设备时间，那么整个倒计时就没有意义了，用户只要将设备时间修改为倒计时的 endTime 就可以轻易看到倒计时结束是页面的变化。因此一开始获取服务端时间就是很重要的。
+但是，如果用戶修改了設備時間，那麼整個倒計時就沒有意義了，用戶只要將設備時間修改為倒計時的 endTime 就可以輕易看到倒計時結束是頁面的變化。因此一開始獲取服務端時間就是很重要的。
 
-简单的说，一个简单的精确倒计时原理如下：
+簡單的說，一個簡單的精確倒計時原理如下：
 
-- 初始化时请求一次服务器时间 serverTime，再 new 一个设备时间 deviceTime
-- deviceTime 与 serverTime 的差作为时间偏移修正
-- 每次递归时 new 一个系统时间，解决 setTimeout 不准确的问题
+- 初始化時請求一次服務器時間 serverTime，再 new 一個設備時間 deviceTime
+- deviceTime 與 serverTime 的差作為時間偏移修正
+- 每次遞歸時 new 一個系統時間，解決 setTimeout 不準確的問題
 
-## 代码
+## 代碼
 
-获取剩余时间的代码如下：
+獲取剩餘時間的代碼如下：
 
 ```js
 /**
- * 获取剩余时间
- * @param  {Number} endTime    截止时间
- * @param  {Number} deviceTime 设备时间
- * @param  {Number} serverTime 服务端时间
- * @return {Object}            剩余时间对象
+ * 獲取剩餘時間
+ * @param  {Number} endTime    截止時間
+ * @param  {Number} deviceTime 設備時間
+ * @param  {Number} serverTime 服務端時間
+ * @return {Object}            剩餘時間對象
  */
 let getRemainTime = (endTime, deviceTime, serverTime) => {
     let t = endTime - Date.parse(new Date()) - serverTime + deviceTime
@@ -58,25 +58,25 @@ let getRemainTime = (endTime, deviceTime, serverTime) => {
 }
 ```
 
-<del>获取服务器时间可以使用 mtop 接口 `mtop.common.getTimestamp` </del>
+<del>獲取服務器時間可以使用 mtop 接口 `mtop.common.getTimestamp` </del>
 
-然后可以通过下面的方式来使用：
+然後可以通過下面的方式來使用：
 
 ```js
-// 获取服务端时间（获取服务端时间代码略）
+// 獲取服務端時間（獲取服務端時間代碼略）
 getServerTime((serverTime) => {
 
-    //设置定时器
+    //設置定時器
     let intervalTimer = setInterval(() => {
 
-        // 得到剩余时间
+        // 得到剩餘時間
         let remainTime = getRemainTime(endTime, deviceTime, serverTime)
 
-        // 倒计时到两个小时内
+        // 倒計時到兩個小時內
         if (remainTime.total <= 7200000 && remainTime.total > 0) {
             // do something
 
-        //倒计时结束
+        //倒計時結束
         } else if (remainTime.total <= 0) {
             clearInterval(intervalTimer);
             // do something
@@ -85,18 +85,18 @@ getServerTime((serverTime) => {
 })
 ```
 
-这样的的写法也可以做到准确倒计时，同时也比较简洁。不需要隔段时间再去同步一次服务端时间。
+這樣的的寫法也可以做到準確倒計時，同時也比較簡潔。不需要隔段時間再去同步一次服務端時間。
 
-## 补充
+## 補充
 
-在写倒计时的时候遇到了一个坑这里记录一下。
+在寫倒計時的時候遇到了一個坑這裡記錄一下。
 
-**千万别在倒计时结束的时候请求接口**。会让服务端瞬间 QPS 峰值达到非常高。
+**千萬別在倒計時結束的時候請求接口**。會讓服務端瞬間 QPS 峰值達到非常高。
 
 ![](https://img.alicdn.com/tfs/TB1LBzjOpXXXXcnXpXXXXXXXXXX-154-71.png)
 
-如果在倒计时结束的时候要使用新的数据渲染页面，正确的做法是：
+如果在倒計時結束的時候要使用新的數據渲染頁面，正確的做法是：
 
-在倒计时结束前的一段时间里，先请求好数据，倒计时结束后，再渲染页面。
+在倒計時結束前的一段時間裡，先請求好數據，倒計時結束後，再渲染頁面。
 
-关于倒计时，如果你有什么更好的解决方案，欢迎评论交流。
+關於倒計時，如果你有什麼更好的解決方案，歡迎評論交流。

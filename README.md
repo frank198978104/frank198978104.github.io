@@ -6,7 +6,7 @@
 [![GitHub release](https://img.shields.io/github/release/Gaohaoyang/gaohaoyang.github.io.svg)](https://github.com/Gaohaoyang/gaohaoyang.github.io/releases)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Gaohaoyang/gaohaoyang.github.io/master/LICENSE)
 
-**[中文版 Chinese README 请点击这里 🇨🇳](https://github.com/Gaohaoyang/gaohaoyang.github.io/blob/master/README-zh-cn.md)**
+**[中文版 Chinese README 請點擊這裡 🇨🇳](https://github.com/Gaohaoyang/gaohaoyang.github.io/blob/master/README-zh-cn.md)**
 
 With the escalation of jekyll version, but I also want to reconstruct my older blog theme, so I did reconstruction and added some features recently. My new blog theme will still be stored in this repository. I will also use this theme in the future. Now I have done basically, then I will focus on issues that users opend to make theme better.
 
@@ -87,7 +87,7 @@ The user can write some introduction about theirselves and their site with `mark
 
 ### Comments
 
-This theme supports both [disqus](https://disqus.com/) and [多说评论 duoshuo comments](http://duoshuo.com/). It's very easy to config your comments module.
+This theme supports both [disqus](https://disqus.com/) and [多說評論 duoshuo comments](http://duoshuo.com/). It's very easy to config your comments module.
 
 The only thing you need do is to change the `short_name` in the file `_config.yml`. As follows.
 
@@ -131,12 +131,12 @@ Of course, I have done a very good mobile adaptation.
 This theme supports Google Analytics and Baidu Statistics， you can just config the id in the file `_config.yml`, as follows.
 
 ```yml
-# statistic analysis 统计代码
-# 百度统计 id，将统计代码替换为自己的百度统计id，即
+# statistic analysis 統計代碼
+# 百度統計 id，將統計代碼替換為自己的百度統計id，即
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
 baidu_tongji_id: xxxxxxxxxxxx
-google_analytics_id: UA-xxxxxxxx # google 分析追踪id
+google_analytics_id: UA-xxxxxxxx # google 分析追蹤id
 ```
 
 ## Usage
@@ -198,7 +198,7 @@ zhihu_username: gaohaoyang
 linkedIn_username: gaohaoyang
 dribbble_username:
 
-description_footer: 本站记录我前端之旅的沿途风景！
+description_footer: 本站記錄我前端之旅的沿途風景！
 ```
 
 #### Comments info
@@ -225,12 +225,12 @@ Visit https://www.google.com/analytics/ or http://tongji.baidu.com/. And follow 
 Of course, if you don't want any statistical and analysis info, you can type nothing at id position.
 
 ```yml
-# statistic analysis 统计代码
-# 百度统计 id，将统计代码替换为自己的百度统计id，即
+# statistic analysis 統計代碼
+# 百度統計 id，將統計代碼替換為自己的百度統計id，即
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
 baidu_tongji_id: cf850xxxxxxxxxxxxxxxx
-google_analytics_id: UA-7xxxxxx-4 # google 分析追踪id
+google_analytics_id: UA-7xxxxxx-4 # google 分析追蹤id
 ```
 
 When you done, you can see UV, PV, location etc. info at your own Google Analytics or Baidu Statistic console.
@@ -242,7 +242,7 @@ You can write posts at folder `_posts`. At the beginning of the post, you should
 ```
 ---
 layout: post
-title:  "对这个 jekyll 博客主题的改版和重构"
+title:  "對這個 jekyll 博客主題的改版和重構"
 date:   2016-03-12 11:40:18 +0800
 categories: jekyll
 tags: jekyll 端口 markdown Foxit RubyGems HTML CSS
@@ -313,18 +313,18 @@ You can also donate me for a coffee, and I'll do better. Thanks.
 Thanks these friends!!!
 
 * 2017.05.25 received Wechat user ¥1.00
-* 2017.05.19 received 风之筝 ¥6.66
-* 2017.05.16 received 张驰 ¥6.00
+* 2017.05.19 received 風之箏 ¥6.66
+* 2017.05.16 received 張馳 ¥6.00
 * 2017.05.03 received 希成 ¥6.66
 * 2017.04.24 received deezer ¥10.00
 * 2017.04.13 received Abraham Xiao ¥30.00
 * 2017.04.11 received Wechat user ¥4.00
 * 2017.04.01 received Elvin Zeng ¥6.66
 * 2017.03.13 received Wechat user ¥6.66
-* 2017.03.04 received 史莱姆 ¥9.90
-* 2017.03.02 received 梦想小熊 ¥6.66
-* 2017.02.27 received 夏友杰 ¥6.66
-* 2017.02.26 received 兰缘小妖 ¥10.00
+* 2017.03.04 received 史萊姆 ¥9.90
+* 2017.03.02 received 夢想小熊 ¥6.66
+* 2017.02.27 received 夏友傑 ¥6.66
+* 2017.02.26 received 蘭緣小妖 ¥10.00
 * 2017.02.25 received Wechat user ¥6.66
 * 2017.02.22 received Wechat user ¥6.66
 * 2017.02.15 received Wechat user ¥10.00
@@ -339,13 +339,13 @@ Thanks these friends!!!
 * 2016.09.25 received 鑫 ¥6.66
 * 2016.08.25 received Erlend Aakre $2.50
 * 2016.08.10 received Wechat user ¥4.40
-* 2016.07.25 received 邓炳初 ¥6.66
-* 2016.07.11 received 彦风 ¥6.66
+* 2016.07.25 received 鄧炳初 ¥6.66
+* 2016.07.11 received 彥風 ¥6.66
 * 2016.07.07 received Klci ¥2.50
 * 2016.05.08 received 1057 ¥10.57
-* 2016.05.07 received 吴林 ¥2
-* 2016.04.29 received 北归 ¥10
-* 2016.04.28 received 魏楚阳_Brian ¥2
+* 2016.05.07 received 吳林 ¥2
+* 2016.04.29 received 北歸 ¥10
+* 2016.04.28 received 魏楚陽_Brian ¥2
 * 2016.04.28 received 薛彬 ¥8.8
 
 

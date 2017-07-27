@@ -1,21 +1,21 @@
 ---
 layout: post
-title:  "JavaScript 中的闭包"
+title:  "JavaScript 中的閉包"
 date:   2015-06-14 14:06:05
 categories: JavaScript
-tags: JavaScript 闭包 慕课网 ife
+tags: JavaScript 閉包 慕課網 ife
 ---
 
 * content
 {:toc}
 
-本文为慕课网 [JavaScript深入浅出](http://www.imooc.com/learn/277) JavaScript 中的闭包笔记。
+本文為慕課網 [JavaScript深入淺出](http://www.imooc.com/learn/277) JavaScript 中的閉包筆記。
 
 
 
 
 
-## 闭包的例子
+## 閉包的例子
 
     function outer() {
         var localVal = 30;
@@ -34,21 +34,21 @@ tags: JavaScript 闭包 慕课网 ife
     var func = outer2();
     console.log(func()); //30
 
-对于第一个普通的函数，在执行过之后，它的局部变量就可以被释放。
+對於第一個普通的函數，在執行過之後，它的局部變量就可以被釋放。
 
-对于第二个函数，`localVal` 是不能被释放的。因为调用 `outer2()` 后，返回的是匿名函数，匿名函数可以访问外部的 `outer2()` 中的局部变量，并返回了这个局部变量 localVal。当 `outer2()` 赋值给 `func` 后，再次调用 `func()`，仍能访问到局部变量 `localVal`。这种情况就是闭包。
+對於第二個函數，`localVal` 是不能被釋放的。因為調用 `outer2()` 後，返回的是匿名函數，匿名函數可以訪問外部的 `outer2()` 中的局部變量，並返回了這個局部變量 localVal。當 `outer2()` 賦值給 `func` 後，再次調用 `func()`，仍能訪問到局部變量 `localVal`。這種情況就是閉包。
 
 ---
 
-## 应用
+## 應用
 
-* **所谓闭包就是：子函数可以使用父函数中的局部变量。**
+* **所謂閉包就是：子函數可以使用父函數中的局部變量。**
 
         ! function() {
             var localData = "localData here";
             document.addEventListener('click',
                 function() {
-                    console.log(localData); //这里访问外部数据
+                    console.log(localData); //這裡訪問外部數據
                 });
         }();
 
@@ -59,16 +59,16 @@ tags: JavaScript 闭包 慕课网 ife
                 url: url,
                 success: function() {
                     // do sth...
-                    console.log(localData); //这里访问外部数据
+                    console.log(localData); //這裡訪問外部數據
                 }
             });
         }()
 
 ---
 
-## 常见错误之循环闭包
+## 常見錯誤之循環閉包
 
-比如我们想循环绑定点击事件
+比如我們想循環綁定點擊事件
 
     document.body.innerHTML = "<div id=div1>aaa</div><div id=div2>bbb</div><div id=div3>ccc</div>";
     for (var i = 1; i < 4; i++) {
@@ -78,9 +78,9 @@ tags: JavaScript 闭包 慕课网 ife
         });
     }
 
-上面的代码，我们点击任何一个 div，弹出的都是 4
+上面的代碼，我們點擊任何一個 div，彈出的都是 4
 
-这是因为，for 循环中的 i 是一个全局变量。这里内函数的点击事件，访问到的是循环后的 i 值，所以是 4
+這是因為，for 循環中的 i 是一個全局變量。這裡內函數的點擊事件，訪問到的是循環後的 i 值，所以是 4
 
     document.body.innerHTML = "<div id=div1>aaa</div><div id=div2>bbb</div><div id=div3>ccc</div>";
     for (var i = 1; i < 4; i++) {
@@ -92,11 +92,11 @@ tags: JavaScript 闭包 慕课网 ife
         }(i);
     }
 
-这里使用了立即执行函数，并给匿名函数赋值 i，这样点击事件每一次就会访问到相应的 i。
+這裡使用了立即執行函數，並給匿名函數賦值 i，這樣點擊事件每一次就會訪問到相應的 i。
 
 ---
 
-## 封装
+## 封裝
 
     (function() {
         var _userId = 9527;
@@ -125,23 +125,23 @@ tags: JavaScript 闭包 慕课网 ife
     console.log(a._typeId); //undefined
     console.log(converter); //Uncaught ReferenceError: converter is not defined
 
-上面的代码通过闭包实现了一个封装。
+上面的代碼通過閉包實現了一個封裝。
 
 ---
 
-## 总结
+## 總結
 
-> * 在计算机科学中，闭包（也称词法闭包或函数闭包）是指一个函数或函数的引用，与一个引用环境绑定在一起。这个引用环境是一个存储该函数每个非局部变量（也叫自由变量）的表。
+> * 在計算機科學中，閉包（也稱詞法閉包或函數閉包）是指一個函數或函數的引用，與一個引用環境綁定在一起。這個引用環境是一個存儲該函數每個非局部變量（也叫自由變量）的表。
 >
-> * 闭包，不同于一般的函数，它允许一个函数在立即词法作用域外调用时，仍可访问非本地变量。
+> * 閉包，不同於一般的函數，它允許一個函數在立即詞法作用域外調用時，仍可訪問非本地變量。
 >
-> from 维基百科
+> from 維基百科
 
-* 闭包的优点
-    * 灵活和方便
-    * 封装
+* 閉包的優點
+    * 靈活和方便
+    * 封裝
 
-* 缺点
-    * 空间浪费
-    * 内存泄露
+* 缺點
+    * 空間浪費
+    * 內存泄露
     * 性能消耗

@@ -1,73 +1,73 @@
 ---
 layout: post
-title:  "JavaScript 语言精粹笔记3-方法、毒瘤等"
+title:  "JavaScript 語言精粹筆記3-方法、毒瘤等"
 categories: JavaScript
-tags:  函数 JavaScript
+tags:  函數 JavaScript
 ---
 
 * content
 {:toc}
 
-记录一下阅读蝴蝶书的笔记，本篇为书中最后一部分：方法、代码风格、优美的特性、毒瘤、糟粕等。
+記錄一下閱讀蝴蝶書的筆記，本篇為書中最後一部分：方法、代碼風格、優美的特性、毒瘤、糟粕等。
 
 
 
 
 ## 方法
 
-这一章主要介绍了一些方法集。这里写几个我不太熟悉的方法和要点吧。
+這一章主要介紹了一些方法集。這裡寫幾個我不太熟悉的方法和要點吧。
 
 * `array.join()`
 
-    > 对于IE6/7，使用`array.join()`连接大量字符串的效率确实优于使用`+`元素运算符。但是目前主流的浏览器，包括IE8以后的版本，都对`+`元素运算符连接字符串做了特别优化，性能已经显著高于`array.join()`。
+    > 對於IE6/7，使用`array.join()`連接大量字符串的效率確實優於使用`+`元素運算符。但是目前主流的瀏覽器，包括IE8以後的版本，都對`+`元素運算符連接字符串做了特別優化，性能已經顯著高於`array.join()`。
 
 * `number.toExponential(fractionDigits)`
 
-    把这个`number`转换成一个指数形式的字符串。
+    把這個`number`轉換成一個指數形式的字符串。
 
 * `number.toFixed(fractionDigits)`
 
-    将这个`number`转换成一个十进制形式的字符串。
+    將這個`number`轉換成一個十進制形式的字符串。
 
 
 ## 毒瘤
 
-* 注意全局变量的引入。
+* 注意全局變量的引入。
 
-* JavaScript 中 Unicode 是16位的。包含65536个字符（基本多文种平面 Basic Multilingual Plane）。剩下的百万字符中的每一个都可以用一对字符来表示。Unicode 把一对字符视为一个单一的字符，而 JavaScript 认为一对字符是两个不同的字符。
+* JavaScript 中 Unicode 是16位的。包含65536個字符（基本多文種平面 Basic Multilingual Plane）。剩下的百萬字符中的每一個都可以用一對字符來表示。Unicode 把一對字符視為一個單一的字符，而 JavaScript 認為一對字符是兩個不同的字符。
 
-* 检测`null`的方式。
+* 檢測`null`的方式。
 
 ```js
 console.log(typeof null) //object
 
-myValue === null //检测 null
+myValue === null //檢測 null
 
 if (myValue && typeof myValue === 'object') {
-    // myValue 是一个对象或数组！
+    // myValue 是一個對象或數組！
 }
 ```
 
-* `parseInt` 把字符串转化为整数的函数。它遇到非数字时会停止解析，所以`parseInt('16')`和`parseInt('16ton')`产生相同的结果。
+* `parseInt` 把字符串轉化為整數的函數。它遇到非數字時會停止解析，所以`parseInt('16')`和`parseInt('16ton')`產生相同的結果。
 
-    如果该字符串第一个字符是0，那么该字符串会基于八进制而不是十进制来求职。在八进制中，8和9不是数字，所以`parseInt('08')`和`parseInt('09')`都产生0作为结果。但`parseInt()`可以接受基数，因此`parseInt('08',10)`结果为8，建议总是加上这个基数参数。
+    如果該字符串第一個字符是0，那麼該字符串會基於八進制而不是十進制來求職。在八進制中，8和9不是數字，所以`parseInt('08')`和`parseInt('09')`都產生0作為結果。但`parseInt()`可以接受基數，因此`parseInt('08',10)`結果為8，建議總是加上這個基數參數。
 
-* JavaScript 的对象永远不会是真的空对象，因为它们可以送原型链中取得成员属性。
+* JavaScript 的對象永遠不會是真的空對象，因為它們可以送原型鏈中取得成員屬性。
 
 ## 糟粕
 
-* 避免使用`with`语句。
+* 避免使用`with`語句。
 
-* 避免使用`eval`语句。
+* 避免使用`eval`語句。
 
-* `continue`可能会降低运算性能。
+* `continue`可能會降低運算性能。
 
-* 位运算符在 JavaScript 会非常慢。
+* 位運算符在 JavaScript 會非常慢。
 
-    Java 里，位运算符处理的是整数。JavaScript 没有整数类型，它只有双精度的浮点数，因此，位运算符把它们的数字运算数先转换为整数，执行运算，在转换回去。JavaScript 的执行环境一般接触不到硬件，所以非常慢。
+    Java 裡，位運算符處理的是整數。JavaScript 沒有整數類型，它只有雙精度的浮點數，因此，位運算符把它們的數字運算數先轉換為整數，執行運算，在轉換回去。JavaScript 的執行環境一般接觸不到硬件，所以非常慢。
 
-* 避免使用包装对象。`new Object`和`new Array`等。
+* 避免使用包裝對象。`new Object`和`new Array`等。
 
 * 避免使用`void`。
 
-本系列结束。
+本系列結束。
