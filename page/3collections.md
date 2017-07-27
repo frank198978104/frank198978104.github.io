@@ -17,6 +17,6 @@ type: page
 
 * [AddToAny](https://www.addtoany.com/)
 
-    快速鍵置射尋分享
+    快速鍵置社群分享
 
 {% include comments.html %}
