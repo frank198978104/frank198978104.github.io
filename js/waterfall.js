@@ -22,7 +22,7 @@
     },
 
     {
-      demo_link: 'https://codepen.io/haoyang/pen/jrvrQq',
+      demo_link: 'https://tad.tycg.gov.tw/',
       img_link: 'https://tad.tycg.gov.tw/images/bg_index_banner.png',
       title: '桃園市政府交通事件裁決處',
       core_tech: 'ASP.NET MVC',

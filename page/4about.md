@@ -11,15 +11,15 @@ type: page
 * content
 {:toc}
 
-## Author
-
+## **Author**
+<h3>Hi, I'm Frank. (孫景承)</h3>
 In 2012, I graduated from Chung Hua University where I majored in Computer Science and Information Engineering.
 
 I've been working for CREATIDEA Company as a ASP.NET Developer.
 
 In my free time, I like singing a song, playing guitar, and listening to music.
 
-## Skill Set
+## **Skill Set**
 
 * C/C++, Visual C#
 * XML, JSON
@@ -27,7 +27,7 @@ In my free time, I like singing a song, playing guitar, and listening to music.
 * ASP.NET, ASP.NET MVC, LINQ
 * IIS, SQL Server2014, EntityFramework
 
-## Contact Me
+## **Contact Me**
 
 * [Github](https://github.com/frank198978104)
 * [LinkedIn](https://www.linkedin.com/in/frank-sun-ab2472139/)
