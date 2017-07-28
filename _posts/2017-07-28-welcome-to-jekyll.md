@@ -35,5 +35,26 @@ mathjax: true
 如果你想自己複製(如上圖)Set up in Desktop右邊的HTTPS或是改資料夾路徑也是可以的
 <img src="/images/2017-07-28-welcome-to-jekyll-image3.jpg" width="500" alt="桌面版範例" title="桌面版範例"/>
 
+5. 試著建立一個 index.html 放到裡面(可直接複製下面黑框內的範例)
+
+6. 右邊的 index.html 已經待上傳了，左下角的Summary輸入概要之後就可以點下**Commit to master**就可以上傳了
+<img src="/images/2017-07-28-welcome-to-jekyll-image4.jpg" alt="上傳範例" title="上傳範例"/>
+
+7. 打開網址 https://username.github.io (username換成自己的帳號) 就完成了！
+
+>第5點index.html範例
+>```html
+><!DOCTYPE html>
+><html>
+>  <body>
+>    <h1>Hello World</h1>
+>    <p>I'm hosted with GitHub Pages.</p>
+>  </body>
+></html>
+>```
+index.html 顯示的結果如下<br/>
+![index.html範例結果](/images/2017-07-28-welcome-to-jekyll-image5.jpg)
+
+### **Step 2 - Jekyll**
 
 (編輯未完)
