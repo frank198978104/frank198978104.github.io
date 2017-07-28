@@ -26,3 +26,4 @@ mathjax: true
 
 ![Set up in Desktop位置](/images/2017-07-28-welcome-to-jekyll-image2.jpg)
 
+(編輯未完)
