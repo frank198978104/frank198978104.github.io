@@ -12,7 +12,7 @@ mathjax: true
 
 　　那就讓我們開始流程跟教學吧！
 
-### Step 1
+### 建置流程
 
 先到 **[GitHub](https://github.com/new)** 上申請帳號
 
