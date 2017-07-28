@@ -31,4 +31,9 @@ mathjax: true
 如果沒有安裝 **[GitHub桌面版](https://desktop.github.com/)** 他就會詢問你是否要安裝**(在此提供連結也可以先行安裝)**
 <img src="/images/2017-07-28-welcome-to-jekyll-image2.jpg" width="500" alt="Set up in Desktop位置" title="Set up in Desktop位置"/>
 
+4. 若已安裝完成，他會跳出如下圖的畫面，自動幫你連結和創資料夾<br/>
+如果你想自己複製(如上圖)Set up in Desktop右邊的HTTPS或是改資料夾路徑也是可以的
+<img src="/images/2017-07-28-welcome-to-jekyll-image3.jpg" width="500" alt="桌面版範例" title="桌面版範例"/>
+
+
 (編輯未完)
