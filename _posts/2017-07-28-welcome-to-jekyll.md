@@ -42,7 +42,7 @@ mathjax: true
 
 7. 打開網址 https://username.github.io (username換成自己的帳號) 就完成了！
 
->第5點index.html範例
+>第5點 index.html 範例
 >```html
 ><!DOCTYPE html>
 ><html>
