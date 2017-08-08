@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "在GitHub上使用jekyll建立自己的部落格"
+title:  "在 GitHub 上使用 Jekyll 建立自己的部落格"
 date:   2017-07-28 00:00:00
-categories: jekyll
-tags: jekyll 懶人包 部落格 教學 GitHub 網站
+categories: Jekyll
+tags: Jekyll 懶人包 部落格 教學 GitHub 網站
 excerpt: 既然剛架好，就順便做一篇簡單的教學吧。
 mathjax: true
 author: Frank Sun(孫景承)
