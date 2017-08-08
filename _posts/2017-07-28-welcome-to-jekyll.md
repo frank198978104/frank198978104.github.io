@@ -89,7 +89,9 @@ jekyll serve
 
 因為工作的關係，我本身比較習慣使用 **[Visual Studio Code](https://code.visualstudio.com/)**
 
-我是直接把整包資料夾拉進 Visual Studio Code 當中，
+我是直接把整包資料夾拉進 Visual Studio Code 當中
+
+當文章編輯完時，介面左邊也會有工具提供給使用者Commit，很方便。
 
 ### **總結**
 GitHub Pages ＋ Jekyll使用上的特點：
