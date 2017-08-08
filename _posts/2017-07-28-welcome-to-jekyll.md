@@ -78,7 +78,8 @@ cd mysite
 jekyll serve
 ```
 
-2. 打開網頁
+2. 打開網頁<br/>
+[http://localhost:4000/](http://localhost:4000/)
 ![localhost:4000範例結果](/images/2017-07-28-welcome-to-jekyll/2017-07-28-welcome-to-jekyll-image6.jpg)
 
 
