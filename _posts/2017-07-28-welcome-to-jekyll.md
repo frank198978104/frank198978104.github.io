@@ -3,9 +3,10 @@ layout: post
 title:  "在GitHub上使用jekyll建立自己的部落格"
 date:   2017-07-28 00:00:00
 categories: jekyll
-tags: jekyll
+tags: jekyll 懶人包 部落格 教學 GitHub 網站
 excerpt: 既然剛架好，就順便做一篇簡單的教學吧。
 mathjax: true
+author: Frank Sun(孫景承)
 ---
 
 * content
@@ -37,7 +38,8 @@ mathjax: true
 
 5. 試著建立一個 index.html 放到裡面(可直接複製下面黑框內的範例)
 
-6. 右邊的 index.html 已經待上傳了，左下角的Summary輸入概要之後就可以點下**Commit to master**就可以上傳了
+6. 右邊的 index.html 已經待上傳了，左下角的Summary輸入概要之後就可以點下**Commit to master**就可以認可了<br/>
+當按下右上方的Push origin 或是 Fetch origin就可以進行發送或擷取GitHub的資料了。
 <img src="/images/2017-07-28-welcome-to-jekyll/2017-07-28-welcome-to-jekyll-image4.jpg" alt="上傳範例" title="上傳範例"/>
 
 7. 打開網址 https://username.github.io (username換成自己的帳號) 就完成了！
@@ -91,7 +93,9 @@ jekyll serve
 
 我是直接把整包資料夾拉進 Visual Studio Code 當中
 
-當文章編輯完時，介面左邊也會有工具提供給使用者Commit，很方便。
+當文章編輯完時，介面左邊也會有工具提供給使用者Commit，很方便
+
+不過推送或擷取還是要透過 GitHub Desktop 按一下 Push origin 或是 Fetch origin(參考 Step 1 的第 6 點)
 
 ### **總結**
 GitHub Pages ＋ Jekyll使用上的特點：
