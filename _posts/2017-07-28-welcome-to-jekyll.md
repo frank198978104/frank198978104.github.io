@@ -89,7 +89,7 @@ jekyll serve
 #### **新增文章**
 只要從相對資料夾下的 _posts 這個資料夾裡面新增一個 .md 檔就可以開始撰寫文章了
 
-因為工作的關係，我本身比較習慣使用 **[Visual Studio Code](https://code.visualstudio.com/)**
+我本身比較習慣使用 **[Visual Studio Code](https://code.visualstudio.com/)**
 
 我是直接把整包資料夾拉進 Visual Studio Code 當中
 
