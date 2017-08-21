@@ -1,17 +1,18 @@
 ---
 layout: default
 ---
-
+<article itemscope itemtype="http://schema.org/BlogPosting">
+<meta itemprop="author" name="author" content="{{ page.author }}">
 <div class="page clearfix" post>
     <div class="left">
-        <h1>{{page.title}}</h1>
+        <h1 itemprop="headline">{{page.title}}</h1>
         <div class="label">
 
-            <div class="label-card">
+            <div class="label-card" itemprop="datePublished">
                 <i class="fa fa-calendar"></i>{{ page.date | date: "%F" }}
             </div>
 
-            <div class="label-card">
+            <div class="label-card" itemprop="publisher">
                 {% if page.author %}<i class="fa fa-user"></i>{{ page.author }}
                 {% endif %}
             </div>
@@ -24,16 +25,15 @@ layout: default
             {% include category.html %}
             </div>
 
-            <div class="label-card">
+            <div class="label-card" itemprop="keywords">
             {% include tag.html %}
             </div>
 
         </div>
         <hr>
-        <article itemscope itemtype="http://schema.org/BlogPosting">
         {{content}}
-        </article>
         <hr>
+</article>
 
         {% assign hasSimilar = '' %}
         {% for post in site.related_posts %}
