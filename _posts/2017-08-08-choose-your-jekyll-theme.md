@@ -5,7 +5,7 @@ title:  "Jekyll 更換主題及安裝插件"
 date:   2017-08-08 00:00:00
 categories: Jekyll
 tags: Jekyll 懶人包 部落格 教學 GitHub 網站
-excerpt: 繼上一篇後，我們就來看看有什麼套件可以利用還更快速的架設部落格吧。
+excerpt: <center><img src="/images/2017-08-08-choose-your-jekyll-theme/2017-08-08-choose-your-jekyll-theme-image1.jpg" width="500" alt="Jekyll 更換主題及安裝插件" title="Jekyll 更換主題及安裝插件"/></center><br/>跟著上一篇操作我們建立好了自己的 GitHub 和 Jekyll 的使用環境，那接下來就是跟大家分享一下 Jekyll 的一些主題和套件囉。
 mathjax: true
 ---
 
