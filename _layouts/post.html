@@ -2,17 +2,23 @@
 layout: default
 ---
 <article itemscope itemtype="http://schema.org/BlogPosting">
-<meta itemprop="author" name="author" content="{{ page.author }}">
+    <meta itemprop="mainEntityOfPage" itemscope itemtype="http://schema.org/WebPage">
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Frank Sun Blog">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="https://frank198978104.github.io/favicon.ico/">
+        </div>
+    </div>
 <div class="page clearfix" post>
     <div class="left">
         <h1 itemprop="headline">{{page.title}}</h1>
         <div class="label">
 
-            <div class="label-card" itemprop="datePublished">
+            <div class="label-card" itemprop="datePublished dateModified">
                 <i class="fa fa-calendar"></i>{{ page.date | date: "%F" }}
             </div>
 
-            <div class="label-card" itemprop="publisher">
+            <div class="label-card" itemprop="author publisher">
                 {% if page.author %}<i class="fa fa-user"></i>{{ page.author }}
                 {% endif %}
             </div>
