@@ -78,7 +78,10 @@ schema.org 是近年規範出來的東西，甚至Google也大量的在利用 sc
 <img src="/images/2017-08-21-how-to-use-seo/2017-08-21-how-to-use-seo-image6.jpg" alt="結構化資料測試工具" title="結構化資料測試工具"/>
 
 #### **使用方法**
-schema.org 的使用方法也很簡單，先定義 Type 將你想結構化的地方包住，只要在標籤打上 itemprop="屬性" 就可以將你包覆起來的地方結構化了：
+schema.org 有三種使用方法「Microdata」、「RDFa」、「JSON-LD」，我在這邊只介紹常用的兩種「Microdata」、「JSON-LD」
+
+##### **Microdata**
+Microdata 的使用方式，先定義 Type 將你想結構化的地方包住，只要在標籤打上 itemprop="屬性" 就可以將你包覆起來的地方結構化了：
 ```html
 <div itemscope itemtype="http://schema.org/Book">
   <div>書名：<span itemprop="name">三隻小豬</span></div>
@@ -98,13 +101,13 @@ schema.org 的使用方法也很簡單，先定義 Type 將你想結構化的地
 ```
 ```html
 <div id="a">書名：<span itemprop="name">三隻小豬</span></div>
-<div id="b">價格：<span itemprop="price">$50</span></div>
+<div id="b">出版：<span itemprop="datePublished">1840</span></div>
 ```
 
 <img src="/images/2017-08-21-how-to-use-seo/2017-08-21-how-to-use-seo-image8.jpg" alt="itemref 範例" title="itemref 範例"/>
 
-#### **JSON-LD**
-還有一種也是 schema.org 很常用的方式，JSON-LD 透過 **< script type="application/ld+json" >** 將網頁結構與資料抽離的另一種使用方式：
+##### **JSON-LD**
+JSON-LD 是透過 **< script type="application/ld+json" >** 將網頁結構與資料抽離的另一種使用方式，感覺就很像在網頁掛上一個名片：
 ```html
 <script type="application/ld+json">
 {
