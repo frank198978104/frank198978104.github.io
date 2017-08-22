@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Frank Sun(孫景承)
+author: Frank Sun (孫景承)
 title:  "Jekyll 更換主題及安裝插件"
 date:   2017-08-08 00:00:00
 categories: Jekyll

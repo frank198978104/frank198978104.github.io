@@ -9,7 +9,8 @@
 title: Frank Sun Blog
 brief-intro: My Technical Notes
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://gaohaoyang.github.io" # the base hostname & protocol for your site
+url: "https://frank198978104.github.io" # the base hostname & protocol for your site
+description: Hello, I'm Frank. Welcome to my website. There mainly record my encountered problems and study things. If you have any problems or question, you can discuss under the article. 你好，我是 Frank Sun (孫景承) 歡迎來到我的網站。 這裡主要是記錄我遇到的問題和我學習過的東西。 如果您有任何問題或疑問，可以在文章下方留言討論。
 
 permalink: /:year/:month/:day/:title/
 
