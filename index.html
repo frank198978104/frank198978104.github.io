@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="page clearfix" index>
+<div class="page clearfix" itemscope itemtype="http://schema.org/Blog" index>
     <div class="left">
         <div align="center">
             <h1>Welcome to Frank Sun Blog</h1>
@@ -14,13 +14,13 @@ layout: default
             {% for post in paginator.posts %}
               <li>
                 <h2>
-                  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                  <a class="post-link" itemprop="headline" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
                 </h2>
                 <div class="label">
-                    <div class="label-card">
+                    <div class="label-card" itemprop="datePublished">
                         <i class="fa fa-calendar"></i>{{ post.date | date: "%F" }}
                     </div>
-                    <div class="label-card">
+                    <div class="label-card" itemprop="author">
                         {% if post.author %}<i class="fa fa-user"></i>{{ post.author }}
                         {% endif %}
                     </div>
@@ -36,7 +36,7 @@ layout: default
                     {% include tag.html %}
                     </div>
                 </div>
-                <div class="excerpt">
+                <div class="excerpt" itemprop="about">
                     {{post.excerpt}}
                 </div>
                 <div class="read-all">
@@ -76,7 +76,7 @@ layout: default
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                     Recent Posts
                 </div>
-                <ul class="content-ul" recent>
+                <ul class="content-ul" itemprop="headline" recent>
                     {% for post in site.posts offset: 0 limit: 10  %}
                         <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
                     {% endfor %}
@@ -89,7 +89,7 @@ layout: default
                     <i class="fa fa-th-list"></i>
                     Categories
                 </div>
-                <ul class="content-ul" cate>
+                <ul class="content-ul" itemprop="alternativeHeadline" cate>
                     {% for category in site.categories %}
                     <li>
                         <a href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}" class="categories-list-item" cate="{{ category | first }}">
@@ -108,7 +108,7 @@ layout: default
                     <i class="fa fa-tags"></i>
                     Tags
                 </div>
-                <div class="tags-cloud">
+                <div class="tags-cloud" itemprop="keywords">
                     {% assign first = site.tags.first %}
                     {% assign max = first[1].size %}
                     {% assign min = max %}
