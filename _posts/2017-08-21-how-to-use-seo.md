@@ -13,7 +13,7 @@ mathjax: true
 {:toc}
 
 ## **什麼是 SEO ?**
-<center>
+<center itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
     <img itemprop="image" src="/images/2017-08-21-how-to-use-seo/2017-08-21-how-to-use-seo-image1.jpg" width="500" alt="使用 SEO 讓你的網站更容易被看見 - 搜尋引擎最佳化" title="使用 SEO 讓你的網站更容易被看見 - 搜尋引擎最佳化"/>
 </center><br/>
 SEO 為 Search Engine Optimization 的縮寫，中文為「搜尋引擎最佳化」，是一種透過了解搜尋引擎的運作規則來調整網站，以及提高目的網站在有關搜尋引擎內排名的方式。簡單的來說就是，使用一些搜尋引擎的規則，讓你的網站更容易被搜尋引擎給收尋到，甚至順序更前面。

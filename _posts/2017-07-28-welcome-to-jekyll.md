@@ -13,7 +13,7 @@ author: Frank Sun (孫景承)
 {:toc}
 
 ### **前言小語：**
-<center>
+<center itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
     <img itemprop="image" src="/images/2017-07-28-welcome-to-jekyll/2017-07-28-welcome-to-jekyll-image0.jpg" width="500" alt="在 GitHub 上使用 Jekyll 建立自己的部落格" title="在 GitHub 上使用 Jekyll 建立自己的部落格"/>
 </center><br/>
 　　前一陣子有朋友在問我網頁前端的相關問題，一開始也只是很平常的回覆他，但是過一陣後我想想，他是寫iOS的為什麼在問我網頁前端的東西呢？他才跟我說他在GitHub上建立部落格，紀錄一些事情。我回頭想想，也對，當遇到問題的時候好像會回去開以前寫過的專案，頗浪費時間的，所以就想說我也來架一個紀錄一下我所做過的專案跟曾經碰到的問題，也算是某種筆記。
