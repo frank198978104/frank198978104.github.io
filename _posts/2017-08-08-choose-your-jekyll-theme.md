@@ -20,7 +20,7 @@ mathjax: true
 ### **主題**
 在 **[官方的說明](http://jekyllcn.com/docs/themes/)** 中，我們可以看到一些比較完整(複雜)的方法，但是其實我們可以從以下的網址中去找你喜歡的主題來使用，既然我們是寫程式的，那麼就要去發揮 OO 的精神。有些主題的作者可能會希望你去他的 GitHub 上按個 Start 或是 Fork ，別人做那麼辛苦，我們也應該去給人家一些鼓勵，反正點一下也不用錢。
 <center itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-  <img itemprop="image" src="/images/2017-08-08-choose-your-jekyll-theme/2017-08-08-choose-your-jekyll-theme-image1.jpg" alt="Jekyll主題範例圖" title="Jekyll主題範例圖"/>
+  <img itemprop="image url height width" src="/images/2017-08-08-choose-your-jekyll-theme/2017-08-08-choose-your-jekyll-theme-image1.jpg" alt="Jekyll主題範例圖" title="Jekyll主題範例圖"/>
 </center>
 
 [http://jekyllthemes.org/](http://jekyllthemes.org/)
