@@ -12,7 +12,7 @@ type: page
 {:toc}
 
 ## **Author**
-<h3>Hi, I'm Frank Sun. (孫景承)</h3>
+<h3>Hi, I'm Frank Sun. 孫景承</h3>
 In 2012, I graduated from Chung Hua University where I majored in Computer Science and Information Engineering.
 
 I've been working for CREATIDEA Company as a ASP.NET Developer.

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Frank Sun (孫景承)
+author: Frank Sun 孫景承
 title:  "使用 SEO 讓你的網站更容易被看見 - 搜尋引擎最佳化"
 date:   2017-08-21 00:00:00
 categories: SEO
