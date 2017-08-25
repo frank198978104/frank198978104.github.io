@@ -95,7 +95,7 @@ author: Frank Sun 孫景承
 連結 Azure 給你的指定路徑就完成了！路徑名稱是 <font color="blue">http://資源名稱.azurewebsites.net</font>，在指令的第4點圖裡面，上面有個 URL 也可以直接連結過去。<br/>
 ![完成圖](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image14.jpg)
 
-<font color="red">P.S：第一次建立成功之後，發佈資料只要重複 <b>指令第3點和第5點</b> 即可。</font>
+<font color="red">P.S：第一次建立成功之後，發佈資料只要重複 <b>指令第2、3、5點</b> 即可。</font>
 
 ## **影片教學**
 YouTube 上也有人提供影片，喜歡看著影片操作的朋友也可以參考喔。
