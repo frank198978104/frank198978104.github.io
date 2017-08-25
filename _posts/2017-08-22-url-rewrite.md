@@ -12,7 +12,7 @@ author: Frank Sun 孫景承
 * content
 {:toc}
 
-## **URL Rewrite http to https**
+## **URL Rewrite http to https** 
 
 <center itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
     <img itemprop="image url height width" width="200" src="/images/2017-08-23-URL-Rewrite/2017-08-23-URL-Rewrite-image1.jpg" alt="URL Rewrite" title="URL Rewrite"/>
