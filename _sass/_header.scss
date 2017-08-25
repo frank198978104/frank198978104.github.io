@@ -17,11 +17,17 @@ header {
         margin: 0 auto;
         line-height: 52px;
         .brand {
-            font-size: 18px;
-        }
-        small {
-            margin-left: 26px;
-            font-size: 14px;
+            .fa-github{
+                color: #fff;
+                font-size: 50px;
+                margin-right: 5px;
+            }
+            .titleName{
+                color: #fff;
+                font-size: 22px;
+                position: relative;
+                top: -8px;
+            }
         }
         .menu{
             display: none;
