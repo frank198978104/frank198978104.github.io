@@ -91,7 +91,8 @@ author: Frank Sun 孫景承
 >```
 >![部屬認證輸入](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image13.jpg)
 
-12. 連結 Azure 給你的指定路徑就完成了！路徑名稱是 http://資源名稱.azurewebsites.net，在指令的第4點圖裡面，上面有個 URL 也可以直接連結過去。<br/>
+### Step 12. 完成
+連結 Azure 給你的指定路徑就完成了！路徑名稱是 http://資源名稱.azurewebsites.net，在指令的第4點圖裡面，上面有個 URL 也可以直接連結過去。<br/>
 ![完成圖](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image14.jpg)
 
 <font color="red">P.S：第一次建立成功之後，發佈資料只要重複 <b>指令第3點和第5點</b> 即可。</font>
