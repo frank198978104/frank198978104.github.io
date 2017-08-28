@@ -5,7 +5,7 @@ title:  "Jekyll 更換主題及安裝插件"
 date:   2017-08-08 00:00:00
 categories: Jekyll
 tags: Jekyll 懶人包 部落格 教學 GitHub 網站
-excerpt: <center><img src="/images/2017-08-08-choose-your-jekyll-theme/2017-08-08-choose-your-jekyll-theme-image1.jpg" width="500" alt="Jekyll 更換主題及安裝插件" title="Jekyll 更換主題及安裝插件"/></center><br/>跟著上一篇操作我們建立好了自己的 GitHub 和 Jekyll 的使用環境，那接下來就是跟大家分享一下 Jekyll 的一些主題和套件囉。
+excerpt: <center><img src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNncDFHbHdIb09FcFk" width="500" alt="Jekyll 更換主題及安裝插件" title="Jekyll 更換主題及安裝插件"/></center><br/>跟著上一篇操作我們建立好了自己的 GitHub 和 Jekyll 的使用環境，那接下來就是跟大家分享一下 Jekyll 的一些主題和套件囉。
 mathjax: true
 ---
 
@@ -13,14 +13,14 @@ mathjax: true
 {:toc}
 
 ### **前情提要**
-上一篇：[在 GitHub 上使用 Jekyll 建立自己的部落格](https://frank198978104.github.io/2017/07/28/welcome-to-jekyll/)
+上一篇：[在 GitHub 上使用 Jekyll 建立自己的部落格](/2017/07/28/welcome-to-jekyll/)
 
 跟著上一篇操作我們建立好了自己的 GitHub 和 Jekyll 的使用環境，那接下來就是跟大家分享一下 Jekyll 的一些主題和套件囉。
 
 ### **主題**
 在 **[官方的說明](http://jekyllcn.com/docs/themes/)** 中，我們可以看到一些比較完整(複雜)的方法，但是其實我們可以從以下的網址中去找你喜歡的主題來使用，既然我們是寫程式的，那麼就要去發揮 OO 的精神。有些主題的作者可能會希望你去他的 GitHub 上按個 Start 或是 Fork ，別人做那麼辛苦，我們也應該去給人家一些鼓勵，反正點一下也不用錢。
 <center itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-  <img itemprop="image url height width" src="/images/2017-08-08-choose-your-jekyll-theme/2017-08-08-choose-your-jekyll-theme-image1.jpg" alt="Jekyll主題範例圖" title="Jekyll主題範例圖"/>
+  <img itemprop="image url height width" src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNncDFHbHdIb09FcFk" alt="Jekyll主題範例圖" title="Jekyll主題範例圖"/>
 </center>
 
 [http://jekyllthemes.org/](http://jekyllthemes.org/)

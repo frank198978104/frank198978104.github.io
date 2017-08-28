@@ -1,0 +1,20 @@
+0. 在 GitHub 上使用 Jekyll 建立自己的部落格
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnb0ZrR1NmMVFUd2M
+
+1. Repository name範例
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnVVFpNXA0elZmekE
+
+2. Set up in Desktop位置
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnUUxDdUVuRzRhZzA
+
+3. 桌面版範例
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnaGNkTXZfRW9oMnc
+
+4. 上傳範例
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnQy1XSWYxaF9qYkU
+
+5. index.html範例結果
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnb1lRZTZOclhEbFU
+
+6. localhost:4000範例結果
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnVzQ0WFpPeE96V28

@@ -1,0 +1,26 @@
+1. 使用 SEO 讓你的網站更容易被看見 - 搜尋引擎最佳化
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnb2dTTldiajltWGc
+
+2. URL
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnTmlfeUkzVjNvT0k
+
+3. Title Tag
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnZ21uTHNHOWNBOVk
+
+4. Heading Tag
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNndGExdGpERTgyS0k
+
+5. Google Search
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnZ0kyeGFnVkRxanc
+
+6. 結構化資料測試工具
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnTm9kUkJrbHBRZE0
+
+7. schema.org  範例
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnbS1SOEFpWk9jSU0
+
+8. itemref 範例
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNnSmwwWTJKajdFZUU
+
+9. JSON-LD 範例
+https://lh3.google.com/u/0/d/0BzPfrKdG6WNna0VrLXdnQndTdkE

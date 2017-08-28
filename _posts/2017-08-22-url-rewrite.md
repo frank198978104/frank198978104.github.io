@@ -4,7 +4,7 @@ title:  "IIS 上 http 重新導向 https"
 date:   2017-08-23 00:00:00
 categories: IIS
 tags: IIS 網站 http https Windows URL_Rewrite 筆記
-excerpt: <center itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="image url height width" width="200" src="/images/2017-08-23-URL-Rewrite/2017-08-23-URL-Rewrite-image1.jpg" alt="URL Rewrite" title="URL Rewrite"/></center><br/>　　前一陣子在裝好 SSL 憑證之後，要來做 http to https 的重新導向，我很開心的打開 URL Rewrite 的安裝檔，一時在想起來當下的 Server 不能連外網所以安裝不起來，於是我從之前有做好導向的 Server 複製 Web.config 的資訊來使用，將以下的資訊放到 < system.webServer > 裡面
+excerpt: <center itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="image url height width" width="200" src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNncEJFTXVPaTRrb3c" alt="URL Rewrite" title="URL Rewrite"/></center><br/>　　前一陣子在裝好 SSL 憑證之後，要來做 http to https 的重新導向，我很開心的打開 URL Rewrite 的安裝檔，一時在想起來當下的 Server 不能連外網所以安裝不起來，於是我從之前有做好導向的 Server 複製 Web.config 的資訊來使用，將以下的資訊放到 < system.webServer > 裡面
 mathjax: true
 author: Frank Sun 孫景承
 ---
@@ -15,7 +15,7 @@ author: Frank Sun 孫景承
 ## **URL Rewrite http to https** 
 
 <center itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-    <img itemprop="image url height width" width="200" src="/images/2017-08-23-URL-Rewrite/2017-08-23-URL-Rewrite-image1.jpg" alt="URL Rewrite" title="URL Rewrite"/>
+    <img itemprop="image url height width" width="200" src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNncEJFTXVPaTRrb3c" alt="URL Rewrite" title="URL Rewrite"/>
 </center><br/>
 
 #### **直接貼上至 Web.config**

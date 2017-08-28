@@ -4,7 +4,7 @@ title:  "在 GitHub 上使用 Jekyll 建立自己的部落格"
 date:   2017-07-28 00:00:00
 categories: Jekyll
 tags: Jekyll 懶人包 部落格 教學 GitHub 網站
-excerpt: <center><img src="/images/2017-07-28-welcome-to-jekyll/2017-07-28-welcome-to-jekyll-image0.jpg" width="500" alt="在 GitHub 上使用 Jekyll 建立自己的部落格" title="在 GitHub 上使用 Jekyll 建立自己的部落格"/></center><br/>　　前一陣子有朋友在問我網頁前端的相關問題，一開始也只是很平常的回覆他，但是過一陣後我想想，他是寫iOS的為什麼在問我網頁前端的東西呢？他才跟我說他在GitHub上建立部落格，紀錄一些事情。我回頭想想，也對，當遇到問題的時候好像會回去開以前寫過的專案，頗浪費時間的，所以就想說我也來架一個紀錄一下我所做過的專案跟曾經碰到的問題，也算是某種筆記。
+excerpt: <center><img src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNnb0ZrR1NmMVFUd2M" width="500" alt="在 GitHub 上使用 Jekyll 建立自己的部落格" title="在 GitHub 上使用 Jekyll 建立自己的部落格"/></center><br/>　　前一陣子有朋友在問我網頁前端的相關問題，一開始也只是很平常的回覆他，但是過一陣後我想想，他是寫iOS的為什麼在問我網頁前端的東西呢？他才跟我說他在GitHub上建立部落格，紀錄一些事情。我回頭想想，也對，當遇到問題的時候好像會回去開以前寫過的專案，頗浪費時間的，所以就想說我也來架一個紀錄一下我所做過的專案跟曾經碰到的問題，也算是某種筆記。
 mathjax: true
 author: Frank Sun 孫景承
 ---
@@ -14,7 +14,7 @@ author: Frank Sun 孫景承
 
 ### **前言小語：**
 <center itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-    <img itemprop="image url height width" src="/images/2017-07-28-welcome-to-jekyll/2017-07-28-welcome-to-jekyll-image0.jpg" width="500" alt="在 GitHub 上使用 Jekyll 建立自己的部落格" title="在 GitHub 上使用 Jekyll 建立自己的部落格"/>
+    <img itemprop="image url height width" src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNnb0ZrR1NmMVFUd2M" width="500" alt="在 GitHub 上使用 Jekyll 建立自己的部落格" title="在 GitHub 上使用 Jekyll 建立自己的部落格"/>
 </center><br/>
 　　前一陣子有朋友在問我網頁前端的相關問題，一開始也只是很平常的回覆他，但是過一陣後我想想，他是寫iOS的為什麼在問我網頁前端的東西呢？他才跟我說他在GitHub上建立部落格，紀錄一些事情。我回頭想想，也對，當遇到問題的時候好像會回去開以前寫過的專案，頗浪費時間的，所以就想說我也來架一個紀錄一下我所做過的專案跟曾經碰到的問題，也算是某種筆記。
 
@@ -28,21 +28,21 @@ author: Frank Sun 孫景承
 1. 先到 **[GitHub](https://github.com/)** 上申請帳號
 
 2. 建立專案，Repository name的名稱必須是<span style="color:red">**你的username.github.io**</span>(參照下圖
-<img src="/images/2017-07-28-welcome-to-jekyll/2017-07-28-welcome-to-jekyll-image1.jpg" width="500" alt="Repository name範例" title="Repository name範例"/>
+<img src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNnVVFpNXA0elZmekE" width="500" alt="Repository name範例" title="Repository name範例"/>
 
 3. 專案建立好後，點擊**Set up in Desktop**(如下圖位置)，之後他會詢問你要開啟<br/>
 如果沒有安裝 **[GitHub桌面版](https://desktop.github.com/)** 他就會詢問你是否要安裝**(在此提供連結也可以先行安裝)**
-<img src="/images/2017-07-28-welcome-to-jekyll/2017-07-28-welcome-to-jekyll-image2.jpg" width="500" alt="Set up in Desktop位置" title="Set up in Desktop位置"/>
+<img src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNnUUxDdUVuRzRhZzA" width="500" alt="Set up in Desktop位置" title="Set up in Desktop位置"/>
 
 4. 若已安裝完成，他會跳出如下圖的畫面，自動幫你連結和創資料夾<br/>
 如果你想自己複製(如上圖)Set up in Desktop右邊的HTTPS或是改資料夾路徑也是可以的
-<img src="/images/2017-07-28-welcome-to-jekyll/2017-07-28-welcome-to-jekyll-image3.jpg" width="500" alt="桌面版範例" title="桌面版範例"/>
+<img src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNnaGNkTXZfRW9oMnc" width="500" alt="桌面版範例" title="桌面版範例"/>
 
 5. 試著建立一個 index.html 放到裡面(可直接複製下面黑框內的範例)
 
 6. 右邊的 index.html 已經待上傳了，左下角的Summary輸入概要之後就可以點下**Commit to master**就可以認可了<br/>
 當按下右上方的Push origin 或是 Fetch origin就可以進行發送或擷取GitHub的資料了。
-<img src="/images/2017-07-28-welcome-to-jekyll/2017-07-28-welcome-to-jekyll-image4.jpg" alt="上傳範例" title="上傳範例"/>
+<img src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNnQy1XSWYxaF9qYkU" alt="上傳範例" title="上傳範例"/>
 
 7. 打開網址 https://username.github.io (username換成自己的帳號) 就完成了！
 
@@ -57,7 +57,7 @@ author: Frank Sun 孫景承
 ></html>
 >```
 index.html 顯示的結果如下<br/>
-![index.html範例結果](/images/2017-07-28-welcome-to-jekyll/2017-07-28-welcome-to-jekyll-image5.jpg)
+![index.html範例結果](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnb1lRZTZOclhEbFU)
 
 ### **Step 2 - Jekyll**
 有興趣可以去看看 Jekyll 網站 → [Jekyll 中文版](http://jekyll.com.cn/)
@@ -82,7 +82,7 @@ jekyll serve
 
 2. 打開網頁<br/>
 [http://localhost:4000/](http://localhost:4000/)
-![localhost:4000範例結果](/images/2017-07-28-welcome-to-jekyll/2017-07-28-welcome-to-jekyll-image6.jpg)
+![localhost:4000範例結果](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnVzQ0WFpPeE96V28)
 
 
 基本上到這邊大致上就完成了

@@ -4,7 +4,7 @@ title:  "將 Jekyll 部屬到 Azure"
 date:   2017-08-25 00:00:00
 categories: Jekyll
 tags: Jekyll 網站 部落格 教學 Azure
-excerpt: <center itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="image url height width" src="/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image0.jpg" alt="URL Rewrite" title="URL Rewrite"/></center><br/>　　在第一篇我們提到如何在 GitHub 上使用 jekyll 架部落格：在 GitHub 上使用 Jekyll 建立自己的部落格<br/>這一次有朋友提議說要不要架在 Azure 看看呢? 因為 Azure 上也可以免費架設，經過小小的了解之後我來教大家怎麼在 Azure 上架設 jekyll 吧。
+excerpt: <center itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img itemprop="image url height width" src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNnbTBzTi1pREpOOUk" alt="Jekyll And Azure Logo" title="Jekyll And Azure Logo"/></center><br/>　　在第一篇我們提到如何在 GitHub 上使用 jekyll 架部落格：在 GitHub 上使用 Jekyll 建立自己的部落格<br/>這一次有朋友提議說要不要架在 Azure 看看呢? 因為 Azure 上也可以免費架設，經過小小的了解之後我來教大家怎麼在 Azure 上架設 jekyll 吧。
 mathjax: true
 author: Frank Sun 孫景承
 ---
@@ -15,7 +15,7 @@ author: Frank Sun 孫景承
 ## **前言**
 
 <center itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-    <img itemprop="image url height width" src="/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image0.jpg" alt="URL Rewrite" title="URL Rewrite"/>
+    <img itemprop="image url height width" src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNnbTBzTi1pREpOOUk" alt="Jekyll And Azure Logo" title="Jekyll And Azure Logo"/>
 </center><br/>
 
 在第一篇我們提到如何在 GitHub 上使用 jekyll 架部落格：**[在 GitHub 上使用 Jekyll 建立自己的部落格](/2017/07/28/welcome-to-jekyll/)**
@@ -29,41 +29,41 @@ author: Frank Sun 孫景承
 
 ### Step 2. ＋ 新增
 進到 Azure 的儀表板之後，點擊左邊編列表的「＋ 新增」。<br/>
-![新增](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image1.jpg)
+![新增](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnSXN1SUlfN2VRbVE)
 
 ### Step 3. 建立 Web 應用程式
 點選「Web 應用程式」的「Create」。<br/>
-![Web 應用程式 Create](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image2.jpg)
+![Web 應用程式 Create](https://lh3.google.com/u/0/d/0BzPfrKdG6WNneVdxUXRnQ3dPZ00)
 
 ### Step 4. 方案/位置
 將資料填妥後，因為預設的伺服器是要付費的，要自己去選擇改成免費的，所以先點選「App Service 方案/位置」<br/>
-![App Service 方案/位置](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image3.jpg)
+![App Service 方案/位置](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnT1AwOVNTTlVSX2c)
 
 ### Step 5. 新建 Service
 直接點「新建」<br/>
-![新建](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image4.jpg)
+![新建](https://lh3.google.com/u/0/d/0BzPfrKdG6WNneTJHallmX19RajA)
 
 ### Step 6. 定價層
 資料填選完之後選擇「定價層」來選擇伺服器<br/>
-![定價層](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image5.jpg)
+![定價層](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnU055Z2FwZ0NSLUk)
 
 ### Step 7. F1 免費
 正如 Step 4 所說，他預設的「S1 標準」是要付費的，所以我們就拉到最底下選擇「F1 免費」，然後點「選取」，然後回到 Step 6 的圖點「確定」，又會回到 Step 4 的圖點「建立」。<br/>
-![F1 免費](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image6.jpg)
+![F1 免費](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnMFMyV1VjWlM0YTA)
 
 ### Step 8. 部屬認證
 等一會之後我們到「應用程式服務」選擇我們剛建立的 Web 應用程式，先看左邊的列表，若未設定「部屬認證」就先設定好，設定好之後按儲存即可。<br/>
-![應用程式服務](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image7.jpg)
-![部屬認證](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image8.jpg)
-![部屬認證](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image9.jpg)
+![應用程式服務](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnakRsaTIwcFZzU0U)
+![部屬認證1](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnVWJZSW1BZ3N6WWM)
+![部屬認證2](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnR2lDRVdtVEJGZEU)
 
 ### Step 9. 部屬選項
 點選「部屬選項」<br/>
-![部屬選項](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image10.jpg)
+![部屬選項](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnN2p2bGZQalFKNXM)
 
 ### Step 10. 本機 Git 儲存機制
 點「選擇來源」，選「本機 Git 儲存機制」，點「確定」。到這邊 Azure 的架設就告一段落了，我們回到本機繼續下面的步驟。<br/>
-![本機 Git 儲存機制](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image11.jpg)
+![本機 Git 儲存機制](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnSGRvOXNQb1Y1MTQ)
 
 ### Step 11. 指令
 在 **[第一篇](/2017/07/28/welcome-to-jekyll/)** 我們已經知道如何 New 出一個新的 jekll 的專案，我們就以剛 New 出來的作範例。在有執行 jekyll serve 之下，我們寫好網站之後程式會幫你編譯出一個「_site」的資料夾，我們開啟命令提示字元到你該專案下的 _site 資料夾當中，然後就要開始下 Git 的指令，如下：
@@ -84,16 +84,16 @@ author: Frank Sun 孫景承
 >```
 >git remote add origin Git複製URL
 >```
->![Git 複製 URL](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image12.jpg)
+>![Git 複製 URL](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnZkwyY21QdDQwNkk)
 >5. 推送上去，第一次會需要部屬認證的帳號密碼，之後就不用了。
 >```
 >git push origin master
 >```
->![部屬認證輸入](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image13.jpg)
+>![部屬認證輸入](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnSDV5bG5CdHRiTWM)
 
 ### Step 12. 完成
 連結 Azure 給你的指定路徑就完成了！路徑名稱是 <font color="blue">http://資源名稱.azurewebsites.net</font>，在指令的第4點圖裡面，上面有個 URL 也可以直接連結過去。<br/>
-![完成圖](/images/2017-08-25-jekyll-on-azure/2017-08-25-jekyll-on-azure-image14.jpg)
+![完成圖](https://lh3.google.com/u/0/d/0BzPfrKdG6WNnZ3pRNkFvX05pSnM)
 
 <font color="red">P.S：第一次建立成功之後，發佈資料只要重複 <b>指令第2、3、5點</b> 即可。</font>
 
@@ -120,4 +120,3 @@ F1 免費：
 * 核心  共用(60 CPU 分鐘數 / 天)
 * RAM	1GB
 * 容量	1.00GB
-
