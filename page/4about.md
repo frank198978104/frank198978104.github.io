@@ -6,7 +6,7 @@ icon: heart
 type: page
 ---
 <div align="center">
-    <img src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNnaUtIUDdpZDFJNjg" title="Frank Sun 孫景承" alt="Frank Sun 孫景承" height="250">
+    <img src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNnaUtIUDdpZDFJNjg" title="Frank Sun 孫景承" alt="Frank Sun 孫景承" height="300">
 </div>
 * content
 {:toc}
