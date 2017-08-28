@@ -52,7 +52,7 @@
           'category': window.store[key].category,
           'content': window.store[key].content
         });
-        console.log(searchTerm);
+        // console.log(searchTerm);
       }
     });
 
