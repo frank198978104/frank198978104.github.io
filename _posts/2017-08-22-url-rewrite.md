@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "IIS 上 http 重新導向 https"
+title:  "IIS 8 http to https"
 date:   2017-08-23 00:00:00
 categories: IIS
 tags: IIS 網站 http https Windows URL_Rewrite 筆記
