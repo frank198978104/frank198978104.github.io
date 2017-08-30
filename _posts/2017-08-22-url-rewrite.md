@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "IIS 8 http to https"
+title:  "IIS 8 - HTTP to HTTPS"
 date:   2017-08-23 00:00:00
 categories: IIS
 tags: IIS 網站 http https Windows URL_Rewrite 筆記
@@ -12,7 +12,7 @@ author: Frank Sun 孫景承
 * content
 {:toc}
 
-## **URL Rewrite http to https** 
+## **URL Rewrite HTTP to HTTPS** 
 
 <center itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
     <img itemprop="image url height width" width="200" src="https://lh3.google.com/u/0/d/0BzPfrKdG6WNncEJFTXVPaTRrb3c" alt="URL Rewrite" title="URL Rewrite"/>
