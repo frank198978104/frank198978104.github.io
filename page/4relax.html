@@ -15,6 +15,19 @@ type: page
         height:32px;
         line-height:16px;
     }
+    #YoutubePreview {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+    }
+    #YoutubePreview iframe, #YoutubePreview object, #YoutubePreview embed {
+        position: absolute;
+        top: 0;left: 0;
+        width: 100%;
+        height: 100%;
+    }
 </style>
 <center style="margin-bottom:1em;"><font size="2" color="red">台視與華視因限制嵌入，目前僅提供超鏈結</font></center>
 <div class="row">
@@ -43,7 +56,7 @@ type: page
   </div>
 </div>
 <hr>
-<center style="margin-top:1em;margin-bottom:1em;text-align:center; overflow:hidden;"><span id="YoutubePreview"></span></center>
+<center><div id="YoutubePreview"></div></center>
 <!--<script type="text/javascript" src="//www4.yourshoutbox.com/shoutbox/start.php?key=45792030"></script>-->
 <!--{% include comments.html %}-->
 
