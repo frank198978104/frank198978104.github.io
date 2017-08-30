@@ -40,6 +40,8 @@ author: Frank Sun 孫景承
 如果你的環境網路是通的當然也可以選擇使用 [URL Rewrite(傳送門)](https://www.microsoft.com/web/downloads/platform.aspx)
 
 安裝好後就可以照著以下的影片去做了
-<iframe width="800" height="450" src="https://www.youtube.com/embed/U7USHit5mhY" frameborder="0" allowfullscreen></iframe>
+<div class="video-container">
+    <iframe width="800" height="450" src="https://www.youtube.com/embed/U7USHit5mhY" frameborder="0" allowfullscreen></iframe>
+</div>
 
 <font color="red">P.S：我到目前操作過的環境皆與影片環境相同<font>

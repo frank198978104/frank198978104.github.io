@@ -99,7 +99,9 @@ author: Frank Sun 孫景承
 
 ## **影片教學**
 YouTube 上也有人提供影片，喜歡看著影片操作的朋友也可以參考喔。
-<iframe width="800" height="450" src="https://www.youtube.com/embed/b8sac4fSqPo" frameborder="0" allowfullscreen></iframe>
+<div class="video-container">
+    <iframe width="800" height="450" src="https://www.youtube.com/embed/b8sac4fSqPo" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ## **GitHub 與 Azure 免費限制**
 ### GitHub
