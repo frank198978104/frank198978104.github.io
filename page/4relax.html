@@ -5,14 +5,30 @@ permalink: /relax/
 icon: tv
 type: page
 ---
+<style>
+    #YouTubeCode{
+        cursor: pointer;
+    }
+</style>
+<button id="YouTubeCode" value="ZADZPdUbRzU" class="btn btn-primary">EBC 東森新聞 51 頻道</button>
+<button id="YouTubeCode" value="wUPPkSANpyo" class="btn btn-primary">CTI中天新聞</button>
+
+<center style="margin-top:1em;margin-bottom:1em;"><span id="YoutubePreview"></span></center>
+
+<script type="text/javascript" src="//www4.yourshoutbox.com/shoutbox/start.php?key=45792030"></script>
+{% include comments.html %}
 
 
-<div>
-    <script type="text/javascript" src="//www4.yourshoutbox.com/shoutbox/start.php?key=45792030"></script>
-</div>
-
-
-
-
-
-
+<script>
+        if ($("#YouTubeCode").val().length > 0) {
+            $("#YoutubePreview").append('<iframe width="854px" height="480px" src="https://www.youtube.com/embed/' + $("#YouTubeCode").val() + '?&autoplay=1" frameborder="0" allowfullscreen></iframe>');
+        }
+    
+        $(document).on("click", "#YouTubeCode",
+            function() {
+                if ($(this).val() != null) {
+                    $("#YoutubePreview").find("iframe").remove();
+                    $("#YoutubePreview").append('<iframe width="854px" height="480px" src="https://www.youtube.com/embed/' + $(this).val() + '?&autoplay=1" frameborder="0" allowfullscreen></iframe>');
+                }
+            });
+</script>
