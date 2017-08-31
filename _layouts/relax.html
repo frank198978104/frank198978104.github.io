@@ -8,6 +8,10 @@ layout: default
             cursor: pointer;
             margin-bottom:1em;
         }
+        #RadioCode{
+            cursor: pointer;
+            margin-bottom:1em;
+        }
         button.menu {
             width:36.57px;
             height:32px;
@@ -58,6 +62,14 @@ layout: default
                 if ($(this).val() != null) {
                     $(".media-container").find("iframe").remove();
                     $(".media-container").append('<iframe width="854px" height="480px" src="https://www.youtube.com/embed/' + $(this).val() + '?&autoplay=1" frameborder="0" allowfullscreen></iframe>');
+                }
+            });
+        
+            $(document).on("click", "#RadioCode",
+            function() {
+                if ($(this).val() != null) {
+                    $(".media-container").find("iframe").remove();
+                    $(".media-container").append('<iframe width="854px" height="480px" src="http://hichannel.hinet.net/radio/index.do?id=' + $(this).val() + '" frameborder="0" allowfullscreen></iframe>');
                 }
             });
 </script>
