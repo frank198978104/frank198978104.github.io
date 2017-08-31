@@ -1,20 +1,20 @@
-0. ¦b GitHub ¤W¨Ï¥Î Jekyll «Ø¥ß¦Û¤vªº³¡¸¨®æ
+ï»¿0. åœ¨ GitHub ä¸Šä½¿ç”¨ Jekyll å»ºç«‹è‡ªå·±çš„éƒ¨è½æ ¼
 https://lh3.google.com/u/0/d/0BzPfrKdG6WNnb0ZrR1NmMVFUd2M
 
-1. Repository name½d¨Ò
+1. Repository nameç¯„ä¾‹
 https://lh3.google.com/u/0/d/0BzPfrKdG6WNnVVFpNXA0elZmekE
 
-2. Set up in Desktop¦ì¸m
+2. Set up in Desktopä½ç½®
 https://lh3.google.com/u/0/d/0BzPfrKdG6WNnUUxDdUVuRzRhZzA
 
-3. ®à­±ª©½d¨Ò
+3. æ¡Œé¢ç‰ˆç¯„ä¾‹
 https://lh3.google.com/u/0/d/0BzPfrKdG6WNnaGNkTXZfRW9oMnc
 
-4. ¤W¶Ç½d¨Ò
+4. ä¸Šå‚³ç¯„ä¾‹
 https://lh3.google.com/u/0/d/0BzPfrKdG6WNnQy1XSWYxaF9qYkU
 
-5. index.html½d¨Òµ²ªG
+5. index.htmlç¯„ä¾‹çµæœ
 https://lh3.google.com/u/0/d/0BzPfrKdG6WNnb1lRZTZOclhEbFU
 
-6. localhost:4000½d¨Òµ²ªG
+6. localhost:4000ç¯„ä¾‹çµæœ
 https://lh3.google.com/u/0/d/0BzPfrKdG6WNnVzQ0WFpPeE96V28
