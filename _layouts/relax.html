@@ -13,14 +13,14 @@ layout: default
             height:32px;
             line-height:16px;
         }
-        #YoutubePreview {
+        .media-container {
             position: relative;
             padding-bottom: 56.25%;
             padding-top: 30px;
             height: 0;
             overflow: hidden;
         }
-        #YoutubePreview iframe, #YoutubePreview object, #YoutubePreview embed {
+        .media-container iframe, .media-container object, .media-container embed {
             position: absolute;
             top: 0;left: 0;
             width: 100%;
@@ -50,14 +50,14 @@ layout: default
 
 <script>
         if ($("#YouTubeCode").val().length > 0) {
-            $("#YoutubePreview").append('<iframe width="854px" height="480px" src="https://www.youtube.com/embed/' + $("#YouTubeCode").val() + '?&autoplay=1" frameborder="0" allowfullscreen></iframe>');
+            $(".media-container").append('<iframe width="854px" height="480px" src="https://www.youtube.com/embed/' + $("#YouTubeCode").val() + '?&autoplay=1" frameborder="0" allowfullscreen></iframe>');
         }
     
         $(document).on("click", "#YouTubeCode",
             function() {
                 if ($(this).val() != null) {
-                    $("#YoutubePreview").find("iframe").remove();
-                    $("#YoutubePreview").append('<iframe width="854px" height="480px" src="https://www.youtube.com/embed/' + $(this).val() + '?&autoplay=1" frameborder="0" allowfullscreen></iframe>');
+                    $(".media-container").find("iframe").remove();
+                    $(".media-container").append('<iframe width="854px" height="480px" src="https://www.youtube.com/embed/' + $(this).val() + '?&autoplay=1" frameborder="0" allowfullscreen></iframe>');
                 }
             });
 </script>
