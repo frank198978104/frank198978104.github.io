@@ -69,9 +69,7 @@ layout: default
             function() {
                 if ($(this).val() != null) {
                     $(".media-container").find("iframe").remove();
-                    var radio_code = $(this).val();
-                    var write_iframe = '<iframe width="854px" height="480px" src="http://hichannel.hinet.net/radio/index.do?id='+ radio_code +'" frameborder="0" allowfullscreen></iframe>'
-                    $(".media-container").append(write_iframe);
+                    $(".media-container").append('<iframe width="854px" height="480px" src="//hichannel.hinet.net/radio/index.do?id=' + $(this).val() + '" frameborder="0" allowfullscreen></iframe>');
                 }
             });
 </script>
