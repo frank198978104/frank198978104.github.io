@@ -69,7 +69,9 @@ layout: default
             function() {
                 if ($(this).val() != null) {
                     $(".media-container").find("iframe").remove();
-                    $(".media-container").append('<iframe width="854px" height="480px" src="https://www.google.com/search?q=%http://hichannel.hinet.net/radio/index.do?id=' + $(this).val() + '&btnI=Im+Feeling+Lucky" frameborder="0" allowfullscreen></iframe>');
+                    var radio_code = $(this).val();
+                    var write_iframe = '<iframe width="854px" height="480px" src="http://hichannel.hinet.net/radio/index.do?id='+ radio_code +'" frameborder="0" allowfullscreen></iframe>'
+                    $(".media-container").append(write_iframe);
                 }
             });
 </script>
