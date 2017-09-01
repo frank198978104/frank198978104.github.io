@@ -8,46 +8,62 @@
 
 <url>
   <loc>https://frank198978104.github.io/</loc>
-  <lastmod>2017-08-28T05:22:41+00:00</lastmod>
+  <lastmod>2017-09-01T02:11:31+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
   <loc>https://frank198978104.github.io/category/</loc>
-  <lastmod>2017-08-28T05:22:41+00:00</lastmod>
+  <lastmod>2017-09-01T02:11:31+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://frank198978104.github.io/tag/</loc>
-  <lastmod>2017-08-28T05:22:41+00:00</lastmod>
+  <lastmod>2017-09-01T02:11:31+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://frank198978104.github.io/collection/</loc>
-  <lastmod>2017-08-28T05:22:41+00:00</lastmod>
+  <lastmod>2017-09-01T02:11:31+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://frank198978104.github.io/project/</loc>
-  <lastmod>2017-08-28T05:22:41+00:00</lastmod>
+  <lastmod>2017-09-01T02:11:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://frank198978104.github.io/relax/</loc>
+  <lastmod>2017-09-01T02:11:31+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://frank198978104.github.io/about/</loc>
-  <lastmod>2017-08-28T05:22:41+00:00</lastmod>
+  <lastmod>2017-09-01T02:11:31+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://frank198978104.github.io/2017/08/25/jekyll-on-azure/</loc>
-  <lastmod>2017-08-28T05:22:41+00:00</lastmod>
+  <lastmod>2017-09-01T02:11:31+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://frank198978104.github.io/2017/08/23/url-rewrite/</loc>
-  <lastmod>2017-08-28T05:22:41+00:00</lastmod>
+  <lastmod>2017-09-01T02:11:31+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://frank198978104.github.io/2017/08/21/how-to-use-seo/</loc>
-  <lastmod>2017-08-28T05:22:41+00:00</lastmod>
+  <lastmod>2017-09-01T02:11:31+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://frank198978104.github.io/2017/08/08/choose-your-jekyll-theme/</loc>
-  <lastmod>2017-08-28T05:22:41+00:00</lastmod>
+  <lastmod>2017-09-01T02:11:31+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://frank198978104.github.io/2017/07/28/welcome-to-jekyll/</loc>
-  <lastmod>2017-08-28T05:22:41+00:00</lastmod>
+  <lastmod>2017-09-01T02:11:31+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 </urlset>
