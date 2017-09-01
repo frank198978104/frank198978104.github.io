@@ -1,19 +1,49 @@
-if ($("#YouTubeCode").val().length > 0) {
+var domain = window.location.origin;
+
+var hashYoutubeCode = window.location.hash.substr(1);
+if(hashYoutubeCode!="")
+{
+    $(".media-container").append('<iframe width="854px" height="480px" src="https://www.youtube.com/embed/' + hashYoutubeCode + '?&autoplay=1" frameborder="0" allowfullscreen></iframe>');
+    $(".copylink").val(domain +'/relax/#'+ hashYoutubeCode);  
+}
+else if ($("#YouTubeCode").val().length > 0) {
     $(".media-container").append('<iframe width="854px" height="480px" src="https://www.youtube.com/embed/' + $("#YouTubeCode").val() + '?&autoplay=1" frameborder="0" allowfullscreen></iframe>');
+    $(".copylink").val(domain +'/relax/#'+ $("#YouTubeCode").val());   
 }
 
 $(document).on("click", "#YouTubeCode",
     function() {
+        $(".media-link").show();
         if ($(this).val() != null) {
             $(".media-container").find("iframe").remove();
             $(".media-container").find("a").remove();
             $(".media-container").css("padding-bottom","56.25%");
             $(".media-container").append('<iframe width="854px" height="480px" src="https://www.youtube.com/embed/' + $(this).val() + '?&autoplay=1" frameborder="0" allowfullscreen></iframe>');
+            $(".copylink").val(domain +'/relax/#'+ $(this).val());  
         }
+    });
+
+    var copyBtn = document.querySelector(".copybtn");  
+    copyBtn.addEventListener("click", function(event) {  
+      var copyLink = document.querySelector(".copylink");  
+      var range = document.createRange();  
+      range.selectNode(copyLink);  
+      window.getSelection().addRange(range);
+
+      try {  
+        var successful = document.execCommand("copy");  
+        var msg = successful ? "successful" : "unsuccessful";  
+        console.log("Copy email command was " + msg);  
+      } catch(err) {  
+        console.log("Oops, unable to copy");  
+      }  
+    
+      window.getSelection().removeAllRanges();  
     });
 
     $(document).on("click", "#RadioCode",
     function() {
+        $(".media-link").hide();
         if ($(this).val() != null) {
             $(".media-container").find("iframe").remove();
             $(".media-container").find("a").remove();
