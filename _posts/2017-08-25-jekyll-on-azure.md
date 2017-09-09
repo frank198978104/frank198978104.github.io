@@ -28,41 +28,49 @@ author: Frank Sun 孫景承
 先到 Azure 的主網站：[https://portal.azure.com/](https://portal.azure.com/)
 
 ### Step 2. ＋ 新增
-進到 Azure 的儀表板之後，點擊左邊編列表的「＋ 新增」。<br/>
+進到 Azure 的儀表板之後，點擊左邊編列表的「＋ 新增」。
+<br><br>
 ![新增](\images\2017-08-25-jekyll-on-azure\2017-08-25-jekyll-on-azure-image01.jpg)
 
 ### Step 3. 建立 Web 應用程式
-點選「Web 應用程式」的「Create」。<br/>
+點選「Web 應用程式」的「Create」。
+<br><br>
 ![Web 應用程式 Create](\images\2017-08-25-jekyll-on-azure\2017-08-25-jekyll-on-azure-image02.jpg)
 
 ### Step 4. 方案/位置
-將資料填妥後，因為預設的伺服器是要付費的，要自己去選擇改成免費的，所以先點選「App Service 方案/位置」<br/>
+將資料填妥後，因為預設的伺服器是要付費的，要自己去選擇改成免費的，所以先點選「App Service 方案/位置」
+<br><br>
 ![App Service 方案/位置](\images\2017-08-25-jekyll-on-azure\2017-08-25-jekyll-on-azure-image03.jpg)
 
 ### Step 5. 新建 Service
-直接點「新建」<br/>
+直接點「新建」
+<br><br>
 ![新建](\images\2017-08-25-jekyll-on-azure\2017-08-25-jekyll-on-azure-image04.jpg)
 
 ### Step 6. 定價層
-資料填選完之後選擇「定價層」來選擇伺服器<br/>
+資料填選完之後選擇「定價層」來選擇伺服器
+<br><br>
 ![定價層](\images\2017-08-25-jekyll-on-azure\2017-08-25-jekyll-on-azure-image05.jpg)
 
 ### Step 7. F1 免費
-正如 Step 4 所說，他預設的「S1 標準」是要付費的，所以我們就拉到最底下選擇「F1 免費」，然後點「選取」，然後回到 Step 6 的圖點「確定」，又會回到 Step 4 的圖點「建立」。<br/>
+正如 Step 4 所說，他預設的「S1 標準」是要付費的，所以我們就拉到最底下選擇「F1 免費」，然後點「選取」，然後回到 Step 6 的圖點「確定」，又會回到 Step 4 的圖點「建立」。<br><br>
 ![F1 免費](\images\2017-08-25-jekyll-on-azure\2017-08-25-jekyll-on-azure-image06.jpg)
 
 ### Step 8. 部屬認證
-等一會之後我們到「應用程式服務」選擇我們剛建立的 Web 應用程式，先看左邊的列表，若未設定「部屬認證」就先設定好，設定好之後按儲存即可。<br/>
+等一會之後我們到「應用程式服務」選擇我們剛建立的 Web 應用程式，先看左邊的列表，若未設定「部屬認證」就先設定好，設定好之後按儲存即可。
+<br><br>
 ![應用程式服務](\images\2017-08-25-jekyll-on-azure\2017-08-25-jekyll-on-azure-image07.jpg)
 ![部屬認證1](\images\2017-08-25-jekyll-on-azure\2017-08-25-jekyll-on-azure-image08.jpg)
 ![部屬認證2](\images\2017-08-25-jekyll-on-azure\2017-08-25-jekyll-on-azure-image09.jpg)
 
 ### Step 9. 部屬選項
-點選「部屬選項」<br/>
+點選「部屬選項」
+<br><br>
 ![部屬選項](\images\2017-08-25-jekyll-on-azure\2017-08-25-jekyll-on-azure-image10.jpg)
 
 ### Step 10. 本機 Git 儲存機制
-點「選擇來源」，選「本機 Git 儲存機制」，點「確定」。到這邊 Azure 的架設就告一段落了，我們回到本機繼續下面的步驟。<br/>
+點「選擇來源」，選「本機 Git 儲存機制」，點「確定」。到這邊 Azure 的架設就告一段落了，我們回到本機繼續下面的步驟。
+<br><br>
 ![本機 Git 儲存機制](\images\2017-08-25-jekyll-on-azure\2017-08-25-jekyll-on-azure-image11.jpg)
 
 ### Step 11. 指令
@@ -92,7 +100,7 @@ author: Frank Sun 孫景承
 >![部屬認證輸入](\images\2017-08-25-jekyll-on-azure\2017-08-25-jekyll-on-azure-image13.jpg)
 
 ### Step 12. 完成
-連結 Azure 給你的指定路徑就完成了！路徑名稱是 <font color="blue">http://資源名稱.azurewebsites.net</font>，在指令的第4點圖裡面，上面有個 URL 也可以直接連結過去。<br/>
+連結 Azure 給你的指定路徑就完成了！路徑名稱是 <font color="blue">http://資源名稱.azurewebsites.net</font>，在指令的第4點圖裡面，上面有個 URL 也可以直接連結過去。<br><br>
 ![完成圖](\images\2017-08-25-jekyll-on-azure\2017-08-25-jekyll-on-azure-image14.jpg)
 
 <font color="red">P.S：第一次建立成功之後，發佈資料只要重複 <b>指令第2、3、5點</b> 即可。</font>

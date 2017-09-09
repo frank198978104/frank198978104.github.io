@@ -69,7 +69,9 @@ index.html 顯示的結果如下<br/>
  [Markdown常用語法](https://support.discordapp.com/hc/zh-tw/articles/210298617-Markdown%E6%96%87%E5%AD%97%E6%A0%BC%E5%BC%8F%E8%A8%AD%E5%AE%9A-%E8%81%8A%E5%A4%A9%E6%A1%86%E6%A0%BC%E5%BC%8F-%E7%B2%97%E9%AB%94-%E6%96%9C%E9%AB%94-%E4%B8%8B%E5%8A%83%E7%B7%9A-)
 
 #### **安裝方法**
-* Windows - [官方版前置作業](https://jekyllrb.com/docs/windows/)
+* Windows - [官方版前置作業](https://jekyllrb.com/docs/windows/)<br>
+補充：[Bash on Windows](/2017/09/09/bash-in-windows/)
+
 * MAC - [若是Ruby版本太舊請先更新](https://www.ruby-lang.org/zh_tw/documentation/installation/#homebrew)
 
 1. 在終端機輸入
