@@ -56,7 +56,7 @@ exit
 ```
 
 #### Step 3. 加入工作排程器
-照已下圖片順序操作
+照以下圖片順序操作
 
 1. 點「建立基本工作...」<br/><br/>
 ![工作排程器1](\images\2017-09-21-sql-server-express-back-up\2017-09-21-sql-server-express-back-up-image2.jpg)
