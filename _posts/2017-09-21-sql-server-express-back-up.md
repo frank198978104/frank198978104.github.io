@@ -81,7 +81,7 @@ exit
 
 ### 補充
 
-如果你的維護計劃精靈開啟出現錯誤，可執行以下 SQL 指令將 Agent XPs 的元件打開
+如果你的「維護計劃精靈」開啟出現錯誤，可執行以下 SQL 指令將 Agent XPs 的元件打開
 
 ```sql
 sp_configure 'show advanced options', 1; 
