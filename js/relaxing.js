@@ -4,11 +4,11 @@ var hashYoutubeCode = window.location.hash.substr(1);
 if(hashYoutubeCode!="")
 {
     $(".media-container").append('<iframe width="854px" height="480px" src="https://www.youtube.com/embed/' + hashYoutubeCode + '?&autoplay=1" frameborder="0" allowfullscreen></iframe>');
-    $(".copylink").val(domain +'/relax/#'+ hashYoutubeCode);  
+    $(".copylink").val(domain +'/relaxing/#'+ hashYoutubeCode);  
 }
 else if ($("#YouTubeCode").val().length > 0) {
     $(".media-container").append('<iframe width="854px" height="480px" src="https://www.youtube.com/embed/' + $("#YouTubeCode").val() + '?&autoplay=1" frameborder="0" allowfullscreen></iframe>');
-    $(".copylink").val(domain +'/relax/#'+ $("#YouTubeCode").val());   
+    $(".copylink").val(domain +'/relaxing/#'+ $("#YouTubeCode").val());   
 }
 
 $(document).on("click", "#YouTubeCode",
@@ -19,7 +19,7 @@ $(document).on("click", "#YouTubeCode",
             $(".media-container").find("a").remove();
             $(".media-container").css("padding-bottom","56.25%");
             $(".media-container").append('<iframe width="854px" height="480px" src="https://www.youtube.com/embed/' + $(this).val() + '?&autoplay=1" frameborder="0" allowfullscreen></iframe>');
-            $(".copylink").val(domain +'/relax/#'+ $(this).val());  
+            $(".copylink").val(domain +'/relaxing/#'+ $(this).val());  
         }
     });
 
