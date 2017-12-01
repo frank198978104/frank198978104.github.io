@@ -30,11 +30,27 @@
     },
     
     {
-      demo_link: 'http://app.creatidea.com.tw/EpaAnniversary',
-      img_link: 'http://app.creatidea.com.tw/EpaAnniversary/images/img_index_banner.jpg',
+      demo_link: 'https://epaanni.epa.gov.tw/',
+      img_link: 'https://epaanni.epa.gov.tw/images/img_index_banner.jpg',
       title: '環保署30週年慶',
       core_tech: 'ASP.NET MVC',
       description: '行政院環保署30週年慶，各局處大事記、各地今昔對比、多媒體圖片影音電子書。'
+    },
+
+    {
+      demo_link: 'http://miaolitravel.net/',
+      img_link: 'http://miaolitravel.net/images/miaoli_body_image3.gif',
+      title: '苗栗玩透透',
+      core_tech: 'ASP.NET MVC',
+      description: '苗栗文化觀光旅遊網、苗栗、文化、觀光、旅遊、桐花、溫泉、單車、自由行、住宿、餐飲、美食、風景、螢火蟲、木雕、藝術、水果、草莓、邯鄲、元宵、火旁龍、客家'
+    },
+
+    {
+      demo_link: 'https://www.web-fd.taipei/i-AMOUR/',
+      img_link: 'https://www.web-fd.taipei/i-AMOUR/images/stories/site/inner_banner2.png',
+      title: 'i-Amour 愛上視障按摩',
+      core_tech: 'ASP.NET MVC',
+      description: '視障按摩在臺灣是一種非常特別的行業，在過去，只有視障者能夠從事按摩的工作，但在100年11月1日起因為大法官649號釋憲開放了按摩市場，按摩工作不再專屬於視障朋友，所以政府有一些輔導措施（包括按摩推廣行銷、技術養成與在職訓練、按摩環境更新改善、優良按摩院甄選以及創業補助等）協助視障按摩師重新包裝自己，讓社會大眾對於視障按摩有全新的體認。'
     }
   ];
 
@@ -65,7 +81,7 @@ function contentInit(content) {
   // var htmlStr = htmlArr.join('')
   var htmlStr = ''
   for (var i = 0; i < content.length; i++) {
-    htmlStr += '<div class="grid-item">' + '   <a class="a-img" href="' + content[i].demo_link + '">' + '       <img src="' + content[i].img_link + '">' + '   </a>' + '   <h3 class="demo-title">' + '       <a href="' + content[i].demo_link + '">' + content[i].title + '</a>' + '   </h3>' + '   <p>主要技術：' + content[i].core_tech + '</p>' + '   <p>' + content[i].description + '       <a href="' + content[i].code_link + '"></a>' + '   </p>' + '</div>'
+    htmlStr += '<div class="grid-item">' + '   <a class="a-img" target="_blank" href="' + content[i].demo_link + '">' + '       <img src="' + content[i].img_link + '">' + '   </a>' + '   <h3 class="demo-title">' + '       <a href="' + content[i].demo_link + '">' + content[i].title + '</a>' + '   </h3>' + '   <p>主要技術：' + content[i].core_tech + '</p>' + '   <p>' + content[i].description + '       <a href="' + content[i].code_link + '"></a>' + '   </p>' + '</div>'
   }
   var grid = document.querySelector('.grid')
   grid.insertAdjacentHTML('afterbegin', htmlStr)
