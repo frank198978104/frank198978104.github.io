@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Google Map 定位
-date:   2017-12-02 00:00:00
+date:   2017-12-01 00:00:00
 categories: Code
 tags: JavaSctipt Code GoogleMap 筆記
 excerpt: 　　這個很單純就是可以利用 Google Map 去定位出你當前的位置，但前題是你的網站要是安全的瀏覽環境，所以你的協定必須為 <b>HTTPS</b>，如果迫切很需要可以到 SSL For Free 去申請免費憑證，一次可以使用 3 個月。
