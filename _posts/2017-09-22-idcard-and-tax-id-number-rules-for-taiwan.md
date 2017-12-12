@@ -4,7 +4,7 @@ title:  身分證字號及統一編號驗證
 date:   2017-09-22 00:00:00
 categories: Code
 tags: Csharp JavaSctipt Code 筆記
-excerpt: 　　常常用到，規則不會變，所以可以直接當工具使用了，提供 C# 及 JavaSctipt 作法。
+excerpt: 　　中華民國身分證字號及統一編號驗證，常常用到，規則不會變，所以可以直接當工具使用了，提供 C# 及 JavaSctipt 作法。
 mathjax: true
 author: Frank Sun 孫景承
 ---
@@ -13,7 +13,7 @@ author: Frank Sun 孫景承
 {:toc}
 
 ## 前言
-　　常常用到，規則不會變，所以可以直接當工具使用了，提供 C# 及 JavaSctipt 作法。
+　　中華民國身分證字號及統一編號驗證，常常用到，規則不會變，所以可以直接當工具使用了，提供 C# 及 JavaSctipt 作法。
 
 ## Csharp
 
