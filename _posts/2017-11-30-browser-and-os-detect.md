@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  JavaSctipt 判斷瀏覽器本及作業系統
+title:  JavaScript 判斷瀏覽器本及作業系統
 date:   2017-11-30 00:00:00
 categories: Code
-tags: JavaSctipt Code 筆記
+tags: JavaScript Code 筆記
 excerpt: 　　判斷瀏覽器和作業系統也是很常碰到的問題，以下的 Code 可以直接打包成 .js 檔做使用。
 mathjax: true
 author: Frank Sun 孫景承

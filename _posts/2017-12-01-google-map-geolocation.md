@@ -3,7 +3,7 @@ layout: post
 title:  Google Map 定位
 date:   2017-12-01 00:00:00
 categories: Code
-tags: JavaSctipt Code GoogleMap 筆記
+tags: JavaScript Code GoogleMap 筆記
 excerpt: 　　這個很單純就是可以利用 Google Map 去定位出你當前的位置，但前題是你的網站要是安全的瀏覽環境，所以你的協定必須為 <b>HTTPS</b>，如果迫切很需要可以到 SSL For Free 去申請免費憑證，一次可以使用 3 個月。
 mathjax: true
 author: Frank Sun 孫景承
@@ -82,4 +82,4 @@ function showError(error)
 　　這個定位寫法是取得位置重新寫在地圖上，所以如果在 Chrome 或是 FireFox 上多請求幾次會看到地圖閃一下閃一下的，但是當 <span style="color:red;"><b>Windows 10 遇上了 Internet Explorer</b></span> 只要請求第二次定位他就會出現錯誤：**POSITION_UNAVAILABLE** ，目前原因不得而知，但重新整理就可以**「治標」**的解決問題了。
 
 <br/>
-判斷瀏覽器和作業系統的部分可以參考：**[JavaSctipt 判斷瀏覽器本及作業系統](/2017/12/01/browser-and-os-detect)**
+判斷瀏覽器和作業系統的部分可以參考：**[JavaScript 判斷瀏覽器本及作業系統](/2017/12/01/browser-and-os-detect)**
