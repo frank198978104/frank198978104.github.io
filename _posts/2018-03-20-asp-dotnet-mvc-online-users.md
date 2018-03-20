@@ -25,7 +25,7 @@ author: Frank Sun 孫景承
     }
 
 
-  void Session_Start(object sender, EventArgs e)
+    void Session_Start(object sender, EventArgs e)
     {
         //啟動新工作階段時執行的程式碼
         Application.Lock();
