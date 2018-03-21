@@ -17,7 +17,7 @@ author: Frank Sun 孫景承
 
 ### Code
 
-**在 Global.asax 裡面輸入以下的Code**
+**在 Global.asax.cs 裡面輸入以下的Code**
 ```csharp
     void Application_Start(object sender, EventArgs e)
     {
