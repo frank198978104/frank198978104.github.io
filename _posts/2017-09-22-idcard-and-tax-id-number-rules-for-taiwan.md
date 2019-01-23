@@ -26,29 +26,29 @@ author: Frank Sun 孫景承
 /// <returns>身分字號是否符合格式</returns>
 public static bool CheckIdCardNumber(string id)
 {
-    var d = false;
-    if (id.Length == 10)
+    var format =  new Regex(@"^[A-Z]\d{9}$");
+    if (!format.IsMatch(id)) return false;
+
+    id = id.ToUpper();
+
+    var a = new[]
     {
-        id = id.ToUpper();
-        if (id[0] >= 0x41 && id[0] <= 0x5A)
-        {
-            var a = new[] { 10, 11, 12, 13, 14, 15, 16, 17, 34, 18, 19, 20, 21, 22, 35, 23, 24, 25, 26, 27, 28, 29, 32, 30, 31, 33 };
-            var b = new int[11];
-            b[1] = a[(id[0]) - 65] % 10;
-            var c = b[0] = a[(id[0]) - 65] / 10;
-            for (var i = 1; i <= 9; i++)
-            {
-                b[i + 1] = id[i] - 48;
-                c += b[i] * (10 - i);
-            }
-            if (((c % 10) + b[10]) % 10 == 0)
-            {
-                d = true;
-            }
-        }
+        10, 11, 12, 13, 14, 15, 16, 17, 34, 18, 19, 20, 21, 22, 35, 23, 24, 25, 26, 27, 28, 29, 32, 30, 31, 33
+    };
+
+    var b = new int[11];
+
+    b[1] = a[(id[0]) - 65] % 10;
+
+    var c = b[0] = a[(id[0]) - 65] / 10;
+
+    for (var i = 1; i <= 9; i++)
+    {
+        b[i + 1] = id[i] - 48;
+        c += b[i] * (10 - i);
     }
 
-    return d;
+    return ((c % 10) + b[10]) % 10 == 0;
 }
 ```
 ### 外籍居留證
