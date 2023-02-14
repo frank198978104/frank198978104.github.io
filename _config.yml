@@ -18,7 +18,7 @@ permalink: /:year/:month/:day/:title/
 # twitter_username: 
 # facebook_username: frank.sun.71619
 github_username:  frank198978104
-email: frank.sun@creatidea.com.tw
+email: Frank.Sun@cloudriches.com
 # weibo_username: 
 # zhihu_username: 
 linkedIn_username: frank-sun-ab2472139
@@ -37,7 +37,7 @@ disqus_shortname: frank-sun-blog
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
 # baidu_tongji_id: cf8506e0ef223e57ff6239944e5d46a4
-google_analytics_id: UA-18589517-1 # google 分析追蹤id
+google_analytics_id: G-Z44DML1H11 # google 分析追蹤id
 
 # Build settings
 markdown: kramdown
