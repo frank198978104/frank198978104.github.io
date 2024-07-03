@@ -1,503 +1,504 @@
 ---
 layout: default
+title: 三十六宮圖練習
 ---
 
-    <title>面相三十六宮圖練習</title>
-    <style>
-        body {
-            position: relative;
-        }
+<style>
+    body {
+        position: relative;
+    }
 
-        img {
-            display: block;
-            width: auto;
-            height: auto;
-            max-width: none;
-        }
+    img {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: none;
+    }
 
-        .input-group {
-            position: absolute;
-            display: flex;
-        }
+    .input-group {
+        position: absolute;
+        display: flex;
+    }
 
-        input[type="text"] {
-            width: 150px;
-            /* 放大兩倍 */
-            height: 100px;
-            /* 放大兩倍 */
-            font-size: 50px;
-            /* 字體也放大兩倍 */
-            border: 1px solid #ccc;
-            margin-right: 5px;
-        }
+    input[type="text"] {
+        width: 150px;
+        /* 放大兩倍 */
+        height: 100px;
+        /* 放大兩倍 */
+        font-size: 50px;
+        /* 字體也放大兩倍 */
+        border: 1px solid #ccc;
+        margin-right: 5px;
+    }
 
-        .correct {
-            background-color: #b0e57c;
-            /* Green */
-        }
+    .correct {
+        background-color: #b0e57c;
+        /* Green */
+    }
 
-        .incorrect {
-            background-color: #f3928a;
-            /* Red */
-        }
+    .incorrect {
+        background-color: #f3928a;
+        /* Red */
+    }
 
-        /* 定位輸入框 */
+    /* 定位輸入框 */
 
-        /* 天庭 */
-        #group-19 {
-            left: 1015px;
-            top: 380px;
-        }
+    /* 天庭 */
+    #group-19 {
+        left: 1015px;
+        top: 380px;
+    }
 
-        /* 中正 */
-        #group-25 {
-            left: 1015px;
-            top: 700px;
-        }
+    /* 中正 */
+    #group-25 {
+        left: 1015px;
+        top: 700px;
+    }
 
-        /* 印堂 */
-        #group-28 {
-            left: 1015px;
-            top: 920px;
-        }
+    /* 印堂 */
+    #group-28 {
+        left: 1015px;
+        top: 920px;
+    }
 
-        /* 山根 */
-        #group-41 {
-            left: 1015px;
-            top: 1090px;
-        }
+    /* 山根 */
+    #group-41 {
+        left: 1015px;
+        top: 1090px;
+    }
 
-        /* 年壽 */
-        #group-44 {
-            left: 1015px;
-            top: 1280px;
-        }
+    /* 年壽 */
+    #group-44 {
+        left: 1015px;
+        top: 1280px;
+    }
 
-        /* 準頭 */
-        #group-48 {
-            left: 1015px;
-            top: 1490px;
-        }
+    /* 準頭 */
+    #group-48 {
+        left: 1015px;
+        top: 1490px;
+    }
 
-        /* 人中 */
-        #group-51 {
-            left: 1015px;
-            top: 1680px;
-        }
+    /* 人中 */
+    #group-51 {
+        left: 1015px;
+        top: 1680px;
+    }
 
-        /* 水星 */
-        #group-60 {
-            left: 1015px;
-            top: 1865px;
-        }
+    /* 水星 */
+    #group-60 {
+        left: 1015px;
+        top: 1865px;
+    }
 
-        /* 承槳 */
-        #group-61 {
-            left: 1015px;
-            top: 2000px;
-        }
+    /* 承漿 */
+    #group-61 {
+        left: 1015px;
+        top: 2000px;
+    }
 
-        /* 地閣 */
-        #group-71 {
-            left: 1015px;
-            top: 2230px;
-        }
+    /* 地閣 */
+    #group-71 {
+        left: 1015px;
+        top: 2230px;
+    }
 
-        /* 日角 */
-        #group-17 {
-            left: 1360px;
-            top: 420px;
-        }
+    /* 日角 */
+    #group-17 {
+        left: 1360px;
+        top: 420px;
+    }
 
-        /* 月角 */
-        #group-18 {
-            left: 670px;
-            top: 420px;
-        }
+    /* 月角 */
+    #group-18 {
+        left: 670px;
+        top: 420px;
+    }
 
-        /* 馹馬 */
-        #group-23 {
-            left: 1580px;
-            top: 570px;
-        }
+    /* 馹馬 */
+    #group-23 {
+        left: 1580px;
+        top: 570px;
+    }
 
-        /* 馹馬 */
-        #group-24 {
-            left: 450px;
-            top: 570px;
-        }
+    /* 馹馬 */
+    #group-24 {
+        left: 450px;
+        top: 570px;
+    }
 
-        /* 福堂 */
-        #group-20 {
-            left: 1330px;
-            top: 725px;
-        }
+    /* 福堂 */
+    #group-20 {
+        left: 1330px;
+        top: 725px;
+    }
 
-        /* 福堂 */
-        #group-21 {
-            left: 690px;
-            top: 730px;
-        }
+    /* 福堂 */
+    #group-21 {
+        left: 690px;
+        top: 730px;
+    }
 
-        /* 天倉 */
-        #group-29 {
-            left: 1635px;
-            top: 860px;
-        }
+    /* 天倉 */
+    #group-29 {
+        left: 1635px;
+        top: 860px;
+    }
 
-        /* 天倉 */
-        #group-30 {
-            left: 395px;
-            top: 860px;
-        }
+    /* 天倉 */
+    #group-30 {
+        left: 395px;
+        top: 860px;
+    }
 
-        /* 奸門 */
-        #group-26 {
-            left: 1608px;
-            top: 1040px;
-        }
+    /* 奸門 */
+    #group-26 {
+        left: 1608px;
+        top: 1040px;
+    }
 
-        /* 奸門 */
-        #group-27 {
-            left: 420px;
-            top: 1040px;
-        }
+    /* 奸門 */
+    #group-27 {
+        left: 420px;
+        top: 1040px;
+    }
 
-        /* 眉心 */
-        #group-31 {
-            left: 1370px;
-            top: 875px;
-        }
+    /* 眉心 */
+    #group-31 {
+        left: 1370px;
+        top: 875px;
+    }
 
-        /* 眉心 */
-        #group-32 {
-            left: 650px;
-            top: 875px;
-        }
+    /* 眉心 */
+    #group-32 {
+        left: 650px;
+        top: 875px;
+    }
 
-        /* 田宅 */
-        #group-33 {
-            left: 1320px;
-            top: 980px;
-        }
+    /* 田宅 */
+    #group-33 {
+        left: 1320px;
+        top: 980px;
+    }
 
-        /* 田宅 */
-        #group-34 {
-            left: 700px;
-            top: 980px;
-        }
+    /* 田宅 */
+    #group-34 {
+        left: 700px;
+        top: 980px;
+    }
 
-        /* 淚堂 */
-        #group-42 {
-            left: 1340px;
-            top: 1165px;
-        }
+    /* 淚堂 */
+    #group-42 {
+        left: 1340px;
+        top: 1165px;
+    }
 
-        /* 淚堂 */
-        #group-43 {
-            left: 670px;
-            top: 1165px;
-        }
+    /* 淚堂 */
+    #group-43 {
+        left: 670px;
+        top: 1165px;
+    }
 
-        /* 顴骨 */
-        #group-46 {
-            left: 1400px;
-            top: 1330px;
-        }
+    /* 顴骨 */
+    #group-46 {
+        left: 1400px;
+        top: 1330px;
+    }
 
-        /* 顴骨 */
-        #group-47 {
-            left: 600px;
-            top: 1330px;
-        }
+    /* 顴骨 */
+    #group-47 {
+        left: 600px;
+        top: 1330px;
+    }
 
-        /* 金星 */
-        #group-0-1 {
-            left: 1800px;
-            top: 1170px;
-        }
+    /* 金星 */
+    #group-0-1 {
+        left: 1800px;
+        top: 1170px;
+    }
 
-        /* 木星 */
-        #group-0-2 {
-            left: 230px;
-            top: 1170px;
-        }
+    /* 木星 */
+    #group-0-2 {
+        left: 230px;
+        top: 1170px;
+    }
 
-        /* 法令 */
-        #group-56 {
-            left: 1500px;
-            top: 1700px;
-        }
+    /* 法令 */
+    #group-56 {
+        left: 1500px;
+        top: 1700px;
+    }
 
-        /* 法令 */
-        #group-57 {
-            left: 500px;
-            top: 1700px;
-        }
+    /* 法令 */
+    #group-57 {
+        left: 500px;
+        top: 1700px;
+    }
 
-        /* 命門 */
-        #group-58 {
-            left: 1660px;
-            top: 1360px;
-        }
+    /* 命門 */
+    #group-58 {
+        left: 1660px;
+        top: 1360px;
+    }
 
-        /* 命門 */
-        #group-59 {
-            left: 360px;
-            top: 1360px;
-        }
+    /* 命門 */
+    #group-59 {
+        left: 360px;
+        top: 1360px;
+    }
 
-        /* 仙庫 */
-        #group-52 {
-            left: 1190px;
-            top: 1680px;
-        }
+    /* 仙庫 */
+    #group-52 {
+        left: 1190px;
+        top: 1680px;
+    }
 
-        /* 仙庫 */
-        #group-53 {
-            left: 840px;
-            top: 1680px;
-        }
+    /* 仙庫 */
+    #group-53 {
+        left: 840px;
+        top: 1680px;
+    }
 
-        /* 地庫 */
-        #group-62 {
-            left: 1370px;
-            top: 2045px;
-        }
+    /* 地庫 */
+    #group-62 {
+        left: 1370px;
+        top: 2045px;
+    }
 
-        /* 地庫 */
-        #group-63 {
-            left: 630px;
-            top: 2045px;
-        }
+    /* 地庫 */
+    #group-63 {
+        left: 630px;
+        top: 2045px;
+    }
 
-        #coordinates {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            padding: 5px;
-            border-radius: 5px;
-            z-index: 1000;
+    #coordinates {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+</style>
+<script>
+    function handleKeyPress(event, element, expected) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            checkAnswer(element, expected);
         }
-    </style>
-    <script>
-        function handleKeyPress(event, element, expected) {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                checkAnswer(element, expected);
+    }
+
+    function checkAnswer(element, expected) {
+        let input = element.value.trim().toLowerCase();
+        let correct = expected.toString().trim().toLowerCase();
+
+        if (input === correct) {
+            element.classList.add('correct');
+            element.classList.remove('incorrect');
+        } else {
+            element.classList.add('incorrect');
+            element.classList.remove('correct');
+        }
+    }
+
+    function checkAllAnswers() {
+        const inputs = document.querySelectorAll('input[type="text"], input[type="text"]');
+        inputs.forEach(input => {
+            const expected = input.getAttribute('onblur').match(/checkAnswer\(this, '(.*)'\)/)[1];
+            checkAnswer(input, expected);
+        });
+    }
+
+    /*
+            // 開發工具，複製 X, Y
+            function copyCoordinates(event) {
+                const coordinates = document.getElementById('coordinates');
+                const copyText = `left: ${event.pageX}px; top: ${event.pageY - 100}px;`;
+                navigator.clipboard.writeText(copyText)
+                    .then(() => {
+                        coordinates.textContent = `座標已複製！`;
+                        setTimeout(() => {
+                            coordinates.textContent = `X: ${event.pageX}, Y: ${event.pageY - 100}`;
+                        }, 1000); // 顯示一秒後恢復原來的座標
+                    })
+                    .catch(err => {
+                        console.error('無法複製座標：', err);
+                        coordinates.textContent = `無法複製座標`;
+                    });
             }
-        }
-
-        function checkAnswer(element, expected) {
-            let input = element.value.trim().toLowerCase();
-            let correct = expected.toString().trim().toLowerCase();
-
-            if (input === correct) {
-                element.classList.add('correct');
-                element.classList.remove('incorrect');
-            } else {
-                element.classList.add('incorrect');
-                element.classList.remove('correct');
-            }
-        }
-
-        function checkAllAnswers() {
-            const inputs = document.querySelectorAll('input[type="text"], input[type="text"]');
-            inputs.forEach(input => {
-                const expected = input.getAttribute('onblur').match(/checkAnswer\(this, '(.*)'\)/)[1];
-                checkAnswer(input, expected);
+    
+            document.addEventListener('mousemove', function (event) {
+                const coordinates = document.getElementById('coordinates');
+                coordinates.textContent = `X: ${event.pageX}, Y: ${event.pageY - 100}`;
             });
-        }
+    
+            document.addEventListener('click', function (event) {
+                copyCoordinates(event);
+            });
+    */
 
-        /*
-                // 開發工具，複製 X, Y
-                function copyCoordinates(event) {
-                    const coordinates = document.getElementById('coordinates');
-                    const copyText = `left: ${event.pageX}px; top: ${event.pageY - 100}px;`;
-                    navigator.clipboard.writeText(copyText)
-                        .then(() => {
-                            coordinates.textContent = `座標已複製！`;
-                            setTimeout(() => {
-                                coordinates.textContent = `X: ${event.pageX}, Y: ${event.pageY - 100}`;
-                            }, 1000); // 顯示一秒後恢復原來的座標
-                        })
-                        .catch(err => {
-                            console.error('無法複製座標：', err);
-                            coordinates.textContent = `無法複製座標`;
-                        });
-                }
-        
-                document.addEventListener('mousemove', function (event) {
-                    const coordinates = document.getElementById('coordinates');
-                    coordinates.textContent = `X: ${event.pageX}, Y: ${event.pageY - 100}`;
-                });
-        
-                document.addEventListener('click', function (event) {
-                    copyCoordinates(event);
-                });
-        */
+</script>
 
-    </script>
+<h1>三十六宮圖練習</h1>
+<div style="position: relative;">
+    <img src="https://lh3.googleusercontent.com/fife/ALs6j_GJLDX9srFJ2xHmF70ug-Zno2GhKjJU2w_EFDhBN2xgHh7r4RonEoMIr4sXN8YNbushQp0lCOOl6hFlzDBZMVnVxFdwgRf3vOMXPSbx5ExvksrS6DEjCKq-qAXgfJRkgnM13uTkD-ejYg_XOxhm3nTquui9Acs4cpDW7uEzb-HsC4jRT5yN8XdlPYt6TbgAToGxHFPQpbzprbInVZ0qgEFxBFeu6KA3QIk7fq0t9cuaPnX02HWrR8xH-d8chO7jO-fxvfldBEfkJP0nFXZ2WYhmxZlRuM5V0V0M8kRaCKm3NU2G7RbI--fnbCJU3iM7hcNSZ3WCjFoeqb1lctLqu3m2JhD_g_J1OBrslvbK4cXEAiGwHbMrD74xvQx9v7d-e2qfPZqui8EsRWWEbFUb6AALjXkCwACxgawQGLYz1NVcNafa8pX9BpjUDxW2uf3eB7SVmQchc8pneyOySMl7negWv74kYFwHXTd_8DCXuszI70F21RpwL4zwbtaJbTDvFjoMayIiqDXmuTLzV73mubE_c-wHdAiJPuGfP6aWq97fBRVNw3Rm1oEILezd1ZUGIw6TchYZDjwQDlSoK3H1reOMxbMs4covJF2euMuBDTWEdrO0jNPRj70AAABo4Oh8_BjhvsKmewNzj79FkqAjEcozBymDz5kWPKD_acbPMq_dhJ8WcWEjhNTc4E3c1-k9DPojNh1a_fVkChUkwAVXET2lrWmkCfDq3-0sbkqEcU5xzpcdC8yTVSnmXtc3fshsROK5BglxFD-3FNY5AIdVJhSpaSxx_cE5oMWCHxx92pEeoPGIGicDD33edUaUGCY84gUGBciYrUCQ5lvUsOPCxHDjEIhyQktay-xPZZBRezakBbe6WHG2HDkQLs_cexXDMG1kWGNrfRNMWV4vjAMKViAw1mDFuuJX-3BufdYliae7WGFgx5nVFhrZh2RLkAOakwqF58BWYQPWW3gje--SYEhFh0pV0tx_hPJdKRl4EbrWsBZtv-6gLJIk0O3RiQ2Qw9jcgOGGjW9mJNC65JfSVavNIQLbTzjlNULYlFi5qEEdR8FojuonNOQqKwghTrCZQ03HRpCylF6_gINvnFOtAfBsU2A_r0geXqwo0INYGbiXhaN9lNVsvN4SgpEEBkOhkEI6CJAUue5G_0Ljqi95SxwwULddalJ7-pLTiTagOcLEtga65TSdiPT0PcA9auzSxool75sIyQp3GfzeQ7oRQn5-6rdDb0juMxoT8xmKhdk4zipEFzlpxutLUoM9_dcHgINRQBWxCmCJLfnq76c8H_IPJXpm77yjuCbYwY0YS9GO1e_1g9sUali-YJbXZ1h28QDVf4uFXSZsengBoDwENCiBOTYENOCQi1gUJ3KfsS336z_IzQjDrYG0bi2Mr3w4d_M3Gzmp-nOX2tINnmYuhxFVwgk0s0-jcmHTMwaxJUNd6GU1SpgL_EmAjzbprpPxSD-HXgt1TzxH_PTqJE-otn5TFfjwp3aWAn0P8OZbN87jg2SIB884IqgapsYxpRvjDCUiwaCLZ67IFGM7dSKbX-zjVxA6QX5qoV4BqqQXzOJaix5-o4fiH5WUSreHOgtzIeybKKmkT9Cwd_A_Ug=w2179-h2683"
+        alt="三十六宮圖">
 
-    <h1>面相三十六宮圖練習</h1>
-    <div style="position: relative;">
-        <img src="https://lh3.googleusercontent.com/fife/ALs6j_GJLDX9srFJ2xHmF70ug-Zno2GhKjJU2w_EFDhBN2xgHh7r4RonEoMIr4sXN8YNbushQp0lCOOl6hFlzDBZMVnVxFdwgRf3vOMXPSbx5ExvksrS6DEjCKq-qAXgfJRkgnM13uTkD-ejYg_XOxhm3nTquui9Acs4cpDW7uEzb-HsC4jRT5yN8XdlPYt6TbgAToGxHFPQpbzprbInVZ0qgEFxBFeu6KA3QIk7fq0t9cuaPnX02HWrR8xH-d8chO7jO-fxvfldBEfkJP0nFXZ2WYhmxZlRuM5V0V0M8kRaCKm3NU2G7RbI--fnbCJU3iM7hcNSZ3WCjFoeqb1lctLqu3m2JhD_g_J1OBrslvbK4cXEAiGwHbMrD74xvQx9v7d-e2qfPZqui8EsRWWEbFUb6AALjXkCwACxgawQGLYz1NVcNafa8pX9BpjUDxW2uf3eB7SVmQchc8pneyOySMl7negWv74kYFwHXTd_8DCXuszI70F21RpwL4zwbtaJbTDvFjoMayIiqDXmuTLzV73mubE_c-wHdAiJPuGfP6aWq97fBRVNw3Rm1oEILezd1ZUGIw6TchYZDjwQDlSoK3H1reOMxbMs4covJF2euMuBDTWEdrO0jNPRj70AAABo4Oh8_BjhvsKmewNzj79FkqAjEcozBymDz5kWPKD_acbPMq_dhJ8WcWEjhNTc4E3c1-k9DPojNh1a_fVkChUkwAVXET2lrWmkCfDq3-0sbkqEcU5xzpcdC8yTVSnmXtc3fshsROK5BglxFD-3FNY5AIdVJhSpaSxx_cE5oMWCHxx92pEeoPGIGicDD33edUaUGCY84gUGBciYrUCQ5lvUsOPCxHDjEIhyQktay-xPZZBRezakBbe6WHG2HDkQLs_cexXDMG1kWGNrfRNMWV4vjAMKViAw1mDFuuJX-3BufdYliae7WGFgx5nVFhrZh2RLkAOakwqF58BWYQPWW3gje--SYEhFh0pV0tx_hPJdKRl4EbrWsBZtv-6gLJIk0O3RiQ2Qw9jcgOGGjW9mJNC65JfSVavNIQLbTzjlNULYlFi5qEEdR8FojuonNOQqKwghTrCZQ03HRpCylF6_gINvnFOtAfBsU2A_r0geXqwo0INYGbiXhaN9lNVsvN4SgpEEBkOhkEI6CJAUue5G_0Ljqi95SxwwULddalJ7-pLTiTagOcLEtga65TSdiPT0PcA9auzSxool75sIyQp3GfzeQ7oRQn5-6rdDb0juMxoT8xmKhdk4zipEFzlpxutLUoM9_dcHgINRQBWxCmCJLfnq76c8H_IPJXpm77yjuCbYwY0YS9GO1e_1g9sUali-YJbXZ1h28QDVf4uFXSZsengBoDwENCiBOTYENOCQi1gUJ3KfsS336z_IzQjDrYG0bi2Mr3w4d_M3Gzmp-nOX2tINnmYuhxFVwgk0s0-jcmHTMwaxJUNd6GU1SpgL_EmAjzbprpPxSD-HXgt1TzxH_PTqJE-otn5TFfjwp3aWAn0P8OZbN87jg2SIB884IqgapsYxpRvjDCUiwaCLZ67IFGM7dSKbX-zjVxA6QX5qoV4BqqQXzOJaix5-o4fiH5WUSreHOgtzIeybKKmkT9Cwd_A_Ug=w2179-h2683" alt="面相三十六宮圖">
-
-        <!-- Start of input groups -->
-        <div id="group-19" class="input-group">
-            <input type="text" name="position-19" onblur="checkAnswer(this, '天庭')"
-                onkeypress="handleKeyPress(event, this, '天庭')">
-        </div>
-        <div id="group-25" class="input-group">
-            <input type="text" name="position-25" onblur="checkAnswer(this, '中正')"
-                onkeypress="handleKeyPress(event, this, '中正')">
-        </div>
-        <div id="group-28" class="input-group">
-            <input type="text" name="position-28" onblur="checkAnswer(this, '印堂')"
-                onkeypress="handleKeyPress(event, this, '印堂')">
-        </div>
-        <div id="group-41" class="input-group">
-            <input type="text" name="position-41" onblur="checkAnswer(this, '山根')"
-                onkeypress="handleKeyPress(event, this, '山根')">
-        </div>
-        <div id="group-44" class="input-group">
-            <input type="text" name="position-44" onblur="checkAnswer(this, '年壽')"
-                onkeypress="handleKeyPress(event, this, '年壽')">
-        </div>
-        <div id="group-48" class="input-group">
-            <input type="text" name="position-48" onblur="checkAnswer(this, '準頭')"
-                onkeypress="handleKeyPress(event, this, '準頭')">
-        </div>
-        <div id="group-51" class="input-group">
-            <input type="text" name="position-51" onblur="checkAnswer(this, '人中')"
-                onkeypress="handleKeyPress(event, this, '人中')">
-        </div>
-        <div id="group-60" class="input-group">
-            <input type="text" name="position-60" onblur="checkAnswer(this, '水星')"
-                onkeypress="handleKeyPress(event, this, '水星')">
-        </div>
-        <div id="group-61" class="input-group">
-            <input type="text" name="position-61" onblur="checkAnswer(this, '承槳')"
-                onkeypress="handleKeyPress(event, this, '承槳')">
-        </div>
-        <div id="group-71" class="input-group">
-            <input type="text" name="position-71" onblur="checkAnswer(this, '地閣')"
-                onkeypress="handleKeyPress(event, this, '地閣')">
-        </div>
-        <div id="group-17" class="input-group">
-            <input type="text" name="position-17" onblur="checkAnswer(this, '日角')"
-                onkeypress="handleKeyPress(event, this, '日角')">
-        </div>
-        <div id="group-18" class="input-group">
-            <input type="text" name="position-18" onblur="checkAnswer(this, '月角')"
-                onkeypress="handleKeyPress(event, this, '月角')">
-        </div>
-        <div id="group-23" class="input-group">
-            <input type="text" name="position-23" onblur="checkAnswer(this, '馹馬')"
-                onkeypress="handleKeyPress(event, this, '馹馬')">
-        </div>
-        <div id="group-24" class="input-group">
-            <input type="text" name="position-24" onblur="checkAnswer(this, '馹馬')"
-                onkeypress="handleKeyPress(event, this, '馹馬')">
-        </div>
-        <div id="group-20" class="input-group">
-            <input type="text" name="position-20" onblur="checkAnswer(this, '福堂')"
-                onkeypress="handleKeyPress(event, this, '福堂')">
-        </div>
-        <div id="group-21" class="input-group">
-            <input type="text" name="position-21" onblur="checkAnswer(this, '福堂')"
-                onkeypress="handleKeyPress(event, this, '福堂')">
-        </div>
-        <div id="group-29" class="input-group">
-            <input type="text" name="position-29" onblur="checkAnswer(this, '天倉')"
-                onkeypress="handleKeyPress(event, this, '天倉')">
-        </div>
-        <div id="group-30" class="input-group">
-            <input type="text" name="position-30" onblur="checkAnswer(this, '天倉')"
-                onkeypress="handleKeyPress(event, this, '天倉')">
-        </div>
-        <div id="group-26" class="input-group">
-            <input type="text" name="position-26" onblur="checkAnswer(this, '奸門')"
-                onkeypress="handleKeyPress(event, this, '奸門')">
-        </div>
-        <div id="group-27" class="input-group">
-            <input type="text" name="position-27" onblur="checkAnswer(this, '奸門')"
-                onkeypress="handleKeyPress(event, this, '奸門')">
-        </div>
-        <div id="group-31" class="input-group">
-            <input type="text" name="position-31" onblur="checkAnswer(this, '眉心')"
-                onkeypress="handleKeyPress(event, this, '眉心')">
-        </div>
-        <div id="group-32" class="input-group">
-            <input type="text" name="position-32" onblur="checkAnswer(this, '眉心')"
-                onkeypress="handleKeyPress(event, this, '眉心')">
-        </div>
-        <div id="group-33" class="input-group">
-            <input type="text" name="position-33" onblur="checkAnswer(this, '田宅')"
-                onkeypress="handleKeyPress(event, this, '田宅')">
-        </div>
-        <div id="group-34" class="input-group">
-            <input type="text" name="position-34" onblur="checkAnswer(this, '田宅')"
-                onkeypress="handleKeyPress(event, this, '田宅')">
-        </div>
-        <div id="group-42" class="input-group">
-            <input type="text" name="position-42" onblur="checkAnswer(this, '淚堂')"
-                onkeypress="handleKeyPress(event, this, '淚堂')">
-        </div>
-        <div id="group-43" class="input-group">
-            <input type="text" name="position-43" onblur="checkAnswer(this, '淚堂')"
-                onkeypress="handleKeyPress(event, this, '淚堂')">
-        </div>
-        <div id="group-46" class="input-group">
-            <input type="text" name="position-46" onblur="checkAnswer(this, '顴骨')"
-                onkeypress="handleKeyPress(event, this, '顴骨')">
-        </div>
-        <div id="group-47" class="input-group">
-            <input type="text" name="position-47" onblur="checkAnswer(this, '顴骨')"
-                onkeypress="handleKeyPress(event, this, '顴骨')">
-        </div>
-        <div id="group-0-1" class="input-group">
-            <input type="text" name="position-0-1" onblur="checkAnswer(this, '金星')"
-                onkeypress="handleKeyPress(event, this, '金星')">
-        </div>
-        <div id="group-0-2" class="input-group">
-            <input type="text" name="position-0-2" onblur="checkAnswer(this, '木星')"
-                onkeypress="handleKeyPress(event, this, '木星')">
-        </div>
-        <div id="group-56" class="input-group">
-            <input type="text" name="position-56" onblur="checkAnswer(this, '法令')"
-                onkeypress="handleKeyPress(event, this, '法令')">
-        </div>
-        <div id="group-57" class="input-group">
-            <input type="text" name="position-57" onblur="checkAnswer(this, '法令')"
-                onkeypress="handleKeyPress(event, this, '法令')">
-        </div>
-        <div id="group-58" class="input-group">
-            <input type="text" name="position-58" onblur="checkAnswer(this, '命門')"
-                onkeypress="handleKeyPress(event, this, '命門')">
-        </div>
-        <div id="group-59" class="input-group">
-            <input type="text" name="position-59" onblur="checkAnswer(this, '命門')"
-                onkeypress="handleKeyPress(event, this, '命門')">
-        </div>
-        <div id="group-52" class="input-group">
-            <input type="text" name="position-52" onblur="checkAnswer(this, '仙庫')"
-                onkeypress="handleKeyPress(event, this, '仙庫')">
-        </div>
-        <div id="group-53" class="input-group">
-            <input type="text" name="position-53" onblur="checkAnswer(this, '仙庫')"
-                onkeypress="handleKeyPress(event, this, '仙庫')">
-        </div>
-        <div id="group-62" class="input-group">
-            <input type="text" name="position-62" onblur="checkAnswer(this, '地庫')"
-                onkeypress="handleKeyPress(event, this, '地庫')">
-        </div>
-        <div id="group-63" class="input-group">
-            <input type="text" name="position-63" onblur="checkAnswer(this, '地庫')"
-                onkeypress="handleKeyPress(event, this, '地庫')">
-        </div>
-
-        <!-- <div id="coordinates">X: 0, Y: 0</div> -->
+    <!-- Start of input groups -->
+    <div id="group-19" class="input-group">
+        <input type="text" name="position-19" onblur="checkAnswer(this, '天庭')"
+            onkeypress="handleKeyPress(event, this, '天庭')">
     </div>
+    <div id="group-25" class="input-group">
+        <input type="text" name="position-25" onblur="checkAnswer(this, '中正')"
+            onkeypress="handleKeyPress(event, this, '中正')">
+    </div>
+    <div id="group-28" class="input-group">
+        <input type="text" name="position-28" onblur="checkAnswer(this, '印堂')"
+            onkeypress="handleKeyPress(event, this, '印堂')">
+    </div>
+    <div id="group-41" class="input-group">
+        <input type="text" name="position-41" onblur="checkAnswer(this, '山根')"
+            onkeypress="handleKeyPress(event, this, '山根')">
+    </div>
+    <div id="group-44" class="input-group">
+        <input type="text" name="position-44" onblur="checkAnswer(this, '年壽')"
+            onkeypress="handleKeyPress(event, this, '年壽')">
+    </div>
+    <div id="group-48" class="input-group">
+        <input type="text" name="position-48" onblur="checkAnswer(this, '準頭')"
+            onkeypress="handleKeyPress(event, this, '準頭')">
+    </div>
+    <div id="group-51" class="input-group">
+        <input type="text" name="position-51" onblur="checkAnswer(this, '人中')"
+            onkeypress="handleKeyPress(event, this, '人中')">
+    </div>
+    <div id="group-60" class="input-group">
+        <input type="text" name="position-60" onblur="checkAnswer(this, '水星')"
+            onkeypress="handleKeyPress(event, this, '水星')">
+    </div>
+    <div id="group-61" class="input-group">
+        <input type="text" name="position-61" onblur="checkAnswer(this, '承漿')"
+            onkeypress="handleKeyPress(event, this, '承漿')">
+    </div>
+    <div id="group-71" class="input-group">
+        <input type="text" name="position-71" onblur="checkAnswer(this, '地閣')"
+            onkeypress="handleKeyPress(event, this, '地閣')">
+    </div>
+    <div id="group-17" class="input-group">
+        <input type="text" name="position-17" onblur="checkAnswer(this, '日角')"
+            onkeypress="handleKeyPress(event, this, '日角')">
+    </div>
+    <div id="group-18" class="input-group">
+        <input type="text" name="position-18" onblur="checkAnswer(this, '月角')"
+            onkeypress="handleKeyPress(event, this, '月角')">
+    </div>
+    <div id="group-23" class="input-group">
+        <input type="text" name="position-23" onblur="checkAnswer(this, '馹馬')"
+            onkeypress="handleKeyPress(event, this, '馹馬')">
+    </div>
+    <div id="group-24" class="input-group">
+        <input type="text" name="position-24" onblur="checkAnswer(this, '馹馬')"
+            onkeypress="handleKeyPress(event, this, '馹馬')">
+    </div>
+    <div id="group-20" class="input-group">
+        <input type="text" name="position-20" onblur="checkAnswer(this, '福堂')"
+            onkeypress="handleKeyPress(event, this, '福堂')">
+    </div>
+    <div id="group-21" class="input-group">
+        <input type="text" name="position-21" onblur="checkAnswer(this, '福堂')"
+            onkeypress="handleKeyPress(event, this, '福堂')">
+    </div>
+    <div id="group-29" class="input-group">
+        <input type="text" name="position-29" onblur="checkAnswer(this, '天倉')"
+            onkeypress="handleKeyPress(event, this, '天倉')">
+    </div>
+    <div id="group-30" class="input-group">
+        <input type="text" name="position-30" onblur="checkAnswer(this, '天倉')"
+            onkeypress="handleKeyPress(event, this, '天倉')">
+    </div>
+    <div id="group-26" class="input-group">
+        <input type="text" name="position-26" onblur="checkAnswer(this, '奸門')"
+            onkeypress="handleKeyPress(event, this, '奸門')">
+    </div>
+    <div id="group-27" class="input-group">
+        <input type="text" name="position-27" onblur="checkAnswer(this, '奸門')"
+            onkeypress="handleKeyPress(event, this, '奸門')">
+    </div>
+    <div id="group-31" class="input-group">
+        <input type="text" name="position-31" onblur="checkAnswer(this, '眉心')"
+            onkeypress="handleKeyPress(event, this, '眉心')">
+    </div>
+    <div id="group-32" class="input-group">
+        <input type="text" name="position-32" onblur="checkAnswer(this, '眉心')"
+            onkeypress="handleKeyPress(event, this, '眉心')">
+    </div>
+    <div id="group-33" class="input-group">
+        <input type="text" name="position-33" onblur="checkAnswer(this, '田宅')"
+            onkeypress="handleKeyPress(event, this, '田宅')">
+    </div>
+    <div id="group-34" class="input-group">
+        <input type="text" name="position-34" onblur="checkAnswer(this, '田宅')"
+            onkeypress="handleKeyPress(event, this, '田宅')">
+    </div>
+    <div id="group-42" class="input-group">
+        <input type="text" name="position-42" onblur="checkAnswer(this, '淚堂')"
+            onkeypress="handleKeyPress(event, this, '淚堂')">
+    </div>
+    <div id="group-43" class="input-group">
+        <input type="text" name="position-43" onblur="checkAnswer(this, '淚堂')"
+            onkeypress="handleKeyPress(event, this, '淚堂')">
+    </div>
+    <div id="group-46" class="input-group">
+        <input type="text" name="position-46" onblur="checkAnswer(this, '顴骨')"
+            onkeypress="handleKeyPress(event, this, '顴骨')">
+    </div>
+    <div id="group-47" class="input-group">
+        <input type="text" name="position-47" onblur="checkAnswer(this, '顴骨')"
+            onkeypress="handleKeyPress(event, this, '顴骨')">
+    </div>
+    <div id="group-0-1" class="input-group">
+        <input type="text" name="position-0-1" onblur="checkAnswer(this, '金星')"
+            onkeypress="handleKeyPress(event, this, '金星')">
+    </div>
+    <div id="group-0-2" class="input-group">
+        <input type="text" name="position-0-2" onblur="checkAnswer(this, '木星')"
+            onkeypress="handleKeyPress(event, this, '木星')">
+    </div>
+    <div id="group-56" class="input-group">
+        <input type="text" name="position-56" onblur="checkAnswer(this, '法令')"
+            onkeypress="handleKeyPress(event, this, '法令')">
+    </div>
+    <div id="group-57" class="input-group">
+        <input type="text" name="position-57" onblur="checkAnswer(this, '法令')"
+            onkeypress="handleKeyPress(event, this, '法令')">
+    </div>
+    <div id="group-58" class="input-group">
+        <input type="text" name="position-58" onblur="checkAnswer(this, '命門')"
+            onkeypress="handleKeyPress(event, this, '命門')">
+    </div>
+    <div id="group-59" class="input-group">
+        <input type="text" name="position-59" onblur="checkAnswer(this, '命門')"
+            onkeypress="handleKeyPress(event, this, '命門')">
+    </div>
+    <div id="group-52" class="input-group">
+        <input type="text" name="position-52" onblur="checkAnswer(this, '仙庫')"
+            onkeypress="handleKeyPress(event, this, '仙庫')">
+    </div>
+    <div id="group-53" class="input-group">
+        <input type="text" name="position-53" onblur="checkAnswer(this, '仙庫')"
+            onkeypress="handleKeyPress(event, this, '仙庫')">
+    </div>
+    <div id="group-62" class="input-group">
+        <input type="text" name="position-62" onblur="checkAnswer(this, '地庫')"
+            onkeypress="handleKeyPress(event, this, '地庫')">
+    </div>
+    <div id="group-63" class="input-group">
+        <input type="text" name="position-63" onblur="checkAnswer(this, '地庫')"
+            onkeypress="handleKeyPress(event, this, '地庫')">
+    </div>
+
+    <!-- <div id="coordinates">X: 0, Y: 0</div> -->
+</div>
