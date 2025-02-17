@@ -1,0 +1,762 @@
+---
+layout: default
+title: 七十五部位流年圖練習
+---
+
+<style>
+    body {
+        position: relative;
+    }
+
+    img {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: none;
+    }
+
+    .input-group-row {
+        position: absolute;
+        display: flex;
+    }
+
+    .input-group-column {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input[type="text"],
+    input[type="text"] {
+        width: 100px;
+        height: 50px;
+        border: 1px solid #ccc;
+        margin-right: 5px;
+        font-size: 50px;
+    }
+
+    .correct {
+        background-color: #b0e57c;
+        /* Green */
+    }
+
+    .incorrect {
+        background-color: #f3928a;
+        /* Red */
+    }
+
+    /* 定位輸入框 */
+
+    /* 天中 */
+    #group-16 {
+        left: 1145px;
+        top: 880px;
+    }
+
+    /* 天庭 */
+    #group-19 {
+        left: 1145px;
+        top: 1020px;
+    }
+
+    /* 司空 */
+    #group-22 {
+        left: 1145px;
+        top: 1155px;
+    }
+
+    /* 中正 */
+    #group-25 {
+        left: 1145px;
+        top: 1290px;
+    }
+
+    /* 印堂 */
+    #group-28 {
+        left: 1145px;
+        top: 1425px;
+    }
+
+    /* 山根 */
+    #group-41 {
+        left: 1145px;
+        top: 1555px;
+    }
+
+    /* 年上 */
+    #group-44 {
+        left: 1145px;
+        top: 1680px;
+    }
+
+    /* 壽上 */
+    #group-45 {
+        left: 1145px;
+        top: 1810px;
+    }
+
+    /* 準頭 */
+    #group-48 {
+        left: 1145px;
+        top: 1970px;
+    }
+
+    /* 人中 */
+    #group-51 {
+        left: 1160px;
+        top: 2210px;
+    }
+
+    /* 水星 */
+    #group-60 {
+        left: 1145px;
+        top: 2430px;
+    }
+
+    /* 承漿 */
+    #group-61 {
+        left: 1145px;
+        top: 2560px;
+    }
+
+    /* 頌堂 */
+    #group-70 {
+        left: 1145px;
+        top: 2680px;
+    }
+
+    /* 地閣 */
+    #group-71 {
+        left: 1145px;
+        top: 2830px;
+    }
+
+    /* 日角 */
+    #group-17 {
+        left: 1400px;
+        top: 1000px;
+    }
+
+    /* 月角 */
+    #group-18 {
+        left: 950px;
+        top: 1000px;
+    }
+
+    /* 邊城 */
+    #group-23 {
+        left: 1570px;
+        top: 960px;
+    }
+
+    /* 邊城 */
+    #group-24 {
+        left: 718px;
+        top: 960px;
+    }
+
+    /* 輔角 */
+    #group-20 {
+        left: 1512px;
+        top: 1150px;
+    }
+
+    /* 輔角 */
+    #group-21 {
+        left: 780px;
+        top: 1150px;
+    }
+
+    /* 山林 */
+    #group-29 {
+        left: 1705px;
+        top: 1100px;
+    }
+
+    /* 山林 */
+    #group-30 {
+        left: 585px;
+        top: 1100px;
+    }
+
+    /* 邱陵 */
+    #group-26 {
+        left: 1710px;
+        top: 1230px;
+    }
+
+    /* 塚墓 */
+    #group-27 {
+        left: 550px;
+        top: 1230px;
+    }
+
+    /* 凌雲 */
+    #group-31 {
+        left: 1370px;
+        top: 1310px;
+    }
+
+    /* 紫氣 */
+    #group-32 {
+        left: 930px;
+        top: 1310px;
+    }
+
+    /* 紫霞 */
+    #group-33 {
+        left: 1750px;
+        top: 1460px;
+    }
+
+    /* 彩霞 */
+    #group-34 {
+        left: 550px;
+        top: 1460px;
+    }
+
+    /* 精舍 */
+    #group-42 {
+        left: 1310px;
+        top: 1550px;
+    }
+
+    /* 光殿 */
+    #group-43 {
+        left: 980px;
+        top: 1550px;
+    }
+
+    /* 太陽 */
+    #group-35 {
+        left: 1400px;
+        top: 1730px;
+    }
+
+    /* 中陽 */
+    #group-37 {
+        left: 1540px;
+        top: 1730px;
+    }
+
+    /* 少陽 */
+    #group-39 {
+        left: 1700px;
+        top: 1730px;
+    }
+
+    /* 太陰 */
+    #group-36 {
+        left: 984px;
+        top: 1730px;
+    }
+
+    /* 中陰 */
+    #group-38 {
+        left: 854px;
+        top: 1730px;
+    }
+
+    /* 少陰 */
+    #group-40 {
+        left: 690px;
+        top: 1730px;
+    }
+
+    /* 顴骨 */
+    #group-46 {
+        left: 1850px;
+        top: 1730px;
+    }
+
+    /* 顴骨 */
+    #group-47 {
+        left: 500px;
+        top: 1730px;
+    }
+
+    /* 天輪 */
+    #group-0-1 {
+        left: 2125px;
+        top: 1560px;
+    }
+
+    /* 天輪 */
+    #group-0-2 {
+        left: 230px;
+        top: 1560px;
+    }
+
+    /* 人輪 */
+    #group-0-3 {
+        left: 2100px;
+        top: 1780px;
+    }
+
+    /* 人輪 */
+    #group-0-4 {
+        left: 255px;
+        top: 1780px;
+    }
+
+    /* 地輪 */
+    #group-0-5 {
+        left: 2060px;
+        top: 1920px;
+    }
+
+    /* 地輪 */
+    #group-0-6 {
+        left: 300px;
+        top: 1920px;
+    }
+
+    /* 諫臺 */
+    #group-49 {
+        left: 1350px;
+        top: 2000px;
+    }
+
+    /* 廷尉 */
+    #group-50 {
+        left: 1010px;
+        top: 2000px;
+    }
+
+    /* 法令 */
+    #group-56 {
+        left: 1490px;
+        top: 2060px;
+    }
+
+    /* 法令 */
+    #group-57 {
+        left: 790px;
+        top: 2060px;
+    }
+
+    /* 附耳 */
+    #group-58 {
+        left: 1780px;
+        top: 2060px;
+    }
+
+    /* 附耳 */
+    #group-59 {
+        left: 500px;
+        top: 2060px;
+    }
+
+    /* 仙庫 */
+    #group-52 {
+        left: 1300px;
+        top: 2210px;
+    }
+
+    /* 仙庫 */
+    #group-53 {
+        left: 1025px;
+        top: 2210px;
+    }
+
+    /* 食倉 */
+    #group-54 {
+        left: 1415px;
+        top: 2210px;
+    }
+
+    /* 祿倉 */
+    #group-55 {
+        left: 910px;
+        top: 2210px;
+    }
+
+    /* 陂地 */
+    #group-64 {
+        left: 1600px;
+        top: 2340px;
+    }
+
+    /* 鵝鴨 */
+    #group-65 {
+        left: 760px;
+        top: 2340px;
+    }
+
+    /* 歸來 */
+    #group-68 {
+        left: 1720px;
+        top: 2380px;
+    }
+
+    /* 歸來 */
+    #group-69 {
+        left: 575px;
+        top: 2380px;
+    }
+
+    /* 金縷 */
+    #group-66 {
+        left: 1775px;
+        top: 2240px;
+    }
+
+    /* 金縷 */
+    #group-67 {
+        left: 520px;
+        top: 2240px;
+    }
+
+    /* 地庫 */
+    #group-62 {
+        left: 1420px;
+        top: 2480px;
+    }
+
+    /* 地庫 */
+    #group-63 {
+        left: 875px;
+        top: 2480px;
+    }
+
+    /* 奴僕 */
+    #group-72 {
+        left: 1420px;
+        top: 2645px;
+    }
+
+    /* 奴僕 */
+    #group-73 {
+        left: 930px;
+        top: 2645px;
+    }
+
+    /* 腮骨 */
+    #group-74 {
+        left: 1595px;
+        top: 2580px;
+    }
+
+    /* 腮骨 */
+    #group-75 {
+        left: 765px;
+        top: 2580px;
+    }
+
+    #coordinates {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+</style>
+<script>
+    function handleKeyPress(event, element, expected) {
+        if (event.key === 'Enter') { event.preventDefault(); checkAnswer(element, expected);
+        }
+    }
+
+    function checkAnswer(element, expected) {
+        let input = element.value.trim().toLowerCase();
+        let correct = expected.toString().trim().toLowerCase();
+
+        if (input === correct) { element.classList.add('correct'); element.classList.remove('incorrect');
+        } else { element.classList.add('incorrect'); element.classList.remove('correct');
+        }
+    }
+
+    function checkAllAnswers() {
+        const inputs = document.querySelectorAll('input[type="text"], input[type="text"]');
+        inputs.forEach(input => { const expected = input.getAttribute('onblur').match(/checkAnswer\(this, '(.*)'\)/)[1]; checkAnswer(input, expected);
+        });
+    }
+    /*
+        // 開發工具，複製 X, Y
+        function copyCoordinates(event) { const coordinates = document.getElementById('coordinates'); const copyText = `left: ${event.pageX}px; top: ${event.pageY - 100}px;`; navigator.clipboard.writeText(copyText)     .then(() => {         coordinates.textContent = `座標已複製！`;         setTimeout(() => {             coordinates.textContent = `X: ${event.pageX}, Y: ${event.pageY - 100}`;         }, 1000); // 顯示一秒後恢復原來的座標     })     .catch(err => {         console.error('無法複製座標：', err);         coordinates.textContent = `無法複製座標`;     });
+        }
+    
+        document.addEventListener('mousemove', function (event) { const coordinates = document.getElementById('coordinates'); coordinates.textContent = `X: ${event.pageX}, Y: ${event.pageY - 100}`;
+        });
+    
+        document.addEventListener('click', function (event) { copyCoordinates(event);
+        });
+    */
+</script>
+
+<h1>七十五部位流年圖練習</h1>
+<div style="position: relative;">
+    <img src="https://lh3.googleusercontent.com/fife/ALs6j_GTRM3iRVD7lz4jrsKimzrZcoFt1xtPhJm2M_R_9MvIunoSOWSwh5UkKQf-7HQmmzmMn3inRKa2ZUTllRJJicZAcW6dvzqoy83eV7kinJnMIzf0fjjVKIKbl5xp-F9h0e2w884Xb63Lo8Ckn09KvpkvI6djUO36vLhvWhyZK5EMBzZuVfKfHy9kJewHBFQ41SRzALblLsO494W9Bxb-Ox-kBzW0vmo09n57ujiWX1TadcgDqwTf-tc4dApsPO5zex21fMgz9KCC6xupx_0FcNaNaH4klgtj9RJpcUsoindtcnIskn1WxXmMYqOoucwjC2uWHnn-CTxIKb3FQMEVSbVsTGZt32f-zaa-QrRnSt-zO8iF8Fp4sNQLS6iQyUNTJolDlk4xiywkWP8H5OqU1z9HlD-8eriH4C_auxjDb3s3h3ZVwZgJ-Rzhcyny6FyjstfW3oCDIzGOPRf_sIou8hOYcNHjlTnqwmhIQ07-WHDNxO_XbrTFcgV4WyUqshbrWr67BhBwsVXIQp-gy3KKQxsimrUO0eCz7u2SBKlzJi8nCOnxbZHkIMPDmpDhLK0oflv46Ct50yvevgumGtrbpihZh4f6hzYrulLnq7Ny4WJQAZL-GlY-eR5ahqaGtV9tDK2QvvW7hrXYCSntR2EHVm0QPeRV1_PLMm_UmQFRLZ5My1it8SO1-cdU4K8EpERkIDSTJ6tEILj64hdzw4D_I2JYHTTiExNkcl3lhah4nZCMq9RIgzff9pkncKeCbT6LBl4m0ethZTNsSQA_KLOae0zAFMxwPcZNtWf6SIGt2uJ0b4ymmjBH-zAyAvrF_1-U8BbQlpZ2h-JstnfvKoEhspBbFBB_Cl-w6QIMOJpKjNBubwBStsb6WJJrc79yS657R15gRzleekYvs-W6465yFrBh7RCOFzJu_1Ai88rOoo4Qb5vL6Z6lr2GTLmHDo9tZ60Zz=w2404-h3087-rw-v1"
+        alt="七十五部位流年圖">
+
+    <!-- Start of input groups -->
+    <div id="group-16" class="input-group-row">
+        <input type="text" name="position-16" onblur="checkAnswer(this, '天中')" onkeypress="handleKeyPress(event, this, '天中')">
+        <!-- <input type="text" name="number-16" onblur="checkAnswer(this, 16)" onkeypress="handleKeyPress(event, this, 16)" style="ime-mode:disabled"> -->
+    </div>
+    <div id="group-19" class="input-group-row">
+        <input type="text" name="position-19" onblur="checkAnswer(this, '天庭')" onkeypress="handleKeyPress(event, this, '天庭')">
+        <!-- <input type="text" name="number-19" onblur="checkAnswer(this, 19)" onkeypress="handleKeyPress(event, this, 19)"> -->
+    </div>
+    <div id="group-22" class="input-group-row">
+        <input type="text" name="position-22" onblur="checkAnswer(this, '司空')" onkeypress="handleKeyPress(event, this, '司空')">
+        <!-- <input type="text" name="number-22" onblur="checkAnswer(this, 22)" onkeypress="handleKeyPress(event, this, 22)"> -->
+    </div>
+    <div id="group-25" class="input-group-row">
+        <input type="text" name="position-25" onblur="checkAnswer(this, '中正')" onkeypress="handleKeyPress(event, this, '中正')">
+        <!-- <input type="text" name="number-25" onblur="checkAnswer(this, 25)" onkeypress="handleKeyPress(event, this, 25)"> -->
+    </div>
+    <div id="group-28" class="input-group-row">
+        <input type="text" name="position-28" onblur="checkAnswer(this, '印堂')" onkeypress="handleKeyPress(event, this, '印堂')">
+        <!-- <input type="text" name="number-28" onblur="checkAnswer(this, 28)" onkeypress="handleKeyPress(event, this, 28)"> -->
+    </div>
+    <div id="group-41" class="input-group-row">
+        <input type="text" name="position-41" onblur="checkAnswer(this, '山根')" onkeypress="handleKeyPress(event, this, '山根')">
+        <!-- <input type="text" name="number-41" onblur="checkAnswer(this, 41)" onkeypress="handleKeyPress(event, this, 41)"> -->
+    </div>
+    <div id="group-44" class="input-group-row">
+        <input type="text" name="position-44" onblur="checkAnswer(this, '年上')" onkeypress="handleKeyPress(event, this, '年上')">
+        <!-- <input type="text" name="number-44" onblur="checkAnswer(this, 44)" onkeypress="handleKeyPress(event, this, 44)"> -->
+    </div>
+    <div id="group-45" class="input-group-row">
+        <input type="text" name="position-45" onblur="checkAnswer(this, '壽上')" onkeypress="handleKeyPress(event, this, '壽上')">
+        <!-- <input type="text" name="number-45" onblur="checkAnswer(this, 45)" onkeypress="handleKeyPress(event, this, 45)"> -->
+    </div>
+    <div id="group-48" class="input-group-row">
+        <input type="text" name="position-48" onblur="checkAnswer(this, '準頭')" onkeypress="handleKeyPress(event, this, '準頭')">
+        <!-- <input type="text" name="number-48" onblur="checkAnswer(this, 48)" onkeypress="handleKeyPress(event, this, 48)"> -->
+    </div>
+    <div id="group-51" class="input-group-column">
+        <!-- <input type="text" name="number-51" onblur="checkAnswer(this, 51)" onkeypress="handleKeyPress(event, this, 51)"> -->
+        <input type="text" name="position-51" onblur="checkAnswer(this, '人中')" onkeypress="handleKeyPress(event, this, '人中')">
+    </div>
+    <div id="group-60" class="input-group-row">
+        <input type="text" name="position-60" onblur="checkAnswer(this, '水星')" onkeypress="handleKeyPress(event, this, '水星')">
+        <!-- <input type="text" name="number-60" onblur="checkAnswer(this, 60)" onkeypress="handleKeyPress(event, this, 60)"> -->
+    </div>
+    <div id="group-61" class="input-group-row">
+        <input type="text" name="position-61" onblur="checkAnswer(this, '承漿')" onkeypress="handleKeyPress(event, this, '承漿')">
+        <!-- <input type="text" name="number-61" onblur="checkAnswer(this, 61)" onkeypress="handleKeyPress(event, this, 61)"> -->
+    </div>
+    <div id="group-70" class="input-group-row">
+        <input type="text" name="position-70" onblur="checkAnswer(this, '頌堂')" onkeypress="handleKeyPress(event, this, '頌堂')">
+        <!-- <input type="text" name="number-70" onblur="checkAnswer(this, 70)" onkeypress="handleKeyPress(event, this, 70)"> -->
+    </div>
+    <div id="group-71" class="input-group-row">
+        <input type="text" name="position-71" onblur="checkAnswer(this, '地閣')" onkeypress="handleKeyPress(event, this, '地閣')">
+        <!-- <input type="text" name="number-71" onblur="checkAnswer(this, 71)" onkeypress="handleKeyPress(event, this, 71)"> -->
+    </div>
+    <div id="group-17" class="input-group-column">
+        <!-- <input type="text" name="number-17" onblur="checkAnswer(this, 17)" onkeypress="handleKeyPress(event, this, 17)"> -->
+        <input type="text" name="position-17" onblur="checkAnswer(this, '日角')" onkeypress="handleKeyPress(event, this, '日角')">
+    </div>
+    <div id="group-18" class="input-group-column">
+        <!-- <input type="text" name="number-18" onblur="checkAnswer(this, 18)" onkeypress="handleKeyPress(event, this, 18)"> -->
+        <input type="text" name="position-18" onblur="checkAnswer(this, '月角')" onkeypress="handleKeyPress(event, this, '月角')">
+    </div>
+    <div id="group-23" class="input-group-row">
+        <input type="text" name="position-23" onblur="checkAnswer(this, '邊城')" onkeypress="handleKeyPress(event, this, '邊城')">
+        <!-- <input type="text" name="number-23" onblur="checkAnswer(this, 23)" onkeypress="handleKeyPress(event, this, 23)"> -->
+    </div>
+    <div id="group-24" class="input-group-row">
+        <input type="text" name="position-24" onblur="checkAnswer(this, '邊城')" onkeypress="handleKeyPress(event, this, '邊城')">
+        <!-- <input type="text" name="number-24" onblur="checkAnswer(this, 24)" onkeypress="handleKeyPress(event, this, 24)"> -->
+    </div>
+    <div id="group-20" class="input-group-row">
+        <input type="text" name="position-20" onblur="checkAnswer(this, '輔角')" onkeypress="handleKeyPress(event, this, '輔角')">
+        <!-- <input type="text" name="number-20" onblur="checkAnswer(this, 20)" onkeypress="handleKeyPress(event, this, 20)"> -->
+    </div>
+    <div id="group-21" class="input-group-row">
+        <input type="text" name="position-21" onblur="checkAnswer(this, '輔角')" onkeypress="handleKeyPress(event, this, '輔角')">
+        <!-- <input type="text" name="number-21" onblur="checkAnswer(this, 21)" onkeypress="handleKeyPress(event, this, 21)"> -->
+    </div>
+    <div id="group-29" class="input-group-row">
+        <input type="text" name="position-29" onblur="checkAnswer(this, '山林')" onkeypress="handleKeyPress(event, this, '山林')">
+        <!-- <input type="text" name="number-29" onblur="checkAnswer(this, 29)" onkeypress="handleKeyPress(event, this, 29)"> -->
+    </div>
+    <div id="group-30" class="input-group-row">
+        <input type="text" name="position-30" onblur="checkAnswer(this, '山林')" onkeypress="handleKeyPress(event, this, '山林')">
+        <!-- <input type="text" name="number-30" onblur="checkAnswer(this, 30)" onkeypress="handleKeyPress(event, this, 30)"> -->
+    </div>
+    <div id="group-26" class="input-group-row">
+        <input type="text" name="position-26" onblur="checkAnswer(this, '邱陵')" onkeypress="handleKeyPress(event, this, '邱陵')">
+        <!-- <input type="text" name="number-26" onblur="checkAnswer(this, 26)" onkeypress="handleKeyPress(event, this, 26)"> -->
+    </div>
+    <div id="group-27" class="input-group-row">
+        <input type="text" name="position-27" onblur="checkAnswer(this, '塚墓')" onkeypress="handleKeyPress(event, this, '塚墓')">
+        <!-- <input type="text" name="number-27" onblur="checkAnswer(this, 27)" onkeypress="handleKeyPress(event, this, 27)"> -->
+    </div>
+    <div id="group-31" class="input-group-row">
+        <input type="text" name="position-31" onblur="checkAnswer(this, '凌雲')" onkeypress="handleKeyPress(event, this, '凌雲')">
+        <!-- <input type="text" name="number-31" onblur="checkAnswer(this, 31)" onkeypress="handleKeyPress(event, this, 31)"> -->
+    </div>
+    <div id="group-32" class="input-group-row">
+        <input type="text" name="position-32" onblur="checkAnswer(this, '紫氣')" onkeypress="handleKeyPress(event, this, '紫氣')">
+        <!-- <input type="text" name="number-32" onblur="checkAnswer(this, 32)" onkeypress="handleKeyPress(event, this, 32)"> -->
+    </div>
+    <div id="group-33" class="input-group-row">
+        <input type="text" name="position-33" onblur="checkAnswer(this, '紫霞')" onkeypress="handleKeyPress(event, this, '紫霞')">
+        <!-- <input type="text" name="number-33" onblur="checkAnswer(this, 33)" onkeypress="handleKeyPress(event, this, 33)"> -->
+    </div>
+    <div id="group-34" class="input-group-row">
+        <input type="text" name="position-34" onblur="checkAnswer(this, '彩霞')" onkeypress="handleKeyPress(event, this, '彩霞')">
+        <!-- <input type="text" name="number-34" onblur="checkAnswer(this, 34)" onkeypress="handleKeyPress(event, this, 34)"> -->
+    </div>
+    <div id="group-42" class="input-group-row">
+        <input type="text" name="position-42" onblur="checkAnswer(this, '精舎')" onkeypress="handleKeyPress(event, this, '精舎')">
+        <!-- <input type="text" name="number-42" onblur="checkAnswer(this, 42)" onkeypress="handleKeyPress(event, this, 42)"> -->
+    </div>
+    <div id="group-43" class="input-group-row">
+        <input type="text" name="position-43" onblur="checkAnswer(this, '光殿')" onkeypress="handleKeyPress(event, this, '光殿')">
+        <!-- <input type="text" name="number-43" onblur="checkAnswer(this, 43)" onkeypress="handleKeyPress(event, this, 43)"> -->
+    </div>
+    <div id="group-35" class="input-group-column">
+        <!-- <input type="text" name="number-35" onblur="checkAnswer(this, 35)" onkeypress="handleKeyPress(event, this, 35)"> -->
+        <input type="text" name="position-35" onblur="checkAnswer(this, '太陽')" onkeypress="handleKeyPress(event, this, '太陽')">
+    </div>
+    <div id="group-37" class="input-group-column">
+        <!-- <input type="text" name="number-37" onblur="checkAnswer(this, 37)" onkeypress="handleKeyPress(event, this, 37)"> -->
+        <input type="text" name="position-37" onblur="checkAnswer(this, '中陽')" onkeypress="handleKeyPress(event, this, '中陽')">
+    </div>
+    <div id="group-39" class="input-group-column">
+        <!-- <input type="text" name="number-39" onblur="checkAnswer(this, 39)" onkeypress="handleKeyPress(event, this, 39)"> -->
+        <input type="text" name="position-39" onblur="checkAnswer(this, '少陽')" onkeypress="handleKeyPress(event, this, '少陽')">
+    </div>
+    <div id="group-36" class="input-group-column">
+        <!-- <input type="text" name="number-36" onblur="checkAnswer(this, 36)" onkeypress="handleKeyPress(event, this, 36)"> -->
+        <input type="text" name="position-36" onblur="checkAnswer(this, '太陰')" onkeypress="handleKeyPress(event, this, '太陰')">
+    </div>
+    <div id="group-38" class="input-group-column">
+        <!-- <input type="text" name="number-38" onblur="checkAnswer(this, 38)" onkeypress="handleKeyPress(event, this, 38)"> -->
+        <input type="text" name="position-38" onblur="checkAnswer(this, '中陰')" onkeypress="handleKeyPress(event, this, '中陰')">
+    </div>
+    <div id="group-40" class="input-group-column">
+        <!-- <input type="text" name="number-40" onblur="checkAnswer(this, 40)" onkeypress="handleKeyPress(event, this, 40)"> -->
+        <input type="text" name="position-40" onblur="checkAnswer(this, '少陰')" onkeypress="handleKeyPress(event, this, '少陰')">
+    </div>
+    <div id="group-46" class="input-group-column">
+        <!-- <input type="text" name="number-46" onblur="checkAnswer(this, 46)" onkeypress="handleKeyPress(event, this, 46)"> -->
+        <input type="text" name="position-46" onblur="checkAnswer(this, '顴骨')" onkeypress="handleKeyPress(event, this, '顴骨')">
+    </div>
+    <div id="group-47" class="input-group-column">
+        <!-- <input type="text" name="number-47" onblur="checkAnswer(this, 47)" onkeypress="handleKeyPress(event, this, 47)"> -->
+        <input type="text" name="position-47" onblur="checkAnswer(this, '顴骨')" onkeypress="handleKeyPress(event, this, '顴骨')">
+    </div>
+    <div id="group-0-1" class="input-group-row">
+        <input type="text" name="position-0-1" onblur="checkAnswer(this, '天輪')" onkeypress="handleKeyPress(event, this, '天輪')">
+        <!-- <input type="text" name="number-0-1" onblur="checkAnswer(this, 0)" onkeypress="handleKeyPress(event, this, 0)"> -->
+    </div>
+    <div id="group-0-2" class="input-group-row">
+        <input type="text" name="position-0-2" onblur="checkAnswer(this, '天輪')" onkeypress="handleKeyPress(event, this, '天輪')">
+        <!-- <input type="text" name="number-0-2" onblur="checkAnswer(this, 0)" onkeypress="handleKeyPress(event, this, 0)"> -->
+    </div>
+    <div id="group-0-3" class="input-group-row">
+        <input type="text" name="position-0-3" onblur="checkAnswer(this, '人輪')" onkeypress="handleKeyPress(event, this, '人輪')">
+        <!-- <input type="text" name="number-0-3" onblur="checkAnswer(this, 0)" onkeypress="handleKeyPress(event, this, 0)"> -->
+    </div>
+    <div id="group-0-4" class="input-group-row">
+        <input type="text" name="position-0-4" onblur="checkAnswer(this, '人輪')" onkeypress="handleKeyPress(event, this, '人輪')">
+        <!-- <input type="text" name="number-0-4" onblur="checkAnswer(this, 0)" onkeypress="handleKeyPress(event, this, 0)"> -->
+    </div>
+    <div id="group-0-5" class="input-group-row">
+        <input type="text" name="position-0-5" onblur="checkAnswer(this, '地輪')" onkeypress="handleKeyPress(event, this, '地輪')">
+        <!-- <input type="text" name="number-0-5" onblur="checkAnswer(this, 0)" onkeypress="handleKeyPress(event, this, 0)"> -->
+    </div>
+    <div id="group-0-6" class="input-group-row">
+        <input type="text" name="position-0-6" onblur="checkAnswer(this, '地輪')" onkeypress="handleKeyPress(event, this, '地輪')">
+        <!-- <input type="text" name="number-0-6" onblur="checkAnswer(this, 0)" onkeypress="handleKeyPress(event, this, 0)"> -->
+    </div>
+    <div id="group-49" class="input-group-column">
+        <!-- <input type="text" name="number-49" onblur="checkAnswer(this, 49)" onkeypress="handleKeyPress(event, this, 49)"> -->
+        <input type="text" name="position-49" onblur="checkAnswer(this, '諫臺')" onkeypress="handleKeyPress(event, this, '諫臺')">
+    </div>
+    <div id="group-50" class="input-group-column">
+        <!-- <input type="text" name="number-50" onblur="checkAnswer(this, 50)" onkeypress="handleKeyPress(event, this, 50)"> -->
+        <input type="text" name="position-50" onblur="checkAnswer(this, '廷尉')" onkeypress="handleKeyPress(event, this, '廷尉')">
+    </div>
+    <div id="group-56" class="input-group-row">
+        <input type="text" name="position-56" onblur="checkAnswer(this, '法令')" onkeypress="handleKeyPress(event, this, '法令')">
+        <!-- <input type="text" name="number-56" onblur="checkAnswer(this, 56)" onkeypress="handleKeyPress(event, this, 56)"> -->
+    </div>
+    <div id="group-57" class="input-group-row">
+        <input type="text" name="position-57" onblur="checkAnswer(this, '法令')" onkeypress="handleKeyPress(event, this, '法令')">
+        <!-- <input type="text" name="number-57" onblur="checkAnswer(this, 57)" onkeypress="handleKeyPress(event, this, 57)"> -->
+    </div>
+    <div id="group-58" class="input-group-row">
+        <input type="text" name="position-58" onblur="checkAnswer(this, '附耳')" onkeypress="handleKeyPress(event, this, '附耳')">
+        <!-- <input type="text" name="number-58" onblur="checkAnswer(this, 58)" onkeypress="handleKeyPress(event, this, 58)"> -->
+    </div>
+    <div id="group-59" class="input-group-row">
+        <input type="text" name="position-59" onblur="checkAnswer(this, '附耳')" onkeypress="handleKeyPress(event, this, '附耳')">
+        <!-- <input type="text" name="number-59" onblur="checkAnswer(this, 59)" onkeypress="handleKeyPress(event, this, 59)"> -->
+    </div>
+    <div id="group-52" class="input-group-column">
+        <!-- <input type="text" name="number-52" onblur="checkAnswer(this, 52)" onkeypress="handleKeyPress(event, this, 52)"> -->
+        <input type="text" name="position-52" onblur="checkAnswer(this, '仙庫')" onkeypress="handleKeyPress(event, this, '仙庫')">
+    </div>
+    <div id="group-53" class="input-group-column">
+        <!-- <input type="text" name="number-53" onblur="checkAnswer(this, 53)" onkeypress="handleKeyPress(event, this, 53)"> -->
+        <input type="text" name="position-53" onblur="checkAnswer(this, '仙庫')" onkeypress="handleKeyPress(event, this, '仙庫')">
+    </div>
+    <div id="group-54" class="input-group-column">
+        <!-- <input type="text" name="number-54" onblur="checkAnswer(this, 54)" onkeypress="handleKeyPress(event, this, 54)"> -->
+        <input type="text" name="position-54" onblur="checkAnswer(this, '食倉')" onkeypress="handleKeyPress(event, this, '食倉')">
+    </div>
+    <div id="group-55" class="input-group-column">
+        <!-- <input type="text" name="number-55" onblur="checkAnswer(this, 55)" onkeypress="handleKeyPress(event, this, 55)"> -->
+        <input type="text" name="position-55" onblur="checkAnswer(this, '祿倉')" onkeypress="handleKeyPress(event, this, '祿倉')">
+    </div>
+    <div id="group-64" class="input-group-column">
+        <!-- <input type="text" name="number-64" onblur="checkAnswer(this, 64)" onkeypress="handleKeyPress(event, this, 64)"> -->
+        <input type="text" name="position-64" onblur="checkAnswer(this, '陂地')" onkeypress="handleKeyPress(event, this, '陂地')">
+    </div>
+    <div id="group-65" class="input-group-column">
+        <!-- <input type="text" name="number-65" onblur="checkAnswer(this, 65)" onkeypress="handleKeyPress(event, this, 65)"> -->
+        <input type="text" name="position-65" onblur="checkAnswer(this, '鵝鴨')" onkeypress="handleKeyPress(event, this, '鵝鴨')">
+    </div>
+    <div id="group-68" class="input-group-row">
+        <input type="text" name="position-68" onblur="checkAnswer(this, '歸來')" onkeypress="handleKeyPress(event, this, '歸來')">
+        <!-- <input type="text" name="number-68" onblur="checkAnswer(this, 68)" onkeypress="handleKeyPress(event, this, 68)"> -->
+    </div>
+    <div id="group-69" class="input-group-row">
+        <input type="text" name="position-69" onblur="checkAnswer(this, '歸來')" onkeypress="handleKeyPress(event, this, '歸來')">
+        <!-- <input type="text" name="number-69" onblur="checkAnswer(this, 69)" onkeypress="handleKeyPress(event, this, 69)"> -->
+    </div>
+    <div id="group-66" class="input-group-row">
+        <input type="text" name="position-66" onblur="checkAnswer(this, '金縷')" onkeypress="handleKeyPress(event, this, '金縷')">
+        <!-- <input type="text" name="number-66" onblur="checkAnswer(this, 66)" onkeypress="handleKeyPress(event, this, 66)"> -->
+    </div>
+    <div id="group-67" class="input-group-row">
+        <input type="text" name="position-67" onblur="checkAnswer(this, '金縷')" onkeypress="handleKeyPress(event, this, '金縷')">
+        <!-- <input type="text" name="number-67" onblur="checkAnswer(this, 67)" onkeypress="handleKeyPress(event, this, 67)"> -->
+    </div>
+    <div id="group-62" class="input-group-row">
+        <input type="text" name="position-62" onblur="checkAnswer(this, '地庫')" onkeypress="handleKeyPress(event, this, '地庫')">
+        <!-- <input type="text" name="number-62" onblur="checkAnswer(this, 62)" onkeypress="handleKeyPress(event, this, 62)"> -->
+    </div>
+    <div id="group-63" class="input-group-row">
+        <input type="text" name="position-63" onblur="checkAnswer(this, '地庫')" onkeypress="handleKeyPress(event, this, '地庫')">
+        <!-- <input type="text" name="number-63" onblur="checkAnswer(this, 63)" onkeypress="handleKeyPress(event, this, 63)"> -->
+    </div>
+    <div id="group-72" class="input-group-column">
+        <!-- <input type="text" name="number-72" onblur="checkAnswer(this, 72)" onkeypress="handleKeyPress(event, this, 72)"> -->
+        <input type="text" name="position-72" onblur="checkAnswer(this, '奴僕')" onkeypress="handleKeyPress(event, this, '奴僕')">
+    </div>
+    <div id="group-73" class="input-group-column">
+        <!-- <input type="text" name="number-73" onblur="checkAnswer(this, 73)" onkeypress="handleKeyPress(event, this, 73)"> -->
+        <input type="text" name="position-73" onblur="checkAnswer(this, '奴僕')" onkeypress="handleKeyPress(event, this, '奴僕')">
+    </div>
+    <div id="group-74" class="input-group-column">
+        <!-- <input type="text" name="number-74" onblur="checkAnswer(this, 74)" onkeypress="handleKeyPress(event, this, 74)"> -->
+        <input type="text" name="position-74" onblur="checkAnswer(this, '腮骨')" onkeypress="handleKeyPress(event, this, '腮骨')">
+    </div>
+    <div id="group-75" class="input-group-column">
+        <!-- <input type="text" name="number-75" onblur="checkAnswer(this, 75)" onkeypress="handleKeyPress(event, this, 75)"> -->
+        <input type="text" name="position-75" onblur="checkAnswer(this, '腮骨')" onkeypress="handleKeyPress(event, this, '腮骨')">
+    </div>
+
+    <!-- <div id="coordinates">X: 0, Y: 0</div> -->
+</div>
